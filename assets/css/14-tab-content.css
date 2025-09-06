@@ -1,0 +1,49 @@
+/* 14. ESTILOS UNIFICADOS PARA CONTENIDO DE PESTAÑAS
+------------------------------------------------------------------- */
+
+/* Le da a cada pestaña un fondo de "tarjeta" consistente */
+.futbolin-tab-content > .futbolin-card {
+    background-color: var(--futbolin-bg-card-hover);
+    border: 1px solid var(--futbolin-border-color);
+    padding: 25px;
+    border-radius: var(--futbolin-border-radius-main);
+}
+
+/* Estilo general para todas las listas de estadísticas dentro del perfil */
+.futbolin-tab-content .stats-list {
+    list-style: none; /* Quita los puntos de las listas */
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.futbolin-tab-content .stats-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--futbolin-border-color);
+}
+
+.futbolin-tab-content .stats-list li:last-child {
+    border-bottom: none;
+}
+
+.futbolin-tab-content .stats-list li strong {
+    color: var(--futbolin-text-dark);
+    font-weight: 600;
+}
+
+.futbolin-tab-content .stats-list .value {
+    font-weight: 500;
+    color: var(--futbolin-text-muted);
+    text-align: right;
+}
+
+/* Contenedor de las "píldoras" de estadísticas en la pestaña Perfil */
+#tab-general .player-career-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding-top: 10px;
+}

@@ -1,0 +1,153 @@
+/* ---
+    2. ESTILOS PARA COMPONENTES ESPECÍFICOS
+------------------------------------------------------------------- */
+
+/* Estilos dinámicos del Header del Perfil de Jugador */
+.futbolin-main-header.header-gm { background: var(--color-cat-gm); }
+.futbolin-main-header.header-elite { background: var(--color-cat-elite); }
+.futbolin-main-header.header-master { background: var(--color-cat-master); }
+.futbolin-main-header.header-amateur, 
+.futbolin-main-header.header-amater { background: var(--color-cat-amateur); }
+.futbolin-main-header.header-rookie { background: var(--color-cat-rookie); }
+
+/* CORRECCIÓN: Hacemos el texto del H1 visible sobre los degradados */
+.futbolin-main-header[class*="header-"] .header-text h1 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.futbolin-main-header.header-gm .header-text h1,
+.futbolin-main-header.header-elite .header-text h1 {
+    color: #3b300f; /* Texto oscuro para fondos muy claros como oro/plata */
+    text-shadow: 
+        -1px -1px 0 rgba(0, 0, 0, 0.2),  
+         1px -1px 0 rgba(0, 0, 0, 0.2),
+        -1px  1px 0 rgba(0, 0, 0, 0.2),
+         1px  1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Insignia de Gran Maestro (GM) */
+.gm-badge-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 5px;
+}
+.gm-badge {
+    display: inline-block; 
+    padding: 4px 10px; 
+    background: #111;
+    color: #ffd700; 
+    font-weight: bold; 
+    border-radius: 5px;
+    font-size: 1.2rem; 
+    border: 2px solid #ffd700;
+    text-shadow: 0 0 5px #ffd700; 
+    margin-right: -20px;
+    transform: rotate(-10deg);
+}
+
+/* Ribete dorado animado para GM (solo en Dobles) */
+.futbolin-main-header.header-gm { 
+    position: relative; 
+    overflow: hidden; 
+}
+.futbolin-main-header.header-gm::before {
+    content: ''; 
+    position: absolute; 
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(transparent, rgba(255, 215, 0, 0.4), transparent 30%);
+    animation: rotate 4s linear infinite;
+}
+@keyframes rotate { 
+    100% { transform: rotate(360deg); } 
+}
+
+/* Estilos para Datos Globales */
+.futbolin-stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.stats-row {
+    justify-content: space-between;
+}
+.stats-label-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.stats-icon {
+    font-size: 1.5em;
+    width: 25px;
+    text-align: center;
+}
+.stats-label {
+    font-weight: 600;
+    color: var(--futbolin-text-dark);
+}
+.stats-value-group .points-pill {
+    background-color: var(--futbolin-bg-highlight);
+}
+.value-placeholder {
+    font-style: italic;
+    color: var(--futbolin-text-muted);
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+/* === INICIO DE NUEVOS ESTILOS PARA LA PÁGINA "ACERCA DE" === */
+
+.futbolin-about-page .futbolin-card {
+    margin-bottom: 25px; /* Más espacio entre los bloques de texto */
+}
+
+.futbolin-about-page .futbolin-card h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--futbolin-border-color);
+    color: var(--futbolin-color-primary);
+}
+
+.futbolin-about-page .futbolin-card p {
+    line-height: 1.7; /* Texto más legible y espaciado */
+    margin-bottom: 1em;
+}
+.futbolin-about-page .futbolin-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para la nueva tabla de requisitos de GM */
+.futbolin-about-page table.wp-list-table {
+    border: none;
+    border-radius: var(--futbolin-border-radius-main);
+    box-shadow: var(--futbolin-shadow-soft);
+    overflow: hidden; /* Para que el borde redondeado se aplique bien */
+}
+
+.futbolin-about-page table.wp-list-table thead {
+    background-color: var(--futbolin-text-dark);
+}
+
+.futbolin-about-page table.wp-list-table th {
+    color: #fff;
+    border-bottom: none;
+    font-size: 1.1em;
+    padding: 15px;
+}
+
+.futbolin-about-page table.wp-list-table td {
+    padding: 15px;
+    vertical-align: middle;
+    font-size: 1em;
+    border-bottom: 1px solid var(--futbolin-border-color) !important;
+}
+
+.futbolin-about-page table.wp-list-table tbody tr:last-child td {
+    border-bottom: none !important; /* Quita la línea de la última fila */
+}
+
+.futbolin-about-page table.wp-list-table tbody tr:nth-child(even) {
+    background-color: var(--futbolin-bg-highlight); /* Mantiene el efecto de filas alternas */
+}
+
+/* === FIN DE NUEVOS ESTILOS === */

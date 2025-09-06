@@ -1,0 +1,27 @@
+.futbolin-maint-card-front {
+  margin: 12px 0;
+  text-align: center;
+  border: 2px dashed #d63638;
+  background: #fff5f5;
+  border-radius: 14px;
+  padding: 28px 20px;
+}
+
+.futbolin-maint-card-front h2 {
+  margin: 6px 0 8px 0;
+  color: #b30000;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.futbolin-maint-card-front p {
+  margin: 0;
+  color: #444;
+  font-size: 16px;
+}
+
+.futbolin-maint-card-front .maint-emoji {
+  font-size: 44px;
+  line-height: 1;
+  margin-bottom: 8px;
+}

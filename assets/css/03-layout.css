@@ -1,0 +1,71 @@
+/* 3. LAYOUT Y CONTENEDORES PRINCIPALES
+------------------------------------------------------------------- */
+.futbolin-full-bleed-wrapper {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background-color: var(--futbolin-bg-main);
+    padding: 50px 20px;
+    box-sizing: border-box;
+    font-family: var(--futbolin-font-family-base);
+    color: var(--futbolin-text-dark);
+}
+.futbolin-full-bleed-wrapper * {
+    font-family: inherit;
+}
+.futbolin-content-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    border-radius: var(--futbolin-border-radius-main);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+    padding: 30px;
+}
+.futbolin-layout-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.futbolin-sidebar {
+    flex: 0 0 380px;
+    align-self: flex-start;
+}
+.futbolin-main-content {
+    flex: 1 1 500px;
+}
+.futbolin-main-content.main-content-full-width {
+    /* NUEVA REGLA: Anula el flex-basis y permite que el contenedor se estire */
+    flex-basis: 100%;
+}
+
+/* NUEVOS ESTILOS PARA EL LAYOUT DEL HALL OF FAME */
+.futbolin-hall-of-fame-wrapper {
+    padding: 20px;
+}
+
+.futbolin-hall-of-fame-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .futbolin-hall-of-fame-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* ESTILOS PARA EL BUSCADOR DEL HALL OF FAME */
+.futbolin-search-hall-of-fame {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--futbolin-border-color);
+}
+.futbolin-search-hall-of-fame .search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.futbolin-search-hall-of-fame .futbolin-live-search {
+    flex: 1;
+}

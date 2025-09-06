@@ -1,0 +1,207 @@
+/* -- admin-styles.css -- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.wrap {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; /* Aumentamos el tamaño base de la fuente */
+    line-height: 1.6;
+}
+
+h1.futbolin-admin-header {
+    font-size: 2.5rem; /* Hacemos el título principal mucho más grande */
+    font-weight: 700;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    border-bottom: 1px solid #c3c4c7;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 2rem; /* Título de sección más grande */
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem; /* Subtítulos más grandes */
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.futbolin-admin-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.futbolin-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #f0f0f1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+.futbolin-content-area {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #c3c4c7;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.futbolin-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e0e0e1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    margin-bottom: 25px;
+}
+
+/* Estilos de la página de inicio */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fefm-logo {
+    width: 250px; /* Hacemos el logo más grande */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.welcome-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    border-bottom: none;
+}
+
+.developer-info-card {
+    background-color: #f9f9f9;
+}
+
+.developer-info-card h3 {
+    font-size: 1.4rem;
+    border-bottom: 1px solid #e0e0e1;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #e0e0e1;
+}
+
+.contact-text {
+    font-style: italic;
+    color: #666;
+}
+
+.contact-email {
+    font-weight: 600;
+    color: #0073aa;
+    font-size: 1.1rem;
+}
+
+/* Estilos de la pestaña de cálculos */
+.stats-control-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e1;
+}
+
+.stats-control-group h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.stats-control-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px; /* Añade espacio entre los botones */
+}
+
+.button-danger {
+    background-color: #d63638;
+    color: #fff;
+    border-color: #d63638;
+}
+
+.button-danger:hover {
+    background-color: #c62a2d;
+    color: #fff;
+}
+
+.futbolin-progress-bar-wrapper {
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#futbolin-progress-bar {
+    width: 0;
+    height: 30px; /* Aumentamos la altura de la barra de progreso */
+    background-color: #0073aa;
+    transition: width 0.5s ease;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 1rem;
+}
+
+#futbolin-progress-status {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.stats-message {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #555;
+}
+
+.stats-message strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* === Futbolín Admin Tabs/Menu (restored) === */
+.futbolin-admin-layout{display:flex;gap:24px;align-items:flex-start}
+.futbolin-sidebar{width:260px;background:#fff;border:1px solid #dcdcde;border-radius:12px;padding:16px;position:sticky;top:24px}
+.futbolin-tabs-nav{display:flex;flex-direction:column;gap:8px}
+.futbolin-tabs-nav a{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:8px;text-decoration:none;background:#f6f7f7;border:1px solid #e2e4e7;color:#1d2327;font-weight:600}
+.futbolin-tabs-nav a .dashicons{font-size:18px;line-height:1}
+.futbolin-tabs-nav a:hover{background:#eaf3ff;border-color:#b3d4ff;color:#0a4b78}
+.futbolin-tabs-nav a.active{background:#2271b1;color:#fff;border-color:#2271b1;box-shadow:0 1px 0 rgba(0,0,0,.05) inset}
+.futbolin-tabs-nav a.active .dashicons{color:#fff}
+.futbolin-content{flex:1;min-width:0}
+@media (max-width: 1024px){
+  .futbolin-admin-layout{flex-direction:column}
+  .futbolin-sidebar{position:relative;top:auto;width:auto}
+}
+

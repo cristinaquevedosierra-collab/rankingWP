@@ -1,0 +1,38 @@
+
+/* 4. TÍTULOS Y ENCABEZADOS
+------------------------------------------------------------------- */
+.futbolin-main-header {
+    padding: 2rem 1rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--futbolin-border-color);
+    background: linear-gradient(135deg, var(--futbolin-bg-highlight), var(--futbolin-bg-card));
+    border-radius: var(--futbolin-border-radius-main) var(--futbolin-border-radius-main) 0 0;
+}
+.header-branding {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: clamp(20px, 4vw, 50px); width: 100%;
+}
+.header-side { flex-shrink: 0; }
+.header-side img { max-height: 60px; width: auto; }
+.header-text { text-align: center; line-height: 1.15; }
+.futbolin-main-header h1 {
+    margin: 0; font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700; color: var(--futbolin-text-headings);
+}
+.futbolin-main-header h2 {
+    margin-top: 0.5rem; font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 500; color: var(--futbolin-color-primary);
+    text-transform: uppercase; letter-spacing: 2px;
+}
+.futbolin-main-content h2, .futbolin-sidebar-block h3, .content-block h3 {
+    color: var(--futbolin-text-headings);
+    border-bottom: 2px solid var(--futbolin-color-primary);
+    padding-bottom: 10px; margin: 0 0 25px 0; font-size: 1.5em;
+}
+/* Alinea la bandera y la etiqueta de categoría en el encabezado del perfil */
+.futbolin-main-header .header-side.right {
+    display: flex;
+    flex-direction: column; /* Apila los elementos (bandera y categoría) */
+    align-items: center;    /* Los centra horizontalmente */
+    gap: 10px;              /* Crea un espacio entre ellos */
+}
