@@ -1,0 +1,125 @@
+/* Propuesta inicial de Design Tokens (NO referenciado aún en build)
+   Objetivo: servir como base para futura sustitución gradual sin riesgo de regresiones ahora.
+   NOTA: No eliminar valores legacy hasta validar visualmente.
+*/
+
+:root {
+  /* === Colores Base === */
+  --rf-color-white: #ffffff; /* legacy #fff / #ffffff */
+  --rf-color-black: #111111; /* cercano a #111 usado en GM badge */
+  --rf-color-heading: var(--futbolin-text-headings); /* #111827 */
+  --rf-color-text: var(--futbolin-text-dark); /* #1f2937 */
+  --rf-color-text-muted: var(--futbolin-text-muted); /* #6b7280 */
+
+  /* === Paleta Primaria (ya existente) === */
+  /* Mantener alias semánticos si se necesita consistencia futura */
+  --rf-color-primary: var(--futbolin-color-primary); /* #3b82f6 */
+  --rf-color-accent: var(--futbolin-color-secondary); /* #f59e0b */
+  --rf-color-success: var(--futbolin-color-success); /* #16a34a */
+  --rf-color-danger: var(--futbolin-color-danger); /* #dc2626 */
+
+  /* === Fondos === */
+  --rf-bg-main: var(--futbolin-bg-main); /* #f3f4f6 */
+  --rf-bg-surface: var(--futbolin-bg-card); /* #ffffff */
+  --rf-bg-surface-alt: var(--futbolin-bg-card-hover); /* #f9fafb */
+  --rf-bg-input: var(--futbolin-bg-input); /* #ffffff */
+  --rf-bg-highlight: var(--futbolin-bg-highlight); /* #eff6ff */
+
+  /* === Bordes & Dividers === */
+  --rf-border-color: var(--futbolin-border-color); /* #e5e7eb */
+
+  /* === Podium (gradientes y fallback) === */
+  /* Gold */
+  --rf-podium-gold-bg1: #fff6cc; /* variable existente */
+  --rf-podium-gold-bg2: #f4d35e;
+  --rf-podium-gold-border: #e1b700; /* ring & border principal */
+  --rf-podium-gold-fallback-top: #ffe082; /* fallback gradient stop 1 */
+  --rf-podium-gold-fallback-bottom: #ffc107; /* fallback gradient stop 2 */
+  --rf-podium-gold-fallback-border: #e0b000; /* borde en fallback */
+
+  /* Silver */
+  --rf-podium-silver-bg1: #f4f6f8;
+  --rf-podium-silver-bg2: #cfd8dc;
+  --rf-podium-silver-border: #9ea7ad;
+  --rf-podium-silver-fallback-top: #f2f4f5;
+  --rf-podium-silver-fallback-bottom: #cfd8dc;
+  --rf-podium-silver-fallback-border: #b0bec5;
+
+  /* Bronze */
+  --rf-podium-bronze-bg1: #ffe6cc;
+  --rf-podium-bronze-bg2: #d19a66;
+  --rf-podium-bronze-border: #ad6a2b;
+  --rf-podium-bronze-fallback-top: #f8cf8e;
+  --rf-podium-bronze-fallback-bottom: #cd7f32;
+  --rf-podium-bronze-fallback-border: #b87333;
+
+  /* === Gran Maestro (GM Badge) === */
+  --rf-gm-bg: #111111; /* fondo badge */
+  --rf-gm-accent: #ffd700; /* texto & borde */
+  --rf-gm-accent-glow: #ffd700; /* glow text-shadow */
+
+  /* === Tipografía (escala) === */
+  /* Convertimos em usados a rem referenciables; base: 1rem */
+  --rf-font-size-xs: 0.9rem;   /* antes 0.9em */
+  --rf-font-size-sm: 0.95rem;  /* antes 0.95em */
+  --rf-font-size-base: 1rem;   /* 1em */
+  --rf-font-size-md: 1.1rem;   /* 1.1em */
+  --rf-font-size-lg: 1.2rem;   /* 1.2rem existía */
+  --rf-font-size-xl: 1.35rem;  /* 1.35em */
+  --rf-font-size-2xl: 1.5rem;  /* 1.5em */
+
+  /* === Border Radius Scale === */
+  --rf-radius-xs: 4px;  /* propuesta nueva */
+  --rf-radius-sm: 5px;  /* badge GM */
+  --rf-radius-md: 8px;  /* gap para futuros componentes */
+  --rf-radius-lg: 10px; /* usado en varios bloques */
+  --rf-radius-xl: 12px; /* existing main */
+  --rf-radius-pill: 20px; /* existing pill */
+
+  /* === Sombras === */
+  --rf-shadow-soft: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px -1px rgba(0,0,0,.08);
+  --rf-shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+  --rf-shadow-ring-gold: inset 0 0 0 1px rgba(225,183,0,.35);
+  --rf-shadow-ring-silver: inset 0 0 0 1px rgba(158,167,173,.35);
+  --rf-shadow-ring-bronze: inset 0 0 0 1px rgba(173,106,43,.35);
+
+  /* === Espaciado (rem) === */
+  --rf-space-1: 0.25rem;   /* 4px */
+  --rf-space-2: 0.3125rem; /* 5px (considerar normalizar > 0.375rem) */
+  --rf-space-3: 0.5rem;    /* 8px */
+  --rf-space-4: 0.625rem;  /* 10px */
+  --rf-space-5: 0.75rem;   /* 12px */
+  --rf-space-6: 0.9375rem; /* 15px */
+  --rf-space-7: 1rem;      /* 16px */
+  --rf-space-8: 1.25rem;   /* 20px */
+  --rf-space-9: 1.5625rem; /* 25px */
+  --rf-space-10: 3.125rem; /* 50px */
+}
+
+/* === Notas de adopción ===
+1. Empezar sustituyendo sólo en componentes de podium y badge GM (acotado).
+2. Mantener los gradientes originales hasta validar equivalencia visual.
+3. No tocar clases globales hasta tener snapshot comparativo.
+4. Documentar cada reemplazo (commit granular). */
+
+/* === Checklist de Reemplazos Priorizados (Plan Seguro) ===
+Fase 1 (aislado, bajo riesgo):
+  [ ] Podium gradientes fallback -> usar --rf-podium-* (oro, plata, bronce).
+  [ ] Aros (box-shadow inset) -> --rf-shadow-ring-gold/silver/bronze.
+  [ ] Badge GM (#111, #ffd700, text-shadow) -> --rf-gm-bg / --rf-gm-accent / --rf-gm-accent-glow.
+Fase 2 (texto y fondos controlados):
+  [ ] Sustituir #111827, #1f2937, #6b7280 donde sigan hardcode por --rf-color-heading/text/text-muted.
+  [ ] Sustituir #fff, #f9fafb, #eff6ff por --rf-bg-surface / -surface-alt / -highlight.
+Fase 3 (estructura visual):
+  [ ] Bordes #e5e7eb hardcode -> --rf-border-color.
+  [ ] Sombras card duplicadas -> --rf-shadow-card.
+  [ ] Border-radius 5px/10px/12px/20px -> tokens radius.
+  [ ] Tamaños font-size escala -> tokens tipografía (empezar por componentes secundarios).
+Fase 4 (fine tuning):
+  [ ] Espaciados px → tokens --rf-space-* (validar que no rompe layouts estrechos).
+  [ ] Unificar gradientes definitivos para podium usando sólo bg1/bg2 (+ posible overlay) y retirar fallback duplicado.
+Criterios de Done por fase:
+  - Zero cambios visuales inesperados en capturas antes/después.
+  - No aumento significativo de especificidad.
+  - Capas de regresión manual en ranking, perfil, listado torneos.
+*/

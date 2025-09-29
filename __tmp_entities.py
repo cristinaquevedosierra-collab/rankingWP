@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+from pathlib import Path
+path = Path('includes/template-parts/player-hitos-tab.php')
+text = path.read_text(encoding='utf-8')
+text = text.replace("  [ 'tone' => 'gold',   'title' => 'Campeón de España (Dobles)',    'temps' => $temps_campeon_d, 'icon' => 'crown', 'doubleIcon' => true ],", "  [ 'tone' => 'gold',   'title' => 'Campe&oacute;n de Espa&ntilde;a (Dobles)',    'temps' => $temps_campeon_d, 'icon' => 'crown', 'doubleIcon' => true ],")
+text = text.replace("  [ 'tone' => 'gold',   'title' => 'Campeón de España (Individual)', 'temps' => $temps_campeon_i, 'icon' => 'crown', 'doubleIcon' => false ],", "  [ 'tone' => 'gold',   'title' => 'Campe&oacute;n de Espa&ntilde;a (Individual)', 'temps' => $temps_campeon_i, 'icon' => 'crown', 'doubleIcon' => false ],")
+text = text.replace("  [ 'tone' => 'gold',   'title' => 'Nº1 del Ranking por Temporada (Dobles)',     'temps' => $temps_no1_d, 'icon' => 'star',  'doubleIcon' => true ],", "  [ 'tone' => 'gold',   'title' => 'N&ordm;1 del Ranking por Temporada (Dobles)',     'temps' => $temps_no1_d, 'icon' => 'star',  'doubleIcon' => true ],")
+text = text.replace("  [ 'tone' => 'gold',   'title' => 'Nº1 del Ranking por Temporada (Individual)', 'temps' => $temps_no1_i, 'icon' => 'star',  'doubleIcon' => false ],", "  [ 'tone' => 'gold',   'title' => 'N&ordm;1 del Ranking por Temporada (Individual)', 'temps' => $temps_no1_i, 'icon' => 'star',  'doubleIcon' => false ],")
+text = text.replace("  [ 'tone' => 'silver', 'title' => 'Nº2 del Ranking por Temporada (Dobles)',     'temps' => $temps_no2_d, 'icon' => 'star',  'doubleIcon' => true ],", "  [ 'tone' => 'silver', 'title' => 'N&ordm;2 del Ranking por Temporada (Dobles)',     'temps' => $temps_no2_d, 'icon' => 'star',  'doubleIcon' => true ],")
+text = text.replace("  [ 'tone' => 'silver', 'title' => 'Nº2 del Ranking por Temporada (Individual)', 'temps' => $temps_no2_i, 'icon' => 'star',  'doubleIcon' => false ],", "  [ 'tone' => 'silver', 'title' => 'N&ordm;2 del Ranking por Temporada (Individual)', 'temps' => $temps_no2_i, 'icon' => 'star',  'doubleIcon' => false ],")
+text = text.replace("  [ 'tone' => 'bronze', 'title' => 'Nº3 del Ranking por Temporada (Dobles)',     'temps' => $temps_no3_d, 'icon' => 'star',  'doubleIcon' => true ],", "  [ 'tone' => 'bronze', 'title' => 'N&ordm;3 del Ranking por Temporada (Dobles)',     'temps' => $temps_no3_d, 'icon' => 'star',  'doubleIcon' => true ],")
+text = text.replace("  [ 'tone' => 'bronze', 'title' => 'Nº3 del Ranking por Temporada (Individual)', 'temps' => $temps_no3_i, 'icon' => 'star',  'doubleIcon' => false ],", "  [ 'tone' => 'bronze', 'title' => 'N&ordm;3 del Ranking por Temporada (Individual)', 'temps' => $temps_no3_i, 'icon' => 'star',  'doubleIcon' => false ],")
+text = text.replace('El jugador no tiene hitos de esta categor\u00eda', 'El jugador no tiene hitos de esta categor&iacute;a')
+path.write_text(text, encoding='utf-8')

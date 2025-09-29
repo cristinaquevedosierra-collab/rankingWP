@@ -1,0 +1,1 @@
+<?php if (!defined('ABSPATH')) exit; class Futbolin_Global_Stats_Service { public static function rebuild($conf=[]) { return ['meta'=>['generated_at'=>current_time('mysql'),'version'=>'1.0'],'conf'=>$conf,'blocks'=>[]]; } }

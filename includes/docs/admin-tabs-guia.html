@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Guía administración Ranking Futbolín</title>
+<style>
+/* ====== Layout & Base (scoped por clase raíz) ====== */
+html,body{margin:0;padding:0;background:transparent;}
+.rf-admin-docs *{box-sizing:border-box;}
+.rf-admin-docs{display:flex;gap:28px;align-items:flex-start;padding:12px 4px 4px 0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;color:#0f172a;background:transparent;}
+.rf-admin-docs{display:flex;gap:28px;align-items:flex-start;padding:26px 34px;box-sizing:border-box;}
+.rf-docs-toc{flex:0 0 260px;position:sticky;top:70px;align-self:flex-start;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 18px 20px;max-height:calc(100vh - 90px);overflow:auto;box-shadow:0 4px 14px -2px rgba(15,23,42,.06),0 2px 4px -1px rgba(15,23,42,.05);}
+.rf-docs-toc h2{margin:0 0 10px;font-size:15px;letter-spacing:.5px;text-transform:uppercase;color:#334155;}
+.rf-docs-toc ol{list-style:decimal;margin:0 0 14px 18px;padding:0;}
+.rf-docs-toc a{display:block;padding:4px 6px 4px 8px;border-radius:6px;color:#0f172a;text-decoration:none;font-size:13px;line-height:1.3;position:relative;}
+.rf-docs-toc a.active,.rf-docs-toc a:hover{background:#f1f5f9;color:#0f172a;font-weight:600;}
+.rf-docs-toc a.active::before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:4px;border-radius:2px;background:#0ea5e9;}
+.rf-docs-controls{display:flex;flex-direction:column;gap:6px;margin-top:4px;}
+.rf-docs-controls button{width:100%;}
+.rf-docs-search{position:relative;margin:4px 0 14px;}
+.rf-docs-search input{width:100%;padding:6px 68px 6px 8px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;background:#fff;}
+.rf-docs-search input:focus{outline:2px solid #38bdf8;outline-offset:1px;}
+.rf-docs-search button{position:absolute;top:4px;border:none;background:transparent;color:#475569;font-size:13px;cursor:pointer;line-height:1;padding:4px;border-radius:4px;}
+#rf-docs-search-clear{right:4px;font-size:16px;}
+#rf-docs-search-prev{right:32px;}
+#rf-docs-search-next{right:54px;}
+.rf-docs-search button:hover{background:#e2e8f0;}
+.rf-docs-search-meta{font-size:11px;color:#64748b;margin-top:5px;min-height:14px;}
+.rf-shortcuts{font-size:11px;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;padding:6px 8px;border-radius:6px;line-height:1.5;margin:0 0 12px;}
+.rf-docs-content{flex:1;min-width:0;}
+.rf-docs-header{margin:0 0 16px;padding:0 0 10px;border-bottom:1px solid #e2e8f0;}
+.rf-docs-header h1{margin:0 0 8px;font-size:26px;line-height:1.15;}
+.rf-docs-meta{font-size:12px;color:#64748b;margin:2px 0 14px;}
+.rf-docs-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px;}
+.rf-docs-actions .button{cursor:pointer;}
+/* ====== Section blocks ====== */
+.rf-docs-section{position:relative;margin:0 0 44px;padding:20px 26px 22px;border:1px solid #e2e8f0;border-radius:16px;background:#fff;box-shadow:0 4px 18px -2px rgba(15,23,42,.05),0 2px 6px -1px rgba(15,23,42,.04);scroll-margin-top:66px;}
+.rf-docs-section h2{margin:0 0 6px;font-size:21px;line-height:1.22;color:#0f172a;}
+.rf-purpose{font-size:13px;margin:0 0 14px;color:#475569;font-style:italic;}
+.rf-docs-section details{margin:0 0 12px;border:1px solid #e2e8f0;border-radius:10px;padding:8px 12px 10px;background:#f8fafc;}
+.rf-docs-section details[open]{background:#f1f5f9;}
+.rf-docs-section summary{cursor:pointer;font-weight:600;color:#0f172a;}
+.rf-docs-section ul,.rf-docs-section ol{margin:6px 0 6px 22px;padding:0;}
+.rf-docs-section li{margin:2px 0;font-size:13px;}
+/* ====== Tables ====== */
+.rf-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
+.rf-table th,.rf-table td{border:1px solid #cbd5e1;padding:6px 8px;text-align:left;vertical-align:top;}
+.rf-table th{background:#f1f5f9;font-weight:600;color:#0f172a;}
+/* ====== Raw MD ====== */
+.rf-raw-md{margin-top:30px;white-space:pre-wrap;border:1px solid #e2e8f0;background:#0f172a;color:#f8fafc;padding:18px 20px;border-radius:12px;max-height:420px;overflow:auto;font-size:12px;line-height:1.45;}
+/* ====== Copy Link Button ====== */
+.rf-copy-link{position:absolute;right:18px;top:18px;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:8px;font-size:12px;cursor:pointer;padding:5px 7px;line-height:1;transition:background .15s,border-color .15s,transform .15s;}
+.rf-copy-link:hover{background:#e2e8f0;}
+.rf-copy-link:active{transform:scale(.92);}
+.rf-copy-link.copied{background:#10b981;color:#fff;border-color:#059669;}
+/* ====== Highlighting ====== */
+mark.rf-hl{background:#fde68a;padding:0 2px;border-radius:2px;box-shadow:0 0 0 1px #fcd34d inset;}
+mark.rf-hl-focus{outline:2px solid #f59e0b;background:#fcd34d;}
+/* Deep link arrival effect */
+@keyframes rfPulse{0%{background:#fef08a;}55%{background:#fde047;}100%{background:transparent;}}
+.rf-anchor-highlight{animation:rfPulse 1.6s ease-in-out 1;}
+/* ====== Print ====== */
+@media print{body{background:#fff;} .rf-docs-toc,.rf-copy-link,.rf-docs-actions,.rf-shortcuts,.rf-docs-search{display:none!important;} .rf-admin-docs{display:block;padding:0;} .rf-docs-section{box-shadow:none;border:1px solid #e2e8f0;page-break-inside:avoid;} .rf-docs-section h2{page-break-after:avoid;}}
+/* ====== Responsive ====== */
+@media (max-width:1200px){.rf-admin-docs{flex-direction:column;padding:24px 20px;} .rf-docs-toc{position:relative;top:auto;max-height:none;width:100%;}}
+@media (max-width:700px){.rf-docs-section{padding:18px 18px;} .rf-copy-link{right:12px;top:12px;}}
+</style></head><body class="rf-docs-body">
+<section class="rf-admin-docs" id="rf-admin-docs-root">
+  <nav class="rf-docs-toc" aria-label="Tabla de contenidos">
+    <h2>Guía de Pestañas</h2>
+    <div class="rf-docs-search" role="search">
+      <input type="search" id="rf-docs-search" placeholder="Buscar... (Ctrl+K)" aria-label="Buscar en la guía" />
+      <button type="button" id="rf-docs-search-clear" aria-label="Limpiar búsqueda" title="Limpiar">×</button>
+      <button type="button" id="rf-docs-search-prev" aria-label="Coincidencia anterior" title="Anterior">◂</button>
+      <button type="button" id="rf-docs-search-next" aria-label="Coincidencia siguiente" title="Siguiente">▸</button>
+      <div class="rf-docs-search-meta" id="rf-docs-search-meta" aria-live="polite"></div>
+    </div>
+    <p class="rf-shortcuts">Atajos: Ctrl+K buscar · Enter / Shift+Enter navegar · ESC limpiar · ↑/↓ moverte por TOC</p>
+    <ol><!-- Fallback contenido estático por si falla JS -->
+      <li><a href="#rf-tab-conexion">Conexión</a></li>
+      <li><a href="#rf-tab-configuracion">Configuración</a></li>
+      <li><a href="#rf-tab-paginas">Páginas</a></li>
+      <li><a href="#rf-tab-datos">Acciones de Datos</a></li>
+      <li><a href="#rf-tab-oficiales">Control listados oficiales</a></li>
+      <li><a href="#rf-tab-rankgen">Generador de listados</a></li>
+      <li><a href="#rf-tab-avanzado">Avanzado</a></li>
+      <li><a href="#rf-tab-log">Log</a></li>
+      <li><a href="#rf-tab-anexos">Anexos</a></li>
+    </ol>
+    <button type="button" id="rf-docs-expand-all" class="button">Expandir todo</button>
+    <button type="button" id="rf-docs-collapse-all" class="button">Colapsar</button>
+  </nav>
+  <div class="rf-docs-content">
+    <header class="rf-docs-header">
+      <h1>Guía detallada de administración</h1>
+      <p class="rf-docs-meta">Actualizado: <time id="rf-docs-date"></time></p>
+      <div class="rf-docs-actions">
+        <button type="button" id="rf-docs-toggle-raw" class="button">Ver Markdown bruto</button>
+        <a class="button button-primary" target="_blank" rel="noopener" href="../docs/admin-tabs-guia.md">Abrir MD independiente</a>
+      </div>
+    </header>
+
+    <!-- Secciones limpias comienzan -->
+    <article class="rf-docs-section" id="rf-tab-conexion" data-collapsible>
+      <h2>1. Conexión</h2>
+      <p class="rf-purpose">Propósito: Definir credenciales y endpoint de la API remota.</p>
+      <details open>
+        <summary>Elementos clave</summary>
+        <ul>
+          <li>Base URL sin barra final</li>
+          <li>Usuario y Contraseña</li>
+          <li>Desmarcar pestañas no usadas para reducir payload</li>
+          <li>Usar un ID real de jugador para previsualización</li>
+          <li>Hall of Fame activo solo con listados calculados</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Checklist post-cambios</summary>
+        <ul>
+          <li>Visitar /?jugador_id=&lt;ID&gt; y ver pestañas esperadas</li>
+          <li>Revisar log por avisos de caché innecesaria</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-configuracion" data-collapsible>
+      <h2>2. Configuración</h2>
+      <p class="rf-purpose">Propósito: Ajustes de comportamiento y pestañas visibles.</p>
+      <details open>
+        <summary>Ajustes clave</summary>
+        <ul>
+          <li>Activar/desactivar pestañas específicas</li>
+          <li>Control de visibilidad (privado / público)</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Riesgos</summary>
+        <ul>
+          <li>Mostrar pestañas sin datos genera experiencia pobre</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-paginas" data-collapsible>
+      <h2>3. Páginas</h2>
+      <p class="rf-purpose">Propósito: Crear y gestionar páginas públicas con shortcodes.</p>
+      <details open>
+        <summary>Funciones</summary>
+        <ul>
+          <li>Crear página (ranking / perfil)</li>
+            <li>Insertar shortcode en existente</li>
+            <li>Abrir seleccionada con ?jugador_id= demo</li>
+            <li>Eliminar (papelera)</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Riesgos</summary>
+        <ul>
+          <li>Shortcode duplicado → redundancia visual</li>
+          <li>Eliminar página enlazada → enlaces rotos</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Checklist</summary>
+        <ul>
+          <li>Comprobar tabla y filtros (ranking)</li>
+          <li>Perfil carga pestañas base</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-datos" data-collapsible>
+      <h2>4. Acciones de Datos</h2>
+      <p class="rf-purpose">Propósito: Operar sobre caché y datasets.</p>
+      <details open>
+        <summary>Bloques</summary>
+        <ol>
+          <li>Caché: vaciar + toggle</li>
+          <li>Precarga específica (jugador / top)</li>
+          <li>Precarga ALL (multi-lote)</li>
+          <li>Versión de dataset (bump)</li>
+          <li>Limpieza de transients antiguos</li>
+          <li>Cron settings (precache incremental, cleanup, top_n, time_budget)</li>
+        </ol>
+      </details>
+      <details>
+        <summary>Métricas</summary>
+        <ul>
+          <li>Jugadores cacheados / fragmentos</li>
+          <li>Progreso lote</li>
+          <li>Tabs cacheadas vs esperadas</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Riesgos</summary>
+        <ul>
+          <li>Caché OFF → latencia / carga API</li>
+          <li>Bump excesivo → tormenta recomputación</li>
+          <li>Precarga ALL agresiva → timeouts hosting limitado</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Procedimientos</summary>
+        <ul>
+          <li>Precargar TOP antes de picos</li>
+          <li>Limpiar tras cambios de pestañas</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Troubleshooting</summary>
+        <ul>
+          <li>Pestañas faltantes → ver reasons{tab} en log inline</li>
+          <li>Lote detenido → cancelar manual o error 500 (ver Log)</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-oficiales" data-collapsible>
+      <h2>5. Control de listados oficiales</h2>
+      <p class="rf-purpose">Propósito: Centralizar cálculos y acciones sobre listados oficiales.</p>
+      <details open>
+        <summary>Notas</summary>
+        <ul>
+          <li>Bloque listo para ampliaciones futuras</li>
+          <li>Recalcular Hall of Fame con baja concurrencia</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Sugerencias</summary>
+        <ul>
+          <li>Guardar timestamp de regeneración</li>
+          <li>Diff de altas/bajas</li>
+          <li>Conteo por categoría</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-rankgen" data-collapsible>
+      <h2>6. Generador de listados (RankGen)</h2>
+      <p class="rf-purpose">Propósito: Generar listados estáticos embebibles.</p>
+      <details open>
+        <summary>Características</summary>
+        <ul>
+          <li>Formularios aislados (evita colisiones)</li>
+          <li>Slug + modalidad + tipo ranking</li>
+          <li>Vista pública ?view=rankgen&slug=...</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Buenas prácticas</summary>
+        <ul>
+          <li>Slugs semánticos (ej. top-dobles-2024-q1)</li>
+          <li>Anotar fecha congelación</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Riesgos</summary>
+        <ul>
+          <li>Slug duplicado → sobrescritura</li>
+          <li>Exceso listados → espacio disco</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Checklist</summary>
+        <ul>
+          <li>Validar filtros públicos</li>
+          <li>Probar paginación (si aplica)</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-avanzado" data-collapsible>
+      <h2>7. Avanzado</h2>
+      <p class="rf-purpose">Propósito: Ajustes técnicos y de entorno.</p>
+      <details open>
+        <summary>Elementos</summary>
+        <ul>
+          <li>Timeout API</li>
+          <li>Reintentos</li>
+          <li>Ancho máximo admin</li>
+          <li>Modo aislado (Shadow DOM)</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Impactos</summary>
+        <ul>
+          <li>Timeout alto = resiliencia / más bloqueo</li>
+          <li>Reintentos altos = estrés en fallo</li>
+          <li>Shadow DOM dificulta overrides si no hay conflicto</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Recomendaciones</summary>
+        <ul>
+          <li>Prod: timeout 30s, reintentos 2–3</li>
+          <li>Activar Shadow DOM solo ante colisiones CSS</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-log" data-collapsible>
+      <h2>8. Log</h2>
+      <p class="rf-purpose">Propósito: Observabilidad.</p>
+      <details open>
+        <summary>Componentes</summary>
+        <ul>
+          <li>Niveles y fuentes (plugin / WP / combinado)</li>
+          <li>Búsqueda y códigos HTTP</li>
+          <li>Auto-refresh configurable</li>
+          <li>Acciones: vaciar, descargar, ZIP</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Buenas prácticas</summary>
+        <ul>
+          <li>Desactivar auto-refresh si crece muy rápido</li>
+          <li>Exportar antes de purgar</li>
+        </ul>
+      </details>
+      <details>
+        <summary>KPIs</summary>
+        <ul>
+          <li>Ratio errores / total</li>
+          <li>Latencia media (si registrada)</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="rf-docs-section" id="rf-tab-anexos" data-collapsible>
+      <h2>Anexos</h2>
+      <details open>
+        <summary>Prioridad de orígenes de conexión</summary>
+        <ol>
+          <li>Ajustes Conexión</li>
+          <li>Legacy</li>
+          <li>Filtro</li>
+          <li>Constantes PHP</li>
+          <li>Fallback JSON</li>
+        </ol>
+      </details>
+      <details>
+        <summary>Flujos rápidos</summary>
+        <ul>
+          <li>Alta inicial: Conexión → Páginas → Configuración → Acciones de Datos → Front</li>
+          <li>Post importación: Bump dataset → Precargar TOP → Ver perfil</li>
+          <li>Diagnóstico latencia: Log (500) → Ajustar timeout/reintentos → Revisar caché</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Riesgos y mitigaciones</summary>
+        <table class="rf-table">
+          <thead><tr><th>Riesgo</th><th>Consecuencia</th><th>Mitigación</th></tr></thead>
+          <tbody>
+            <tr><td>Caché OFF</td><td>Latencia / carga API</td><td>Reactivar caché</td></tr>
+            <tr><td>Timeout muy bajo</td><td>Falsos fallos</td><td>≥ 20s si backend lento</td></tr>
+            <tr><td>Reintentos altos</td><td>Estrés backend</td><td>Limitar 2–3</td></tr>
+            <tr><td>Bump abusivo</td><td>Tormenta recomput.</td><td>Planificar ventanas</td></tr>
+            <tr><td>Shadow DOM inneces.</td><td>Dificulta overrides</td><td>Desactivar</td></tr>
+            <tr><td>Log sin rotación</td><td>Espacio disco</td><td>Archivado cron</td></tr>
+            <tr><td>Slug duplicado</td><td>Sobrescritura</td><td>Convención nombres</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </article>
+  </div>
+</section>
+<script>
+// Fragment JS autoinicializable para entorno WP Admin
+(()=>{"use strict";
+const $=s=>document.querySelector(s),$$=s=>Array.from(document.querySelectorAll(s));
+const dateEl=$('#rf-docs-date'); if(dateEl) dateEl.textContent=new Date().toISOString().slice(0,10);
+const tocList=$('.rf-docs-toc ol'),sections=$$('.rf-docs-section');
+if(tocList){ tocList.innerHTML=''; sections.forEach(sec=>{ const h2=sec.querySelector('h2'); if(!h2) return; const li=document.createElement('li'); const a=document.createElement('a'); a.href='#'+sec.id; a.textContent=h2.textContent.replace(/^\d+\.\s*/,''); li.appendChild(a); tocList.appendChild(li); }); }
+let tocLinks=$$('.rf-docs-toc a');
+function setActive(id){ tocLinks.forEach(a=>{ const active=a.getAttribute('href')==='#'+id; a.classList.toggle('active',active); if(active) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); }); }
+sections.forEach(sec=>{ const h2=sec.querySelector('h2'); if(!h2) return; const btn=document.createElement('button'); btn.type='button'; btn.className='rf-copy-link'; btn.setAttribute('aria-label','Copiar enlace a esta sección'); btn.innerHTML='🔗'; btn.addEventListener('click',()=>{ const url=location.origin+location.pathname+'#'+sec.id; navigator.clipboard.writeText(url).then(()=>{ btn.classList.add('copied'); btn.title='Copiado'; setTimeout(()=>{btn.classList.remove('copied'); btn.title='';},1200); }); }); h2.appendChild(btn); });
+const obs=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) setActive(e.target.id); }),{rootMargin:'0px 0px -70% 0px',threshold:0}); sections.forEach(s=>obs.observe(s));
+$$('a[href^="#rf-tab-"]').forEach(a=>a.addEventListener('click',e=>{ e.preventDefault(); const id=a.getAttribute('href').substring(1); const t=document.getElementById(id); if(t){ window.scrollTo({top:t.offsetTop-20,behavior:'smooth'}); history.replaceState(null,'','#'+id); } }));
+if(location.hash && location.hash.startsWith('#rf-tab-')){ const target=$(location.hash); if(target){ setTimeout(()=>{ window.scrollTo({top:target.offsetTop-20,behavior:'instant'}); target.classList.add('rf-anchor-highlight'); setTimeout(()=>target.classList.remove('rf-anchor-highlight'),1600); },60); } }
+const DETAILS_KEY='rfDocsDetailsState'; const storedDetails=(()=>{ try{return JSON.parse(localStorage.getItem(DETAILS_KEY)||'{}');}catch(e){return{};} })();
+$$('.rf-docs-section details').forEach((d,i)=>{ const key=d.closest('.rf-docs-section').id+'::'+i; if(key in storedDetails) d.open=!!storedDetails[key]; d.addEventListener('toggle',()=>{ storedDetails[key]=d.open; localStorage.setItem(DETAILS_KEY, JSON.stringify(storedDetails)); }); });
+$('#rf-docs-expand-all').addEventListener('click',()=>$$('.rf-docs-section details').forEach(d=>d.open=true));
+$('#rf-docs-collapse-all').addEventListener('click',()=>$$('.rf-docs-section details').forEach(d=>d.open=false));
+const searchInput=$('#rf-docs-search'),searchClear=$('#rf-docs-search-clear'),searchMeta=$('#rf-docs-search-meta'),btnPrev=$('#rf-docs-search-prev'),btnNext=$('#rf-docs-search-next');
+let lastTerm='',matchNodes=[],currentIdx=-1,debounceId; function clearHighlights(){ matchNodes.forEach(m=>{ const p=m.parentNode; if(!p) return; p.replaceChild(document.createTextNode(m.textContent),m); p.normalize(); }); matchNodes=[]; currentIdx=-1; }
+function focusMatch(i){ if(!matchNodes.length) return; matchNodes.forEach(m=>m.classList.remove('rf-hl-focus')); const n=matchNodes[i]; n.classList.add('rf-hl-focus'); n.scrollIntoView({block:'center'}); }
+function updateCounter(){ if(!matchNodes.length){ searchMeta.textContent=''; return; } const base=(currentIdx>=0? (currentIdx+1)+'/' : '')+matchNodes.length+' coincidencia'+(matchNodes.length!==1?'s':''); searchMeta.textContent=base; }
+function highlight(term){ clearHighlights(); if(!term){ updateCounter(); return; } const walker=document.createTreeWalker($('.rf-docs-content'),NodeFilter.SHOW_TEXT,{acceptNode:n=>{ if(!n.parentElement) return NodeFilter.FILTER_REJECT; if(['SCRIPT','STYLE','BUTTON','SUMMARY','TIME'].includes(n.parentElement.tagName)) return NodeFilter.FILTER_REJECT; const t=n.textContent.trim(); return t && t.toLowerCase().includes(term.toLowerCase())?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP; }}); const re=new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'ig'); while(walker.nextNode()){ const node=walker.currentNode,text=node.textContent; let m,last=0,frag=document.createDocumentFragment(),hit=false; while((m=re.exec(text))){ hit=true; if(m.index>last) frag.appendChild(document.createTextNode(text.slice(last,m.index))); const mark=document.createElement('mark'); mark.className='rf-hl'; mark.textContent=m[0]; frag.appendChild(mark); matchNodes.push(mark); last=m.index+m[0].length; } if(hit){ if(last<text.length) frag.appendChild(document.createTextNode(text.slice(last))); node.parentNode.replaceChild(frag,node); } } if(matchNodes.length){ currentIdx=0; focusMatch(0); } updateCounter(); }
+function nextMatch(dir){ if(!matchNodes.length) return; currentIdx=(currentIdx+dir+matchNodes.length)%matchNodes.length; focusMatch(currentIdx); updateCounter(); }
+const TERM_KEY='rfDocsSearchTerm'; const persisted=localStorage.getItem(TERM_KEY); if(persisted){ searchInput.value=persisted; lastTerm=''; }
+function handleInput(){ const term=searchInput.value.trim(); if(term===lastTerm) return; lastTerm=term; localStorage.setItem(TERM_KEY, term); clearTimeout(debounceId); debounceId=setTimeout(()=>highlight(term),130); }
+searchInput.addEventListener('input',handleInput);
+searchClear.addEventListener('click',()=>{ searchInput.value=''; localStorage.removeItem(TERM_KEY); lastTerm=''; clearHighlights(); updateCounter(); searchInput.focus(); });
+btnPrev.addEventListener('click',()=>nextMatch(-1)); btnNext.addEventListener('click',()=>nextMatch(1));
+document.addEventListener('keydown',e=>{ if(e.ctrlKey && e.key.toLowerCase()==='k'){ e.preventDefault(); searchInput.focus(); searchInput.select(); } else if(e.key==='Escape' && document.activeElement===searchInput){ searchClear.click(); } else if(e.key==='Enter' && document.activeElement===searchInput){ e.preventDefault(); nextMatch(e.shiftKey?-1:1); } });
+$('.rf-docs-toc').addEventListener('keydown',e=>{ if(!['ArrowDown','ArrowUp'].includes(e.key)) return; e.preventDefault(); const current=tocLinks.findIndex(a=>a.classList.contains('active')); let idx=current; if(e.key==='ArrowDown') idx=(current+1)%tocLinks.length; else idx=(current-1+tocLinks.length)%tocLinks.length; const a=tocLinks[idx]; a.focus(); a.click(); });
+tocLinks=$$('.rf-docs-toc a');
+const toggleRaw=$('#rf-docs-toggle-raw'); let rawVisible=false,rawBlock; toggleRaw.addEventListener('click',async()=>{ if(!rawVisible){ if(!rawBlock){ try{ const mdURL=window.location.origin+'/wp-content/plugins/ranking-futbolin/docs/admin-tabs-guia.md'; const resp=await fetch(mdURL,{cache:'no-store'}); if(!resp.ok) throw new Error('HTTP '+resp.status); const txt=await resp.text(); rawBlock=document.createElement('pre'); rawBlock.className='rf-raw-md'; rawBlock.textContent=txt; $('#rf-admin-docs-root').appendChild(rawBlock);}catch(e){ rawBlock=document.createElement('div'); rawBlock.className='rf-raw-md'; rawBlock.style.background='#fee2e2'; rawBlock.style.color='#991b1b'; rawBlock.textContent='Markdown no disponible ('+e.message+').'; $('#rf-admin-docs-root').appendChild(rawBlock);} } rawBlock.style.display='block'; toggleRaw.textContent='Ocultar Markdown'; } else { rawBlock.style.display='none'; toggleRaw.textContent='Ver Markdown bruto'; } rawVisible=!rawVisible; });
+if(persisted){ handleInput(); }
+})();
+document.currentScript&&document.currentScript.parentElement&&document.currentScript.parentElement.tagName!=='BODY'&&console.warn('Guía cargada en contenedor no estándar');
+</script>
+</body></html>
