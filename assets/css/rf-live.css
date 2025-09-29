@@ -1,0 +1,121 @@
+
+/*! RF Live Styles (v7) */
+.futbolin-sidebar-block .search-wrapper{ position:relative; overflow:visible !important; z-index:2; }
+
+/* Contenedor del dropdown (en el flujo del sidebar) */
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown{
+  position:absolute; left:0; right:0; top:100%;
+  margin-top:.35rem;
+  max-height: 320px; overflow:auto;
+  background: var(--rf-surface, #fff);
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  display: none;
+  z-index: 2147483646;
+  pointer-events:auto;
+  -webkit-backdrop-filter: saturate(120%) blur(4px);
+  backdrop-filter: saturate(120%) blur(4px);
+}
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown.rf-open{ display:block !important; animation: rfFadeIn .12s ease-out; }
+
+/* Elementos */
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown a,
+.rf-live-portal a{
+  display:flex; align-items:center; gap:.5rem;
+  padding: .55rem .8rem;
+  text-decoration: none; color: var(--futbolin-text, inherit);
+  line-height: 1.3;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown a:last-child,
+.rf-live-portal a:last-child{ border-bottom: 0; }
+
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown a:hover,
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown a:focus,
+.rf-live-portal a:hover,
+.rf-live-portal a:focus{
+  background: #eef2ff; /* azul suave */
+  outline: none; text-decoration: none;
+}
+
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown a:focus-visible,
+.rf-live-portal a:focus-visible{
+  outline: 2px solid #3b82f6; outline-offset: -2px;
+}
+
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown .rf-empty,
+.rf-live-portal .rf-empty{
+  padding:.6rem .8rem; opacity:.8; color:#6b7280;
+}
+
+/* Scrollbar suave (solo navegadores que soportan) */
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown::-webkit-scrollbar,
+.rf-live-portal::-webkit-scrollbar{ width:10px; }
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown::-webkit-scrollbar-track,
+.rf-live-portal::-webkit-scrollbar-track{ background:transparent; }
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown::-webkit-scrollbar-thumb,
+.rf-live-portal::-webkit-scrollbar-thumb{ background:rgba(0,0,0,.18); border-radius:999px; }
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown::-webkit-scrollbar-thumb:hover,
+.rf-live-portal::-webkit-scrollbar-thumb:hover{ background:rgba(0,0,0,.28); }
+
+/* Reduce motion: desactiva animación de aparición */
+@media (prefers-reduced-motion: reduce){
+  .futbolin-sidebar-block .search-wrapper .search-results-dropdown.rf-open,
+  .rf-live-portal.rf-open{ animation:none !important; }
+}
+
+/* Fallback focus (por si :focus-visible no aplica) */
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown a:focus:not(:focus-visible),
+.rf-live-portal a:focus:not(:focus-visible){ outline:2px solid #3b82f6; outline-offset:-2px; }
+
+/* Portal en body (cuando el tema recorta/oculta) */
+.rf-live-portal{
+  position: fixed;
+  max-height: 320px; overflow:auto;
+  background: var(--rf-surface, #fff);
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  /* z-index altísimo para evitar clipping; reducible si el tema no interfiere */
+  z-index: 2147483647; /* INTENCIONAL: usar custom property si se desea modular */
+  display:none;
+  -webkit-backdrop-filter: saturate(120%) blur(4px);
+  backdrop-filter: saturate(120%) blur(4px);
+  animation: rfFadeIn .12s ease-out;
+}
+.rf-live-portal.rf-open{ display:block !important; }
+
+/* Estilo de <mark> si en el futuro destacamos el término */
+.futbolin-sidebar-block .search-wrapper .search-results-dropdown mark,
+.rf-live-portal mark{
+  background:#fff3a3; color:inherit; border-radius:3px; padding:0 2px;
+}
+
+@keyframes rfFadeIn { from{ opacity:0; transform: translateY(4px);} to{ opacity:1; transform: translateY(0);} }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark){
+  .futbolin-sidebar-block .search-wrapper .search-results-dropdown,
+  .rf-live-portal{
+    background: var(--rf-surface-dark, #1f2937);
+    border-color: rgba(255,255,255,.12);
+    box-shadow: 0 12px 36px rgba(0,0,0,.6);
+  }
+  .futbolin-sidebar-block .search-wrapper .search-results-dropdown a,
+  .rf-live-portal a{
+    color: #e5e7eb;
+    border-bottom-color: rgba(255,255,255,.08);
+  }
+  .futbolin-sidebar-block .search-wrapper .search-results-dropdown a:hover,
+  .futbolin-sidebar-block .search-wrapper .search-results-dropdown a:focus,
+  .rf-live-portal a:hover,
+  .rf-live-portal a:focus{
+    background:#22304a;
+  }
+  .futbolin-sidebar-block .search-wrapper .search-results-dropdown .rf-empty,
+  .rf-live-portal .rf-empty{ color:#9ca3af; }
+}
+
+/* END RF Live Styles (v7 + accessibility patch) */

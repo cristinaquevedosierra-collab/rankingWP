@@ -1,0 +1,312 @@
+/* Resumen y buscador */
+#tab-torneos .torneos-summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+#tab-torneos .torneos-summary-context,
+#tab-torneos .torneos-filter-context {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--futbolin-text-muted, #4b5563);
+  line-height: 1.5;
+}
+
+#tab-torneos .torneos-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+#tab-torneos .torneos-summary-cards .ts-item {
+  background: linear-gradient(180deg, rgba(248,250,252,0.95) 0%, rgba(219,234,254,0.7) 100%);
+  border: 1px solid rgba(203,213,225,0.7);
+  border-radius: var(--futbolin-border-radius-main, 16px);
+  padding: 16px 18px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#tab-torneos .torneos-summary-cards .ts-item span {
+  font-size: 0.82em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--futbolin-text-muted, #4b5563);
+}
+
+#tab-torneos .torneos-summary-cards .ts-item strong {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--futbolin-text-headings, #0f172a);
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-won {
+  background: linear-gradient(135deg, #fffbe7 0%, #ffe259 45%, #b68c2e 100%);
+  border: 1px solid rgba(230, 185, 79, 0.8);
+  box-shadow: 0 6px 16px rgba(182, 140, 46, 0.18);
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-won strong {
+  color: #b68c2e;
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-rate strong {
+  font-size: 1.6em;
+  color: var(--futbolin-color-primary, #2563eb);
+}
+
+#tab-torneos .torneos-filter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+#tab-torneos .torneos-filter-box--participation {
+  margin: 24px 0 12px 0;
+}
+
+#tab-torneos .torneos-filter-box--distribution {
+  margin-top: 4px;
+}
+
+#tab-torneos .torneos-filter-input {
+  width: 100%;
+  max-width: 320px;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(203,213,225,0.9);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 0.95em;
+  color: var(--futbolin-text-base, #1f2937);
+  box-shadow: inset 0 1px 2px rgba(15,23,42,0.08);
+}
+
+#tab-torneos .torneos-filter-input:focus {
+  outline: none;
+  border-color: var(--futbolin-color-primary, #2563eb);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+#tab-torneos .torneos-search-empty {
+  margin: -4px 0 0 0;
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--futbolin-text-muted, #6b7280);
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #tab-torneos .torneos-summary-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  #tab-torneos .torneos-summary-cards .ts-item {
+    padding: 14px 16px;
+  }
+  #tab-torneos .torneos-filter-input {
+    max-width: 100%;
+  }
+}
+
+#tab-torneos .torneos-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--futbolin-bg-card, #ffffff) 0%, rgba(248,250,252,0.92) 100%);
+  border: 1px solid var(--futbolin-border-color, #dce0e8);
+  border-radius: var(--futbolin-border-radius-main, 16px);
+  box-shadow: 0 14px 28px rgba(15,23,42,0.08);
+  padding: 24px;
+}
+
+#tab-torneos .torneos-card + .torneos-card {
+  margin-top: 26px;
+}
+
+#tab-torneos .torneos-card .futbolin-card-header h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.45em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--futbolin-text-headings, #101828);
+  border-bottom: 2px solid rgba(59,130,246,0.45);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+
+#tab-torneos .torneos-card .futbolin-card-header h3::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--futbolin-color-primary,#2563eb) 0%, rgba(37,99,235,0) 100%);
+}
+
+#tab-torneos .torneos-distribution-groups,
+#tab-torneos .torneos-participation-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#tab-torneos .torneos-distribution-group,
+#tab-torneos .torneos-participation-group {
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(249,250,251,0.55) 100%);
+  border: 1px solid rgba(226,232,240,0.75);
+  border-radius: var(--futbolin-border-radius-main, 16px);
+  padding: 18px 20px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+#tab-torneos .torneos-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(203,213,225,0.7);
+}
+
+#tab-torneos .torneos-group-title {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--futbolin-text-headings, #0f172a);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#tab-torneos .torneos-group-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.12);
+  color: var(--futbolin-color-primary,#2563eb);
+  font-size: 0.82em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#tab-torneos .torneos-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#tab-torneos .torneos-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(226,232,240,0.7);
+}
+
+#tab-torneos .torneos-table thead th {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78em;
+  font-weight: 700;
+  padding: 12px 14px;
+  color: var(--futbolin-text-muted, #4b5563);
+  background: linear-gradient(90deg, rgba(241,245,249,0.9) 0%, rgba(219,234,254,0.65) 100%);
+  border-bottom: 1px solid rgba(203,213,225,0.6);
+}
+
+#tab-torneos .torneos-table tbody td {
+  padding: 12px 14px;
+  font-size: 0.92em;
+  color: var(--futbolin-text-base, #1f2937);
+  border-bottom: 1px solid rgba(237,242,247,0.9);
+}
+
+#tab-torneos .torneos-table tbody tr:nth-child(even) {
+  background: rgba(248,250,252,0.85);
+}
+
+#tab-torneos .torneos-table tbody tr:hover {
+  background: rgba(59,130,246,0.08);
+  transition: background-color 0.2s ease;
+}
+
+#tab-torneos .torneos-table td:last-child,
+#tab-torneos .torneos-table th:last-child {
+  text-align: center;
+}
+
+#tab-torneos .torneos-table td:last-child {
+  font-weight: 700;
+  color: var(--futbolin-color-primary,#2563eb);
+}
+
+#tab-torneos .torneos-table td:nth-child(3) {
+  font-weight: 600;
+  color: var(--futbolin-text-headings, #0f172a);
+}
+
+#tab-torneos .torneos-table td:nth-child(1) {
+  font-weight: 600;
+}
+
+#tab-torneos .torneos-table .pos-gold {
+  color: #b45309;
+}
+
+#tab-torneos .torneos-table .pos-silver {
+  color: #6b7280;
+}
+
+#tab-torneos .torneos-table .pos-bronze {
+  color: #92400e;
+}
+
+@media (max-width: 1024px) {
+  #tab-torneos .torneos-card {
+    padding: 20px;
+  }
+  #tab-torneos .torneos-table {
+    min-width: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  #tab-torneos .torneos-card {
+    padding: 18px;
+    box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+  }
+  #tab-torneos .torneos-group-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #tab-torneos .torneos-group-meta {
+    margin-left: 0;
+  }
+  #tab-torneos .torneos-table {
+    min-width: 360px;
+  }
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-lost {
+  background: linear-gradient(135deg, #ffe2e5 0%, #f8b4b4 45%, #dc2626 100%) !important;
+  border: 1px solid rgba(220, 38, 38, 0.55) !important;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.18) !important;
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-lost strong {
+  color: #dc2626 !important;
+}
+
