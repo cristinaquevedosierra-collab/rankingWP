@@ -1,0 +1,35 @@
+/* 18. CONTROLES DEL RANKING (TAMAÑO DE PÁGINA)
+------------------------------------------------------------------- */
+
+.page-size-form {
+    display: flex;
+    gap: 5px;
+    background-color: var(--futbolin-bg-main);
+    padding: 5px;
+    border-radius: var(--futbolin-border-radius-main);
+    border: 1px solid var(--futbolin-border-color);
+    margin-left: auto; 
+}
+
+.page-size-form button {
+    background-color: transparent;
+    border: none;
+    color: var(--futbolin-text-muted);
+    font-weight: 500;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    
+}
+
+.page-size-form button:hover {
+    background-color: var(--futbolin-bg-highlight);
+    color: var(--futbolin-color-primary);
+}
+
+.page-size-form button.active {
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,369 @@
+Schemas
+BuscarJugadorDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+}
+BuscarJugadorDTOPaginatedList{
+items	[
+nullable: true
+BuscarJugadorDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+}]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+BuscarJugadorPagDTO{
+jugadoresBuscados	BuscarJugadorDTOPaginatedList{
+items	[
+nullable: true
+BuscarJugadorDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+}]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+}
+CampeonEspaniaDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+torneosIndividual	[
+nullable: true
+TorneoGanadoDTO{
+torneoId	integer($int32)
+nombreTorneo	string
+nullable: true
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+competicionId	integer($int32)
+}]
+torneosDobles	[
+nullable: true
+TorneoGanadoDTO{
+torneoId	integer($int32)
+nombreTorneo	string
+nullable: true
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+competicionId	integer($int32)
+}]
+}
+CategoriaDTO{
+categoriaId	integer($int32)
+nombreCategoria	string
+nullable: true
+puntosRangoInicial	integer($int32)
+puntosRangoFinal	integer($int32)
+puntosRangoDescensoInicial	integer($int32)
+puntosRangoDescensoFinal	integer($int32)
+puntosInicioExtranjero	integer($int32)
+}
+EquipoDTO{
+equipoId	integer($int32)
+jugadores	[...]
+}
+JugadorDatosDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+genero	string
+nullable: true
+activoDesdeTorneo	string
+nullable: true
+activoDesdeTorneoAnio	integer($int32)
+ultimoTorneo	string
+nullable: true
+ultimoTorneoAnio	integer($int32)
+totalPartidosJugados	integer($int32)
+totalPartidosGanados	integer($int32)
+totalCompeticionesJugadas	integer($int32)
+totalCompeticionesGanadas	integer($int32)
+totalTorneosJugados	integer($int32)
+mejorPosicionDobles	integer($int32)
+temporadasMejorPosicionDobles	[
+nullable: true
+TemporadaDTO{
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+}]
+mejorPosicionIndividual	integer($int32)
+temporadasMejorPosicionIndividual	[
+nullable: true
+TemporadaDTO{
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+}]
+mejorPosicionDoblesFinTemporada	integer($int32)
+temporadasMejorPosicionDoblesFinTemporada	[
+nullable: true
+TemporadaDTO{
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+}]
+mejorPosicionIndividualFinTemporada	integer($int32)
+temporadasMejorPosicionIndividualFinTemporada	[
+nullable: true
+TemporadaDTO{
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+}]
+}
+JugadorEquipoDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+}
+JugadorPartidosDTO{
+registroId	integer($int32)
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+competicionId	integer($int32)
+torneo	string
+nullable: true
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+torneoId	integer($int32)
+competicion	string
+nullable: true
+tipoCompeticionId	integer($int32)
+tipoCompeticion	string
+nullable: true
+fase	string
+nullable: true
+ganadorLocal	boolean
+equipoLocal	string
+nullable: true
+equipoLocalDTO	EquipoDTO{
+equipoId	integer($int32)
+jugadores	[
+nullable: true
+JugadorEquipoDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+}]
+}
+equipoVisitante	string
+nullable: true
+equipoVisitanteDTO	EquipoDTO{
+equipoId	integer($int32)
+jugadores	[
+nullable: true
+JugadorEquipoDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+}]
+}
+puntosLocal	string
+nullable: true
+puntosVisitante	string
+nullable: true
+puntuacionInicial	integer($int32)
+puntosGanados	integer($int32)
+puntuacionFinal	integer($int32)
+modalidadId	integer($int32)
+modalidad	string
+nullable: true
+sistema	string
+nullable: true
+categoriaId	integer($int32)
+categoria	string
+nullable: true
+}
+JugadorPartidosDTOPaginatedList{
+items	[
+nullable: true
+JugadorPartidosDTO{...}]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+JugadorPartidosPagDTO{
+jugadorPartidos	JugadorPartidosDTOPaginatedList{
+items	[...]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+}
+JugadorPosicionesTorneoDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+torneoId	integer($int32)
+nombreTorneo	string
+nullable: true
+torneoFecha	string($date-time)
+modalidadId	integer($int32)
+modalidad	string
+nullable: true
+competicionId	integer($int32)
+nombreCompeticion	string
+nullable: true
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+equipo	string
+nullable: true
+equipoDTO	EquipoDTO{
+equipoId	integer($int32)
+jugadores	[...]
+}
+posicion	integer($int32)
+puntos	integer($int32)
+tipoCompeticionId	integer($int32)
+tipoCompeticion	string
+nullable: true
+}
+JugadorPuntuacionCategoriaDTO{
+jugadorId	integer($int32)
+nombreJugador	string
+nullable: true
+modalidadId	integer($int32)
+modalidad	string
+nullable: true
+categoriaId	integer($int32)
+categoria	string
+nullable: true
+puntos	integer($int32)
+torneoInicialId	integer($int32)
+torneoInicial	string
+nullable: true
+torneoFinalId	integer($int32)
+torneoFinal	string
+nullable: true
+isActual	boolean
+ordenWeb	integer($int32)
+}
+LoginDTO{
+usuario	string
+nullable: true
+password	string
+nullable: true
+}
+TemporadaDTO{
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+}
+TorneoDTO{
+torneoId	integer($int32)
+nombreTorneo	string
+nullable: true
+fecha	string($date-time)
+lugar	string
+nullable: true
+activo	boolean
+esUltimoTorneoAnio	boolean
+carreraCampeonesTemporada	integer($int32)
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+}
+TorneoDTOPaginatedList{
+items	[
+nullable: true
+TorneoDTO{...}]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+TorneoGanadoDTO{
+torneoId	integer($int32)
+nombreTorneo	string
+nullable: true
+temporadaId	integer($int32)
+temporada	string
+nullable: true
+competicionId	integer($int32)
+}
+TorneoPagDTO{
+torneos	TorneoDTOPaginatedList{
+items	[...]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+}
+TorneoPosicionDTO{
+torneoId	integer($int32)
+nombreTorneo	string
+nullable: true
+competicionId	integer($int32)
+nombreCompeticion	string
+nullable: true
+tipoCompeticionId	integer($int32)
+tipoCompeticion	string
+nullable: true
+equipoJugadores	string
+nullable: true
+equipoDTO	EquipoDTO{
+equipoId	integer($int32)
+jugadores	[...]
+}
+posicion	integer($int32)
+}
+TorneoPosicionDTOPaginatedList{
+items	[...]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+TorneoPosicionPagDTO{
+competiciones	TorneoPosicionDTOPaginatedList{
+items	[
+nullable: true
+TorneoPosicionDTO{...}]
+pageIndex	integer($int32)
+totalPages	integer($int32)
+totalCount	integer($int32)
+hasPreviousPage	boolean
+readOnly: true
+hasNextPage	boolean
+readOnly: true
+}
+}

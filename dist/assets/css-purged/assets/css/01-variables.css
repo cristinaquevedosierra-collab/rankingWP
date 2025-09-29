@@ -1,0 +1,39 @@
+/* ---
+   1. CONFIGURACIÓN GLOBAL Y VARIABLES
+------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Tipografía */
+    --futbolin-font-family-base: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Paleta de Colores Principal */
+    --futbolin-color-primary: #3b82f6;
+    --futbolin-color-secondary: #f59e0b;
+    --futbolin-color-success: #16a34a;
+    --futbolin-color-danger: #dc2626;
+    
+    /* Textos */
+    --futbolin-text-dark: #1f2937;
+    --futbolin-text-muted: #6b7280;
+    --futbolin-text-headings: #111827;
+
+    /* Fondos */
+    --futbolin-bg-main: #f3f4f6;
+    --futbolin-bg-card: #ffffff;
+    --futbolin-bg-card-hover: #f9fafb;
+    --futbolin-bg-input: #ffffff;
+    --futbolin-bg-highlight: #eff6ff;
+
+    /* Bordes */
+    --futbolin-border-color: #e5e7eb;
+    --futbolin-border-radius-main: 12px;
+    --futbolin-border-radius-pill: 20px;
+
+    /* Colores dinámicos para categorías del Perfil de Jugador */
+    --color-cat-gm: linear-gradient(45deg, #e4c442, #ffec8b, #c9a700);
+    --color-cat-elite: linear-gradient(45deg, #c0c0c0, #ffffff, #b0b0b0);
+    --color-cat-master: linear-gradient(45deg, #cd7f32, #f5d3a9, #b87333);
+    --color-cat-amateur: linear-gradient(45deg, #8492a6, #c2cbd5, #6a788a);
+    --color-cat-rookie: linear-gradient(45deg, #dc3545, #f8b4b4, #b02a37);
+}

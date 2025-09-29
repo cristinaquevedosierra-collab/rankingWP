@@ -1,0 +1,764 @@
+{
+  "meta": {
+    "baseUrl": "https://illozapatillo.zapto.org",
+    "auth": {
+      "loginPath": "/api/Seguridad/login",
+      "usernameVar": "usuario",
+      "passwordVar": "password",
+      "tokenType": "Bearer",
+      "tokenExtraction": [
+        "token",
+        "accessToken",
+        "access_token",
+        "bearer",
+        "jwt",
+        "data.token",
+        "result.token"
+      ]
+    },
+    "version": "1.0.0+run-20250907",
+    "generatedAt": "2025-09-07T13:55:38.612783Z",
+    "notes": [
+      "Merged insights from run-20250907-145647 (endpoints coverage, enums expansion, normalization, wrapper precedence).",
+      "No incluir credenciales aquí. Se inyectan vía env o WP.",
+      "baseUrl puede sobreescribirse con RF_API_BASEURL."
+    ],
+    "overrideEnv": {
+      "baseUrl": "RF_API_BASEURL",
+      "username": "RF_API_USER",
+      "password": "RF_API_PASS"
+    }
+  },
+  "endpoints": {
+    "auth": {
+      "login": {
+        "path": "/api/Seguridad/login",
+        "method": "POST",
+        "body": {
+          "usuario": "<string>",
+          "password": "<string>"
+        },
+        "returns": "Bearer token (string or wrapped)"
+      }
+    },
+    "modalidad": {
+      "getModalidades": {
+        "path": "/api/Modalidad/GetModalidades",
+        "method": "GET"
+      }
+    },
+    "torneo": {
+      "getTorneos": {
+        "path": "/api/Torneo/GetTorneos",
+        "method": "GET"
+      },
+      "getTorneosPag": {
+        "path": "/api/Torneo/GetTorneosPag",
+        "method": "GET",
+        "pagination": {
+          "wrapper": "torneos",
+          "items": "items",
+          "hasNext": "hasNextPage"
+        }
+      },
+      "getTorneoConPosiciones": {
+        "path": "/api/Torneo/GetTorneoConPosiciones/{torneoId}",
+        "method": "GET"
+      },
+      "getTorneoConPosicionesPag": {
+        "path": "/api/Torneo/GetTorneoConPosicionesPag/{torneoId}",
+        "method": "GET",
+        "pagination": {
+          "wrapper": "competiciones",
+          "items": "items",
+          "hasNext": "hasNextPage"
+        }
+      },
+      "getUltimoTorneoCalcularGlicko2": {
+        "path": "/api/Torneo/GetUltimoTorneoCalcularGlicko2",
+        "method": "GET"
+      },
+      "unwrap_order": [
+        [
+          "items"
+        ],
+        [
+          "data",
+          "items"
+        ],
+        [
+          "result",
+          "items"
+        ],
+        [
+          "*root*"
+        ]
+      ],
+      "invariants": {
+        "all_ge_pag": true
+      }
+    },
+    "jugador": {
+      "getDatosJugador": {
+        "path": "/api/Jugador/{jugadorId}/GetDatosJugador",
+        "method": "GET"
+      },
+      "getJugadorPosicionPorTorneos": {
+        "path": "/api/Jugador/{jugadorId}/GetJugadorPosicionPorTorneos",
+        "method": "GET"
+      },
+      "getJugadorPuntuacionCategoria": {
+        "path": "/api/Jugador/{jugadorId}/GetJugadorPuntuacionCategoria",
+        "method": "GET"
+      },
+      "getJugadorPartidos_ALL": {
+        "candidates": [
+          "/api/Jugador/GetJugadorPartidos/{jugadorId}",
+          "/api/Jugador/{jugadorId}/GetJugadorPartidos"
+        ],
+        "method": "GET",
+        "note": "Fuente canónica; contiene registros que faltan en la versión paginada para ciertos jugadores."
+      },
+      "getJugadorPartidos_PAG": {
+        "candidates": [
+          "/api/Jugador/GetJugadorPartidosPag/{jugadorId}",
+          "/api/Jugador/{jugadorId}/GetJugadorPartidosPag"
+        ],
+        "method": "GET",
+        "pagination": {
+          "wrappers": [
+            "jugadorPartidos",
+            "partidos",
+            "data",
+            "resultados"
+          ],
+          "items": "items",
+          "hasNext": "hasNextPage"
+        },
+        "note": "Úsese solo para UI/scroll. Puede omitir registros (ver anomalies)."
+      },
+      "buscarJugador": {
+        "candidates": [
+          "/api/Jugador/GetBuscarJugador/{busqueda}",
+          "/api/Jugador/GetBuscarJugador",
+          "/api/Jugador/BuscarJugador/{busqueda}",
+          "/api/Jugador/BuscarJugador",
+          "/api/Jugador/GetBuscarJugadorES/{busqueda}",
+          "/api/Jugador/GetBuscarJugadorES"
+        ],
+        "method": "GET"
+      },
+      "buscarJugadorPag": {
+        "candidates": [
+          "/api/Jugador/GetBuscarJugadorPag/{busqueda}",
+          "/api/Jugador/BuscarJugadorPag/{busqueda}",
+          "/api/Jugador/GetBuscarJugadorPag",
+          "/api/Jugador/BuscarJugadorPag"
+        ],
+        "method": "GET",
+        "pagination": {
+          "wrappers": [
+            "jugadoresBuscados",
+            "jugadores",
+            "resultados"
+          ],
+          "items": "items",
+          "hasNext": "hasNextPage"
+        }
+      },
+      "unwrap_order": [
+        [
+          "items"
+        ],
+        [
+          "data",
+          "items"
+        ],
+        [
+          "result",
+          "items"
+        ],
+        [
+          "*root*"
+        ]
+      ],
+      "invariants": {
+        "all_ge_pag": true
+      }
+    },
+    "ranking": {
+      "esp_all": {
+        "path": "/api/Ranking/GetRankingPorModalidadESPGlicko2/{modalidadId}",
+        "method": "GET"
+      },
+      "esp_pag": {
+        "path": "/api/Ranking/GetRankingPorModalidadESPPagGlicko2/{modalidadId}",
+        "method": "GET",
+        "pagination": {
+          "wrapper": "ranking",
+          "items": "items",
+          "hasNext": "hasNextPage"
+        }
+      },
+      "ext_all": {
+        "path": "/api/Ranking/GetRankingPorModalidadEXTGlicko2/{modalidadId}",
+        "method": "GET"
+      },
+      "paths": {
+        "g2": "/api/Ranking/GetRankingPorModalidadESPPagGlicko2/{modalidadId}",
+        "esp": "/api/Ranking/GetRankingPorModalidadESPPag/{modalidadId}",
+        "qs_modalidad": "/api/Ranking/GetRankingPorModalidadESPPagGlicko2?modalidadId={modalidadId}",
+        "por_modalidad": "/api/Ranking/GetRankingPorModalidad/{modalidadId}"
+      },
+      "variants_order": [
+        "g2",
+        "esp",
+        "qs_modalidad",
+        "por_modalidad"
+      ],
+      "unwrap_order": [
+        [
+          "ranking",
+          "items"
+        ],
+        [
+          "data",
+          "items"
+        ],
+        [
+          "result",
+          "items"
+        ],
+        [
+          "items"
+        ],
+        [
+          "*root*"
+        ]
+      ],
+      "invariants": {
+        "ensure_objects": true,
+        "items_array": true
+      }
+    },
+    "miscelanea": {
+      "campeonesEspania_candidates": [
+        "/api/Ranking/GetCampeonesEspania",
+        "/api/Jugador/GetCampeonesEspania",
+        "/api/Torneo/GetCampeonesEspania"
+      ]
+    }
+  },
+  "rules": {
+    "pagination": {
+      "prefer_all_for": [
+        "jugador.getJugadorPartidos_ALL"
+      ],
+      "advisory_pag": [
+        "jugador.getJugadorPartidos_PAG"
+      ],
+      "wrappers": {
+        "wrappers": [
+          "jugadorPartidos",
+          "partidos",
+          "data",
+          "resultados"
+        ],
+        "items": "items",
+        "hasNext": "hasNextPage"
+      }
+    },
+    "normalizations": {
+      "categoria": {
+        "Amater": "Amateur"
+      },
+      "modalidad": {
+        "Amater": "Amateur"
+      },
+      "deep": true,
+      "text_map": {
+        "Amater": "Amateur"
+      }
+    },
+    "search": {
+      "minQueryLen": 2,
+      "fallbackCandidates": [
+        "/api/Jugador/GetBuscarJugador/{busqueda}",
+        "/api/Jugador/GetBuscarJugador",
+        "/api/Jugador/BuscarJugador/{busqueda}",
+        "/api/Jugador/BuscarJugador",
+        "/api/Jugador/GetBuscarJugadorES/{busqueda}",
+        "/api/Jugador/GetBuscarJugadorES"
+      ]
+    },
+    "hints": {
+      "exclude_liguilla_where_applies": true
+    }
+  },
+  "enums": {
+    "tipoCompeticion": [
+      {
+        "id": 1,
+        "name": "Open Dobles",
+        "aliases": [
+          "Open Dobles"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Amater Dobles",
+        "aliases": [
+          "Amater Dobles"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "DYP",
+        "aliases": [
+          "DYP"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Junior Dobles",
+        "aliases": [
+          "Junior Dobles"
+        ],
+        "sources": [
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Senior Dobles",
+        "aliases": [
+          "Senior Dobles"
+        ],
+        "sources": [
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Women Dobles",
+        "aliases": [
+          "Women Dobles"
+        ],
+        "sources": [
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 9,
+        "name": "ProAm",
+        "aliases": [
+          "ProAm"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Rookie Dobles",
+        "aliases": [
+          "Rookie Dobles"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Mixto",
+        "aliases": [
+          "Mixto"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 12,
+        "name": "ProDobles",
+        "aliases": [
+          "ProDobles"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Open Individual",
+        "aliases": [
+          "Open Individual"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Amater Individual",
+        "aliases": [
+          "Amater Individual"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Junior Individual",
+        "aliases": [
+          "Junior Individual"
+        ],
+        "sources": [
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Women Individual",
+        "aliases": [
+          "Women Individual"
+        ],
+        "sources": [
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "Penalizacion por no jugar Open Individual",
+        "aliases": [
+          "Penalizacion por no jugar Open Individual"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos"
+        ]
+      },
+      {
+        "id": 21,
+        "name": "Penalizacion por no jugar Open Dobles",
+        "aliases": [
+          "Penalizacion por no jugar Open Dobles"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos"
+        ]
+      },
+      {
+        "id": 24,
+        "name": "Campeonato España Individual",
+        "aliases": [
+          "Campeonato España Individual"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 25,
+        "name": "Campeonato España Dobles",
+        "aliases": [
+          "Campeonato España Dobles"
+        ],
+        "sources": [
+          "Jugador/GetJugadorPartidos",
+          "Jugador/GetJugadorPosicionPorTorneos",
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      },
+      {
+        "id": 26,
+        "name": "MasterDobles",
+        "aliases": [
+          "MasterDobles"
+        ],
+        "sources": [
+          "Torneo/GetTorneoConPosiciones",
+          "Torneo/GetTorneoConPosicionesPag"
+        ]
+      }
+    ],
+    "modalidad": [
+      {
+        "id": 1,
+        "name": "Individual",
+        "aliases": [
+          "Individual"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Dobles",
+        "aliases": [
+          "Dobles"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Senior Dobles",
+        "aliases": [
+          "Senior Dobles"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Senior Individual",
+        "aliases": [
+          "Senior Individual"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Junior Dobles",
+        "aliases": [
+          "Junior Dobles"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Junior Individual",
+        "aliases": [
+          "Junior Individual"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Mujeres Dobles",
+        "aliases": [
+          "Mujeres Dobles"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Mujeres Individual",
+        "aliases": [
+          "Mujeres Individual"
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Otros",
+        "aliases": [
+          "Otros"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Mixto",
+        "aliases": [
+          "Mixto"
+        ]
+      }
+    ],
+    "categoriaById": [
+      {
+        "id": 1,
+        "name": "Rookie",
+        "aliases": [
+          "Rookie"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Amater",
+        "aliases": [
+          "Amater"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Master",
+        "aliases": [
+          "Master"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Elite",
+        "aliases": [
+          "Elite"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Elite GM",
+        "aliases": [
+          "Elite GM"
+        ]
+      }
+    ],
+    "categoriaFree": [
+      {
+        "name": "No puntuable",
+        "count": 310
+      }
+    ],
+    "temporada": {
+      "{'id': 2, 'name': 'Temporada 2011'}": "{'id': 2, 'name': 'Temporada 2011'}",
+      "{'id': 3, 'name': 'Temporada 2012'}": "{'id': 3, 'name': 'Temporada 2012'}",
+      "{'id': 4, 'name': 'Temporada 2013'}": "{'id': 4, 'name': 'Temporada 2013'}",
+      "{'id': 8, 'name': 'Temporada 2017'}": "{'id': 8, 'name': 'Temporada 2017'}",
+      "{'id': 11, 'name': 'Temporada 2022'}": "{'id': 11, 'name': 'Temporada 2022'}",
+      "{'id': 12, 'name': 'Temporada 2023'}": "{'id': 12, 'name': 'Temporada 2023'}",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12",
+      "13": "13",
+      "14": "14",
+      "16": "16"
+    },
+    "temporadaList": [
+      {
+        "id": 1,
+        "name": "Temporada 1"
+      },
+      {
+        "id": 2,
+        "name": "Temporada 2"
+      },
+      {
+        "id": 3,
+        "name": "Temporada 3"
+      },
+      {
+        "id": 4,
+        "name": "Temporada 4"
+      },
+      {
+        "id": 5,
+        "name": "Temporada 5"
+      },
+      {
+        "id": 6,
+        "name": "Temporada 6"
+      },
+      {
+        "id": 7,
+        "name": "Temporada 7"
+      },
+      {
+        "id": 8,
+        "name": "Temporada 8"
+      },
+      {
+        "id": 9,
+        "name": "Temporada 9"
+      },
+      {
+        "id": 10,
+        "name": "Temporada 10"
+      },
+      {
+        "id": 11,
+        "name": "Temporada 11"
+      },
+      {
+        "id": 12,
+        "name": "Temporada 12"
+      },
+      {
+        "id": 13,
+        "name": "Temporada 13"
+      },
+      {
+        "id": 14,
+        "name": "Temporada 14"
+      },
+      {
+        "id": 16,
+        "name": "Temporada 16"
+      }
+    ]
+  },
+  "seedIds": {
+    "jugadores": [
+      4,
+      614
+    ],
+    "jugadorId": [
+      4
+    ]
+  },
+  "anomalies": {
+    "jugadorPartidos_mismatches": [
+      {
+        "jugadorId": 614,
+        "onlyInALL_count": 2,
+        "onlyInPAG_count": 0,
+        "onlyInALL_sample": [
+          375,
+          376
+        ],
+        "onlyInPAG_sample": []
+      }
+    ],
+    "login_not_in_schema": true,
+    "discovery_path_format": {
+      "prefix_missing": "/api/",
+      "id_position": "final segment",
+      "schema_suffix_examples": [
+        ".[]",
+        ".fecha",
+        ".count"
+      ]
+    }
+  }
+}

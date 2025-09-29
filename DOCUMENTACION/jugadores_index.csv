@@ -1,0 +1,3 @@
+jugadorId,nombreJugador,totalPartidos,faltanEnPaginado,tipoCompeticionIds,modalidadIds,categoriaIds,hasSeniorDobles,hasMujeresDobles
+4,Hector NUÑEZ SAEZ,778,2,"1,3,9,11,12,13,24,25","1,2,9,10","0,1,3,4,5",False,False
+614,Jordan GONZALEZ REBOSO,376,2,"1,2,3,9,10,11,12,13,14,20,21,24,25","1,2,9,10","0,1,2,3,4,5",False,False

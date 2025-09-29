@@ -1,0 +1,139 @@
+/* 20. COLUMNA DE CATEGORÍA EN EL RANKING
+------------------------------------------------------------------- */
+
+/* Hacemos que el nombre del jugador no ocupe todo el espacio para dejar sitio a la categoría */
+.ranking-player-details {
+  flex-grow: 1; /* Permite que el nombre crezca para ocupar el espacio disponible */
+  flex-shrink: 1; /* Permite que se encoja si es necesario */
+  min-width: 150px; /* Ancho mínimo para el nombre */
+}
+
+/* Estilos para el contenedor de la categoría */
+.ranking-player-category {
+  flex-shrink: 0; /* Evita que la categoría se encoja */
+  text-align: center;
+}
+
+/* Estilos para la "píldora" de la categoría, con colores dinámicos */
+.category-pill {
+    display: inline-block;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+    border-radius: var(--futbolin-border-radius-pill);
+    color: #1f2937; /* texto oscuro por defecto para mejor legibilidad */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 80px; /* Ancho mínimo para consistencia */
+    background: linear-gradient(135deg, #f8fafc, #eef2f7); /* base suave si no hay categoría específica */
+    border: 1px solid #e5e7eb;
+}
+
+/* Colores específicos para cada categoría */
+/* Elite GM: cubrir variantes con/sin guion y data-attribute; elevar especificidad */
+/* Elite GM: oro pastel con buen contraste */
+/* Elite: plata pastel */
+/* Master: bronce pastel */
+
+.category-pill[data-category="master"] {
+    background: linear-gradient(135deg, #f6eadf, #ead7c5);
+    border: 1px solid #d9c3ae;
+    color: #442a17;
+}
+/* Pro: azul pastel */
+
+.category-pill[data-category="pro"] {
+    background: linear-gradient(135deg, #e0f2fe, #bfdbfe);
+    border: 1px solid #93c5fd;
+    color: #0f3a67;
+}
+/* Amateur: gris/azulado pastel */
+
+.category-pill[data-category="amateur"],
+.category-pill[data-category="amater"] {
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border: 1px solid #cbd5e1;
+    color: #334155;
+}
+/* Rookie: verde pastel (menos agresivo) */
+
+.category-pill[data-category="rookie"] {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border: 1px solid #86efac;
+    color: #14532d;
+}
+
+/* --- NUEVOS ESTILOS PARA LA PANTALLA DE RANKING GENERAL --- */
+
+/* Contenedor principal de los rankings de jugadores */
+
+.ranking-header {
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr 1fr 1fr; /* 5 columnas para Pos, Jugador, Partidas, Competiciones, Campeonatos */
+    gap: 15px;
+    background-color: #0073aa;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 8px 8px 0 0;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.ranking-header a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.sort-arrow {
+  font-size: 0.8em;
+  margin-left: 4px;
+}
+
+/* Si el doble viene de un <select>, elimínale la flecha nativa */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none !important; /* por si acaso */
+}
+.ranking-header .sort-arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin-left: 5px;
+}
+
+.ranking-header .sort-arrow.up {
+    border-bottom: 5px solid #fff;
+}
+
+
+/* Estilos para el número de posición en los rankings */
+
+/* Estilos específicos para las primeras 3 posiciones */
+
+.futbolin-paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.futbolin-paginacion a {
+    text-decoration: none;
+    color: #0073aa;
+    padding: 5px 10px;
+    border: 1px solid #0073aa;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.futbolin-paginacion a:hover {
+    background-color: #0073aa;
+    color: #fff;
+}

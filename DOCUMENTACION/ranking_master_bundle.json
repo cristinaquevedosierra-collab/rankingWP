@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "generatedAt": "2025-09-06T19:12:16.294142Z",
+    "baseUrl": "https://ranking.fefm.net",
+    "auth": {
+      "kind": "login",
+      "loginEndpoint": "/api/Seguridad/login",
+      "usuario": "usuario",
+      "password": "HectorP4r4Pr0b4r"
+    },
+    "notes": [
+      "Este bundle unifica configuración de endpoints, reglas y catálogos.",
+      "Para peticiones a producción, adapta usuario/password o usa token Bearer si aplica."
+    ]
+  },
+  "endpoints": {
+    "auth": {
+      "login": "/api/Seguridad/login"
+    },
+    "modalidad": {
+      "getModalidades": "/api/Modalidad/GetModalidades"
+    },
+    "jugador": {
+      "getDatos": "/api/Jugador/{jugadorId}/GetDatosJugador",
+      "getPosicionPorTorneos": "/api/Jugador/{jugadorId}/GetJugadorPosicionPorTorneos",
+      "getPuntuacionCategoria": "/api/Jugador/{jugadorId}/GetJugadorPuntuacionCategoria",
+      "getPartidosAll": "/api/Jugador/{jugadorId}/GetJugadorPartidos",
+      "getPartidosPag": "/api/Jugador/{jugadorId}/GetJugadorPartidosPag"
+    },
+    "ranking": {
+      "espAll": "/api/Ranking/GetRankingPorModalidadESPGlicko2/{modalidadId}",
+      "espPag": "/api/Ranking/GetRankingPorModalidadESPPagGlicko2/{modalidadId}",
+      "extAll": "/api/Ranking/GetRankingPorModalidadEXTGlicko2/{modalidadId}",
+      "campeonesEspania": [
+        "/api/Ranking/GetCampeonesEspania",
+        "/api/Jugador/GetCampeonesEspania",
+        "/api/Torneo/GetCampeonesEspania"
+      ]
+    },
+    "torneo": {
+      "getTorneosAll": "/api/Torneo/GetTorneos",
+      "getTorneosPag": "/api/Torneo/GetTorneosPag",
+      "getUltimoGlicko2": "/api/Torneo/GetUltimoTorneoCalcularGlicko2",
+      "getTorneoPosAll": "/api/Torneo/GetTorneoConPosiciones/{torneoId}",
+      "getTorneoPosPag": "/api/Torneo/GetTorneoConPosicionesPag/{torneoId}"
+    },
+    "busqueda": {
+      "buscarJugador": [
+        "/api/Jugador/GetBuscarJugador/{busqueda}",
+        "/api/Jugador/GetBuscarJugador?busqueda={busqueda}",
+        "/api/Jugador/BuscarJugador/{busqueda}",
+        "/api/Jugador/BuscarJugador?busqueda={busqueda}",
+        "/api/Jugador/GetBuscarJugadorES/{busqueda}",
+        "/api/Jugador/GetBuscarJugadorES?busqueda={busqueda}"
+      ],
+      "buscarJugadorPag": [
+        "/api/Jugador/GetBuscarJugadorPag/{busqueda}?page={page}&pageSize={pageSize}",
+        "/api/Jugador/GetBuscarJugadorPag?busqueda={busqueda}&page={page}&pageSize={pageSize}",
+        "/api/Jugador/BuscarJugadorPag/{busqueda}?page={page}&pageSize={pageSize}",
+        "/api/Jugador/BuscarJugadorPag?busqueda={busqueda}&page={page}&pageSize={pageSize}"
+      ]
+    }
+  },
+  "rules": {
+    "prefers": {
+      "jugador.partidos": "ALL",
+      "ranking.esp": "EITHER_MATCH_SET"
+    },
+    "wrappers": {
+      "torneosPag": "torneos",
+      "rankingEspPag": "ranking",
+      "jugadorPartidosPag": "jugadorPartidos"
+    },
+    "pagination": {
+      "pageParam": "page",
+      "pageSizeParam": "pageSize",
+      "detectHasNext": [
+        "hasNextPage",
+        "pageIndex/totalPages",
+        "nonEmptyPage"
+      ],
+      "fetchOneExtraPage": true
+    },
+    "filters": {
+      "excludePhases": [
+        "Liguilla"
+      ],
+      "normalizeTerms": {
+        "Amater": "Amateur"
+      }
+    },
+    "safety": {
+      "maxPages": 10000
+    }
+  },
+  "enums": {
+    "tipoCompeticion": {
+      "1": {
+        "preferredName": "Open Dobles",
+        "aka": []
+      },
+      "2": {
+        "preferredName": "Amater Dobles",
+        "aka": []
+      },
+      "3": {
+        "preferredName": "DYP",
+        "aka": []
+      },
+      "4": {
+        "preferredName": "Junior Dobles",
+        "aka": []
+      },
+      "5": {
+        "preferredName": "Senior Dobles",
+        "aka": []
+      },
+      "6": {
+        "preferredName": "Women Dobles",
+        "aka": []
+      },
+      "9": {
+        "preferredName": "ProAm",
+        "aka": []
+      },
+      "10": {
+        "preferredName": "Rookie Dobles",
+        "aka": []
+      },
+      "11": {
+        "preferredName": "Mixto",
+        "aka": []
+      },
+      "12": {
+        "preferredName": "ProDobles",
+        "aka": []
+      },
+      "13": {
+        "preferredName": "Open Individual",
+        "aka": []
+      },
+      "14": {
+        "preferredName": "Amater Individual",
+        "aka": []
+      },
+      "15": {
+        "preferredName": "Junior Individual",
+        "aka": []
+      },
+      "17": {
+        "preferredName": "Women Individual",
+        "aka": []
+      },
+      "24": {
+        "preferredName": "Campeonato España Individual",
+        "aka": []
+      },
+      "25": {
+        "preferredName": "Campeonato España Dobles",
+        "aka": []
+      },
+      "26": {
+        "preferredName": "MasterDobles",
+        "aka": []
+      }
+    },
+    "modalidad": {
+      "1": {
+        "preferredName": "Individual",
+        "aka": []
+      },
+      "2": {
+        "preferredName": "Dobles",
+        "aka": []
+      },
+      "3": {
+        "preferredName": "Senior Dobles",
+        "aka": []
+      },
+      "4": {
+        "preferredName": "Senior Individual",
+        "aka": []
+      },
+      "5": {
+        "preferredName": "Junior Dobles",
+        "aka": []
+      },
+      "6": {
+        "preferredName": "Junior Individual",
+        "aka": []
+      },
+      "7": {
+        "preferredName": "Mujeres Dobles",
+        "aka": []
+      },
+      "8": {
+        "preferredName": "Mujeres Individual",
+        "aka": []
+      },
+      "9": {
+        "preferredName": "Otros",
+        "aka": []
+      },
+      "10": {
+        "preferredName": "Mixto",
+        "aka": []
+      }
+    },
+    "categoriaById": {
+      "1": {
+        "preferredName": "Rookie",
+        "aka": []
+      },
+      "2": {
+        "preferredName": "Amater",
+        "aka": []
+      },
+      "3": {
+        "preferredName": "Master",
+        "aka": []
+      },
+      "4": {
+        "preferredName": "Elite",
+        "aka": []
+      },
+      "5": {
+        "preferredName": "Elite GM",
+        "aka": []
+      }
+    },
+    "categoriaFree": [
+      "No puntuable"
+    ],
+    "temporada": {
+      "1": {
+        "name": "Temporada 2010"
+      },
+      "2": {
+        "name": "Temporada 2011"
+      },
+      "3": {
+        "name": "Temporada 2012"
+      },
+      "4": {
+        "name": "Temporada 2013"
+      },
+      "5": {
+        "name": "Temporada 2014"
+      },
+      "6": {
+        "name": "Temporada 2015"
+      },
+      "7": {
+        "name": "Temporada 2016"
+      },
+      "8": {
+        "name": "Temporada 2017"
+      },
+      "9": {
+        "name": "Temporada 2018"
+      },
+      "10": {
+        "name": "Temporada 2019"
+      },
+      "11": {
+        "name": "Temporada 2022"
+      },
+      "12": {
+        "name": "Temporada 2023"
+      },
+      "13": {
+        "name": "Temporada 2024"
+      },
+      "14": {
+        "name": "Temporada 2025"
+      },
+      "16": {
+        "name": "Temporada 2021"
+      }
+    }
+  },
+  "seedIds": {
+    "jugadores": [
+      4,
+      614
+    ],
+    "modalidades": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "anomalies": {
+    "typos": [
+      "Amater"
+    ],
+    "endpoints_all_vs_pag": {
+      "jugador.partidos": {
+        "prefer": "ALL",
+        "reason": "Se detectaron partidas presentes en ALL y ausentes en PAG para ciertos jugadores (p.ej. jugadorId 614)."
+      }
+    },
+    "missingInPagExamples": {
+      "registroIds": [
+        376,
+        375
+      ],
+      "objects": [
+        {
+          "registroId": 375,
+          "jugadorId": 614,
+          "nombreJugador": "Jordan GONZALEZ REBOSO",
+          "competicionId": 273,
+          "torneo": "CAMPEONATO DE ESPAÑA 2017",
+          "temporadaId": 8,
+          "temporada": "Temporada 2017",
+          "torneoId": 110,
+          "competicion": "PRO-AM",
+          "tipoCompeticionId": 9,
+          "tipoCompeticion": "ProAm",
+          "fase": "Eliminacion Doble Ko",
+          "ganadorLocal": false,
+          "equipoLocal": "Agapito GONZALEZ MARTIN - Jordan GONZALEZ REBOSO",
+          "equipoLocalDTO": {
+            "equipoId": 1581,
+            "jugadores": [
+              {
+                "jugadorId": 612,
+                "nombreJugador": "Agapito GONZALEZ MARTIN"
+              },
+              {
+                "jugadorId": 614,
+                "nombreJugador": "Jordan GONZALEZ REBOSO"
+              }
+            ]
+          },
+          "equipoVisitante": "Juan Jose RODRIGUEZ BARTOLOME - Víctor SIMON TOME",
+          "equipoVisitanteDTO": {
+            "equipoId": 1720,
+            "jugadores": [
+              {
+                "jugadorId": 19,
+                "nombreJugador": "Juan Jose RODRIGUEZ BARTOLOME"
+              },
+              {
+                "jugadorId": 506,
+                "nombreJugador": "Víctor SIMON TOME"
+              }
+            ]
+          },
+          "puntosLocal": "(0)",
+          "puntosVisitante": "(0)",
+          "puntuacionInicial": 0,
+          "puntosGanados": 0,
+          "puntuacionFinal": 0,
+          "modalidadId": 9,
+          "modalidad": "Otros",
+          "sistema": "No puntuable",
+          "categoriaId": 0,
+          "categoria": "No puntuable"
+        },
+        {
+          "registroId": 376,
+          "jugadorId": 614,
+          "nombreJugador": "Jordan GONZALEZ REBOSO",
+          "competicionId": 243,
+          "torneo": "II MUNDIALITO LOS REALEJOS",
+          "temporadaId": 8,
+          "temporada": "Temporada 2017",
+          "torneoId": 104,
+          "competicion": "DYP REALEJOS",
+          "tipoCompeticionId": 3,
+          "tipoCompeticion": "DYP",
+          "fase": "Eliminacion Directa",
+          "ganadorLocal": false,
+          "equipoLocal": "Jordan GONZALEZ REBOSO - Pedro RODRIGUEZ RAMOS",
+          "equipoLocalDTO": {
+            "equipoId": 1606,
+            "jugadores": [
+              {
+                "jugadorId": 614,
+                "nombreJugador": "Jordan GONZALEZ REBOSO"
+              },
+              {
+                "jugadorId": 626,
+                "nombreJugador": "Pedro RODRIGUEZ RAMOS"
+              }
+            ]
+          },
+          "equipoVisitante": "Orlando ARTENARA LACUEVITA - Aaron CASTELLANO MACHIN",
+          "equipoVisitanteDTO": {
+            "equipoId": 1598,
+            "jugadores": [
+              {
+                "jugadorId": 27,
+                "nombreJugador": "Orlando ARTENARA LACUEVITA"
+              },
+              {
+                "jugadorId": 126,
+                "nombreJugador": "Aaron CASTELLANO MACHIN"
+              }
+            ]
+          },
+          "puntosLocal": "(0)",
+          "puntosVisitante": "(0)",
+          "puntuacionInicial": 0,
+          "puntosGanados": 0,
+          "puntuacionFinal": 0,
+          "modalidadId": 9,
+          "modalidad": "Otros",
+          "sistema": "No puntuable",
+          "categoriaId": 0,
+          "categoria": "No puntuable"
+        }
+      ]
+    },
+    "rawNotes": [
+      "## Posibles typos ('Amater' → 'Amateur')",
+      "- {\"tipoCompeticionId\":2,\"preferredName\":\"Amater Dobles\",\"allNames\":\"Amater Dobles\",\"sources\":\"Jugador/GetJugadorPartidos | Jugador/GetJugadorPosicionPorTorneos | Torneo/GetTorneoConPosiciones | Torneo/GetTorneoConPosicionesPag\",\"samples\":731}",
+      "- {\"tipoCompeticionId\":14,\"preferredName\":\"Amater Individual\",\"allNames\":\"Amater Individual\",\"sources\":\"Jugador/GetJugadorPartidos | Jugador/GetJugadorPosicionPorTorneos | Torneo/GetTorneoConPosiciones | Torneo/GetTorneoConPosicionesPag\",\"samples\":74}",
+      "- {\"categoriaId\":2,\"preferredName\":\"Amater\",\"allNames\":\"Amater\"}"
+    ]
+  },
+  "processors_manifest": {
+    "processors": []
+  },
+  "tests": {
+    "invariants": [
+      {
+        "name": "exclude_liguilla_globally",
+        "description": "Las métricas que cuenten victorias/partidos deben excluir fase=Liguilla.",
+        "enforced": true
+      }
+    ]
+  }
+}

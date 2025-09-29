@@ -1,0 +1,73 @@
+/**
+ * 17-loader.css — Overlay + Spinner + Texto con tres puntos animados
+ */
+
+/* Overlay pantalla completa */
+#futbolin-loader-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.85);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .3s ease-in-out;
+  opacity: 1;
+}
+#futbolin-loader-overlay.futbolin-loader-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Contenido centrado */
+
+/* Spinner por puntos alrededor (si lo usas) */
+@keyframes spinDots { to { transform: rotate(360deg); } }
+
+/* Tamaño del Lottie (ajústalo si quieres) */
+
+/* Texto grande y en negrita */
+
+/* Tres puntos animados (sin desplazar el texto) */
+
+@keyframes dotPulse {
+  0%, 100% { opacity: .25; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.6); }
+}
+
+/* Accesibilidad: menos movimiento si el usuario lo pide */
+/* === Texto: pulso sutil (opacidad) === */
+
+@keyframes textPulse {
+  0%, 100% { opacity: .85; }
+  50%      { opacity: 1;   }
+}
+
+/* === Tres puntos: solo opacidad (sin translate/scale) === */
+
+@keyframes dotFade {
+  0%, 100% { opacity: .2; }
+  50%      { opacity: 1;  }
+}
+
+/* Respeto de accesibilidad */
+/* Efecto shimmer interno (sin desplazar el contenedor) */
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+/* ====== FORZAR ANIMACIONES DEL LOADER (ignora reduced motion) ====== */
+
+/* Pulso sutil del texto */
+@keyframes textPulse {
+  0%, 100% { opacity: .85; }
+  50%      { opacity: 1;   }
+}
+
+/* Puntos con fade escalonado (sin mover el texto) */
+@keyframes dotFade {
+  0%, 100% { opacity: .2; }
+  50%      { opacity: 1;  }
+}

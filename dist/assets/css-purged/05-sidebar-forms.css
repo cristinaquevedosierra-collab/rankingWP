@@ -1,0 +1,70 @@
+/* 5. SIDEBAR Y FORMULARIOS
+------------------------------------------------------------------- */
+.futbolin-sidebar .futbolin-card {
+    background-color: var(--futbolin-bg-card-hover);
+    border: 1px solid var(--futbolin-border-color);
+    padding: 25px;
+    border-radius: var(--futbolin-border-radius-main);
+}
+
+.futbolin-sidebar-block { 
+    margin-bottom: 30px; 
+}
+
+.futbolin-sidebar-block h3 {
+    color: var(--futbolin-text-headings);
+    border-bottom: 1px solid var(--futbolin-border-color);
+    padding-bottom: 10px;
+    margin: 0 0 15px 0;
+    font-size: 1.2em;
+}
+
+.futbolin-search-form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.futbolin-search-form .search-wrapper {
+    flex-grow: 1;
+    position: relative;
+}
+
+.futbolin-search-form input[type="text"] {
+    width: 100%;
+    height: 60%; /* Para que ocupe la misma altura que el botón */
+    border: 1px solid var(--futbolin-border-color);
+    background: var(--futbolin-bg-input);
+    color: var(--futbolin-text-dark);
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.futbolin-search-form input[type="text"]:focus {
+    outline: none;
+    border-color: var(--futbolin-color-primary);
+    box-shadow: 0 0 0 3px var(--futbolin-bg-highlight);
+}
+
+.futbolin-search-form button {
+    height: 50%;
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid var(--futbolin-color-primary);
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.futbolin-search-form button:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}

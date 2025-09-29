@@ -1,0 +1,1705 @@
+.futbolin-card h3.history-main-title{margin:0 0 20px 0!important;padding-bottom:12px!important;text-align:center!important;font-size:1.5em!important;font-weight:600!important;color:var(--futbolin-text-headings)!important;border-bottom:2px solid rgba(59,130,246,.5)!important;display:block!important;}
+﻿.rf-hitos__title{background:linear-gradient(135deg,#ffe7a3,#ffd36b,#e6b84e,#d4af37,#f3d27c);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800;display:inline-flex;align-items:center;gap:12px;font-size:20px;letter-spacing:.05em;text-transform:uppercase;margin:12px 0 18px;} .rf-hitos__section{margin-top:28px;} .rf-hitos__section:first-of-type{margin-top:0;} .rf-card__title-count{align-items:center;background:rgba(0,0,0,.25);border-radius:999px;display:inline-flex;gap:4px;padding:4px 10px;font-size:13px;font-weight:700;} .rf-card__title-count-number,.rf-card__title-count-symbol{line-height:1;} .rf-badge--double{padding-right:24px;} .rf-badge__icon{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:28px;} .rf-badge__icon-asset{display:inline-flex;align-items:center;justify-content:center;} .rf-badge__icon-asset--secondary{position:absolute;right:-12px;top:0;transform:scale(.85);} .rf-badge__text{white-space:nowrap;} .rf-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}\n/* Perfil: main card headers */
+ 
+
+/* Perfil: header colors by category */
+/*! purgecss start ignore */
+.futbolin-main-header.header-gm{background:var(--color-cat-gm);}
+.futbolin-main-header.header-elite{background:var(--color-cat-elite);}
+.futbolin-main-header.header-master{background:var(--color-cat-master);}
+.futbolin-main-header.header-amateur,.futbolin-main-header.header-amater{background:var(--color-cat-amateur);}
+.futbolin-main-header.header-rookie{background:var(--color-cat-rookie);}
+.futbolin-main-header[class*="header-"] .header-text h1,.futbolin-main-header[class*="header-"] .header-text h2{color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.5);}
+.futbolin-main-header.header-gm .header-text h1,.futbolin-main-header.header-elite .header-text h1{color:#3b300f;text-shadow:-1px -1px 0 rgba(0,0,0,.2),1px -1px 0 rgba(0,0,0,.2),-1px 1px 0 rgba(0,0,0,.2),1px 1px 0 rgba(0,0,0,.2);}
+.futbolin-main-header.header-gm .header-text h2,.futbolin-main-header.header-elite .header-text h2{color:rgba(60,50,15,.8);text-shadow:none;}
+.futbolin-main-header .header-text .player-header-badges{display:flex;flex-direction:column;align-items:center;gap:6px;margin:8px auto 2px;max-width:min(92vw,900px)}
+.futbolin-main-header .header-text .player-header-badges .badges-line{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 8px;line-height:1}
+.futbolin-main-header .header-text .player-header-badges .badges-line .star,.futbolin-main-header .header-text .player-header-badges .badges-line .crown{display:inline-flex;align-items:center;justify-content:center}
+.futbolin-main-header .header-text .player-header-badges .badges-line svg{display:block}
+.futbolin-main-header .header-text .player-header-badges .line-stars svg{filter:drop-shadow(0 1px 1px rgba(0,0,0,.2))}
+.futbolin-main-header .header-text .player-header-badges .line-crowns svg{filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+/*! purgecss end ignore */
+
+/* Fuerza border-radius SOLO en el contenedor principal de partidos del historial, nunca en hijos */
+#tab-historial .ranking-row.history-match-row:not(.top-1):not(.top-2):not(.top-3),
+#tab-historial .ranking-row.history-match-row[data-resultado],
+#tab-historial .ranking-row.history-match-row[data-resultado][data-valid] {
+  border-radius: 12px !important;
+}
+#tab-historial .ranking-row.history-match-row > .ranking-position,
+#tab-historial .ranking-row.history-match-row > .history-match-details,
+#tab-historial .ranking-row.history-match-row > .history-match-elo {
+  border-radius: 0 !important;
+}
+/* Ultra override: SOLO historial, SOLO contenedor principal, nunca hijos */
+#tab-historial .ranking-row.history-match-row {
+  border-radius: 12px !important;
+}
+#tab-historial .ranking-row.history-match-row > .ranking-position {
+  border-radius: 0 !important;
+}
+#tab-historial .ranking-row.history-match-row[data-resultado="Victoria"],
+#tab-historial .ranking-row.history-match-row[data-resultado="Derrota"] {
+  border-radius: 12px !important;
+}
+/* Ultra override: esquinas curvas SOLO para partidos del historial */
+#tab-historial .ranking-row.history-match-row,
+#tab-historial .ranking-row.history-match-row[style] {
+  border-radius: 12px !important;
+}
+/* Esquinas curvas en filas de partidos del historial (como en clasificación) */
+#tab-historial .ranking-row.history-match-row {
+  border-radius: 12px !important;
+}
+/* Desactiva efecto hover en filas de partidos del historial (no relieve, no zoom, no color) */
+#tab-historial .ranking-row.history-match-row:hover {
+  background: linear-gradient(90deg, #fff 0%, #e8fbe7 100%) !important;
+  box-shadow: none !important;
+  transform: none !important;
+  z-index: auto !important;
+  filter: none !important;
+}
+#tab-historial .ranking-row.history-match-row[data-resultado="Derrota"]:hover {
+  background: linear-gradient(90deg, #fff 0%, #fdeaea 100%) !important;
+}
+/* Ultra override: texto negro puro en Títulos Ganados (profesionales) */
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5)[style],
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-value,
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-label {
+  color: #111 !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #111 !important;
+}
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-value,
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-label {
+  color: #111 !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+}
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-value,
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-label {
+  color: #111 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 2px #fff, 0 1px 0 #fff8 !important;
+}
+/* === RESULTADOS GLOBALES: bloques verde y dorado === */
+.player-career-stats-grid.global-muted > .stat-box:nth-child(2) {
+  background: linear-gradient(135deg, #e8fbe7 0%, #b6f0c2 60%, #4caf50 100%) !important;
+  padding: 10px 10px !important;
+  border-radius: var(--futbolin-border-radius-main, 12px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 2px !important;
+}
+.player-career-stats-grid.global-muted > .stat-box:nth-child(2) .stat-value,
+.player-career-stats-grid.global-muted > .stat-box:nth-child(2) .stat-label {
+  color: #17692a !important;
+  font-weight: 800 !important;
+}
+.player-career-stats-grid.global-muted > .stat-box:nth-child(5) {
+  background: linear-gradient(135deg, #fffbe7 0%, #ffe259 45%, #b68c2e 100%) !important;
+  padding: 10px 10px !important;
+  border-radius: var(--futbolin-border-radius-main, 12px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 2px !important;
+}
+.player-career-stats-grid.global-muted > .stat-box:nth-child(5) .stat-value,
+.player-career-stats-grid.global-muted > .stat-box:nth-child(5) .stat-label {
+  color: #222 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 0 #fff8 !important;
+}
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-value,
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-label {
+  color: #222 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 0 #fff8 !important;
+}
+/* Bloque dorado para 'Títulos Ganados' en la grid profesional */
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) {
+  background: linear-gradient(135deg, #fffbe7 0%, #ffe259 45%, #b68c2e 100%) !important;
+  padding: 10px 10px !important;
+  border-radius: var(--futbolin-border-radius-main, 12px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 2px !important;
+}
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-value,
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) .stat-label {
+  color: #b68c2e !important;
+}
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(2) {
+  background: linear-gradient(135deg, #e8fbe7 0%, #b6f0c2 60%, #4caf50 100%) !important;
+  padding: 10px 10px !important;
+  border-radius: var(--futbolin-border-radius-main, 12px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 2px !important;
+}
+.player-career-stats-grid .stat-box:has(.stat-label:contains('Partidos Ganados')) {
+  background: linear-gradient(135deg, #e8fbe7 0%, #b6f0c2 60%, #4caf50 100%) !important;
+}
+.player-career-stats-grid .stat-box:has(.stat-label:contains('Partidos Ganados')) .stat-value {
+  color: #17692a !important;
+}
+.player-career-stats-grid .stat-box:has(.stat-label:contains('Partidos Ganados')) .stat-label {
+  color: #17692a !important;
+}
+
+/* Refuerzo con selector ultra-específico y !important para máxima prioridad */
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(2) {
+  background: linear-gradient(135deg, #e8fbe7 0%, #b6f0c2 60%, #4caf50 100%) !important;
+}
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(2) .stat-value,
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(2) .stat-label {
+  color: #17692a !important;
+}
+#tab-historial .ranking-row.history-match-row[data-resultado="Victoria"] {
+  background: linear-gradient(90deg, #fff 0%, #e8fbe7 100%) !important;
+  border-left: 4px solid #4caf50 !important;
+  border-radius: 0 !important;
+  border-color: #4caf50 !important;
+}
+#tab-historial .ranking-row.history-match-row[data-resultado="Derrota"] {
+  background: linear-gradient(90deg, #fff 0%, #fdeaea 100%) !important;
+  border-left: 4px solid #e53935 !important;
+  border-radius: 0 !important;
+  border-color: #e53935 !important;
+}
+#tab-historial .ranking-row.history-match-row .history-match-phase {
+  background: transparent !important;
+  color: inherit !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin-left: 14px !important;
+}
+#tab-historial .ranking-row.history-match-row .history-match-winner {
+  color: #17692a !important;
+  padding-left: 32px !important;
+}
+#tab-historial .ranking-row.history-match-row .history-match-loser {
+  color: #a11a1a !important;
+  padding-left: 32px !important;
+}
+#tab-general .stats-list .partido-victoria {
+  background: linear-gradient(90deg, #fff 0%, #e8fbe7 100%) !important;
+  border-left: 4px solid #4caf50;
+  color: #17692a;
+}
+#tab-general .stats-list .partido-derrota {
+  background: linear-gradient(90deg, #fff 0%, #fdeaea 100%) !important;
+  border-left: 4px solid #e53935;
+  color: #a11a1a;
+}
+#tab-general .stats-list .partido-victoria strong,
+#tab-general .stats-list .partido-victoria .porcentaje-victorias {
+  color: #17692a !important;
+}
+#tab-general .stats-list .partido-derrota strong,
+#tab-general .stats-list .partido-derrota .porcentaje-victorias {
+  color: #a11a1a !important;
+}
+/* Medalla: degradado dorado más oscuro a la izquierda */
+.rf-medalla {
+  background: linear-gradient(90deg, #b3d4fc 0%, #1769aa 100%) !important;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.22) !important;
+  transform: scale(1.025);
+  z-index: 2;
+  filter: none !important;
+  font-weight: 800 !important;
+  font-size: 1.15em !important;
+  color: #222 !important;
+  background: none !important;
+  border: none !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin-right: 12px !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+/* === CONSOLIDADO TOP 3 (oro / plata / bronce) === */
+:root {
+  --rf-gold-ring: #ffd700;
+  --rf-gold-grad: linear-gradient(135deg,#b68c2e 0%,#ffe259 45%,#ffa751 100%);
+  --rf-gold-row: linear-gradient(90deg,#fffbe7 0%,#ffe259 100%);
+  --rf-silver-ring: #bcbcbc;
+  --rf-silver-grad: linear-gradient(135deg,#bcbcbc 0%,#f0f0f0 45%,#d1d1d1 100%);
+  --rf-silver-row: linear-gradient(90deg,#fffbe7 0%,#d1d1d1 100%);
+  --rf-bronze-ring: #b97a56;
+  --rf-bronze-grad: linear-gradient(135deg,#e6b980 0%,#c97b4d 45%,#a05a2c 100%);
+  --rf-bronze-row: linear-gradient(90deg,#fffbe7 0%,#f1c59a 100%);
+}
+.ranking-row.top-1 > .ranking-position,
+.ranking-row.top-2 > .ranking-position,
+.ranking-row.top-3 > .ranking-position {
+  background: var(--rf-gold-grad) !important;
+  color:#fff !important;
+  border-radius:50% !important;
+  min-width:38px !important;min-height:38px !important;width:38px !important;height:38px !important;
+  display:flex !important;align-items:center !important;justify-content:center !important;
+  font-weight:700 !important;font-size:1.05em !important;
+  padding:0 !important;margin:0 !important;position:relative !important;z-index:1 !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.18) !important;
+  border:2px solid var(--rf-gold-ring) !important;
+  transition:background .18s, box-shadow .18s, transform .18s;
+}
+.ranking-row.top-2 > .ranking-position { background: var(--rf-silver-grad) !important; border-color: var(--rf-silver-ring) !important; }
+.ranking-row.top-3 > .ranking-position { background: var(--rf-bronze-grad) !important; border-color: var(--rf-bronze-ring) !important; }
+
+/* Filas contenedor top-1/2/3 */
+.ranking-row.top-1, .ranking-row.top-1.ranking-row, li.ranking-row.top-1 { background: var(--rf-gold-row) !important; border:1.5px solid var(--rf-gold-ring) !important; }
+.ranking-row.top-2, .ranking-row.top-2.ranking-row, li.ranking-row.top-2 { background: var(--rf-silver-row) !important; border:1.5px solid var(--rf-silver-ring) !important; }
+.ranking-row.top-3, .ranking-row.top-3.ranking-row, li.ranking-row.top-3 { background: var(--rf-bronze-row) !important; border:1.5px solid var(--rf-bronze-ring) !important; }
+
+/* Hovers unificados (mantienen zoom y brillo adaptado) */
+.ranking-row.has-pos-1:hover, .ranking-row.has-pos-1.ranking-row:hover, li.ranking-row.has-pos-1:hover { box-shadow:0 6px 24px rgba(255,215,0,.28) !important; transform:scale(1.025); }
+.ranking-row.top-2:hover, .ranking-row.top-2.ranking-row:hover, li.ranking-row.top-2:hover { box-shadow:0 6px 24px rgba(160,160,160,.25) !important; transform:scale(1.025); }
+.ranking-row.top-3:hover, .ranking-row.top-3.ranking-row:hover, li.ranking-row.top-3:hover { box-shadow:0 6px 24px rgba(185,122,86,.25) !important; transform:scale(1.025); }
+
+/* Mantener efecto de resplandor sobre el círculo al hover */
+.ranking-row.has-pos-1:hover > .ranking-position { box-shadow:0 0 0 4px #ffe59e55,0 4px 18px #ffd70055 !important; transform:scale(1.12); }
+.ranking-row.has-pos-2:hover > .ranking-position { box-shadow:0 0 0 4px #e6e6e655,0 4px 18px #bcbcbc55 !important; transform:scale(1.12); }
+.ranking-row.has-pos-3:hover > .ranking-position { box-shadow:0 0 0 4px #f1c59a55,0 4px 18px #b97a5655 !important; transform:scale(1.12); }
+
+/* REVERTIR ocultación del número en top-1/2/3 */
+.ranking-row.top-1 > .ranking-position,
+.ranking-row.top-2 > .ranking-position,
+.ranking-row.top-3 > .ranking-position,
+.ranking-row.top-1 > .ranking-position *,
+.ranking-row.top-2 > .ranking-position *,
+.ranking-row.top-3 > .ranking-position * {
+  color:#fff !important; visibility:visible !important; -webkit-user-select:auto; user-select:auto;
+}
+/* Oculta el número en la medalla para top-1, top-2, top-3 */
+/* El número SIEMPRE es visible y centrado */
+/* Asegura que a partir del 4 sí se muestre el número */
+/* El resto: solo número negro, sin círculo */
+/* A partir del 4º: contenedor totalmente transparente, solo número visible */
+.ranking-row:not(.top-1):not(.top-2):not(.top-3) > .ranking-position,
+.ranking-position.pos-4,
+.ranking-position.pos-5,
+.ranking-position.pos-6,
+.ranking-position.pos-7,
+.ranking-position.pos-8,
+.ranking-position.pos-9,
+.ranking-position.pos-10 {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  color: #222 !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700 !important;
+  font-size: 1.1em !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.ranking-row > .ranking-player-details {
+  margin-left: 6px !important;
+}
+/* Fuerza alineación a la izquierda en filas de ranking y detalles */
+/* Alineación horizontal y vertical para ranking-row */
+/* Fila ranking: pill visual, fondo suave, sombra */
+/* Fila ranking: pill visual, fondo suave, sombra */
+.ranking-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-align: left !important;
+  border-radius: 12px !important;
+  background: linear-gradient(90deg, #fffbe7 0%, #fffde4 100%) !important;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.07) !important;
+  border: 1.5px solid #ffe59e !important;
+  padding: 8px 18px !important;
+  margin-bottom: 10px !important;
+  transition: box-shadow .18s, background .18s, transform .18s;
+}
+
+/* Efecto hover para filas de clasificación (no historial) */
+
+.ranking-row:not(.has-pos-1):not(.has-pos-2):not(.has-pos-3):hover,
+.ranking-row:not(.has-pos-1):not(.has-pos-2):not(.has-pos-3).ranking-row:hover,
+li.ranking-row:not(.has-pos-1):not(.has-pos-2):not(.has-pos-3):hover {
+  background: linear-gradient(90deg, #b3d4fc 0%, #1769aa 100%) !important;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.22) !important;
+  transform: scale(1.025);
+  z-index: 2;
+  filter: none !important;
+}
+
+/* Efecto hover para top-1, top-2, top-3: brillo y zoom */
+
+.ranking-row.has-pos-1:hover,
+.ranking-row.has-pos-1.ranking-row:hover,
+li.ranking-row.has-pos-1:hover {
+  background: linear-gradient(90deg, #ffe259 0%, #ffd700 60%, #b68c2e 100%) !important;
+  box-shadow: 0 6px 24px rgba(255, 215, 0, 0.28) !important;
+  filter: none !important;
+  transform: scale(1.025);
+  z-index: 2;
+}
+.ranking-row.has-pos-2:hover,
+.ranking-row.has-pos-2.ranking-row:hover,
+li.ranking-row.has-pos-2:hover {
+  background: linear-gradient(90deg, #e6e6e6 0%, #bcbcbc 60%, #888888 100%) !important;
+  box-shadow: 0 6px 24px rgba(120, 120, 120, 0.22) !important;
+  filter: none !important;
+  transform: scale(1.025);
+  z-index: 2;
+}
+.ranking-row.top-3:hover,
+.ranking-row.top-3.ranking-row:hover,
+li.ranking-row.top-3:hover {
+  background: linear-gradient(90deg, #f1c59a 0%, #b97a56 60%, #a05a2c 100%) !important;
+  box-shadow: 0 6px 24px rgba(185, 122, 86, 0.22) !important;
+  filter: none !important;
+  transform: scale(1.025);
+  z-index: 2;
+}
+
+/* Efecto hover para el número de posición (círculo) solo top-1/2/3 */
+.ranking-row.top-1 > .ranking-position,
+.ranking-row.top-2 > .ranking-position,
+.ranking-row.top-3 > .ranking-position {
+  transition: background 0.18s, box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+}
+
+.ranking-row.has-pos-1:hover > .ranking-position,
+.ranking-row.top-1.ranking-row:hover > .ranking-position,
+li.ranking-row.has-pos-1:hover > .ranking-position {
+  box-shadow: 0 0 0 4px #ffe59e55, 0 4px 18px #ffd70055;
+  transform: scale(1.12);
+}
+.ranking-row.has-pos-2:hover > .ranking-position,
+.ranking-row.has-pos-2.ranking-row:hover > .ranking-position,
+li.ranking-row.has-pos-2:hover > .ranking-position {
+  box-shadow: 0 0 0 4px #e6e6e655, 0 4px 18px #bcbcbc55;
+  transform: scale(1.12);
+}
+.ranking-row.has-pos-3:hover > .ranking-position,
+.ranking-row.has-pos-3.ranking-row:hover > .ranking-position,
+li.ranking-row.has-pos-3:hover > .ranking-position {
+  box-shadow: 0 0 0 4px #f1c59a55, 0 4px 18px #b97a5655;
+  transform: scale(1.12);
+}
+
+
+/* El resto: solo número negro, sin círculo, incluso en hover */
+.ranking-row:not(.top-1):not(.top-2):not(.top-3) > .ranking-position,
+.ranking-row:not(.top-1):not(.top-2):not(.top-3):hover > .ranking-position {
+  color: #222 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  overflow: visible !important;
+  transform: scale(1.10);
+}
+
+/* Efecto hover para posiciones >=4 (solo número, sin círculo) */
+.ranking-row:not(.top-1):not(.top-2):not(.top-3):hover > .ranking-position {
+  color: #1769aa !important;
+  background: #b3d4fc !important;
+  transform: scale(1.10);
+  filter: none;
+}
+/* 1º: fondo blanco a amarillo */
+.ranking-row.top-1,
+.ranking-row.top-1.ranking-row,
+li.ranking-row.top-1 {
+  background: linear-gradient(90deg, #fffbe7 0%, #ffe259 100%) !important;
+  border: 1.5px solid #ffd700 !important;
+}
+/* 2º: fondo blanco a gris */
+.ranking-row.top-2,
+.ranking-row.top-2.ranking-row,
+li.ranking-row.top-2 {
+  background: linear-gradient(90deg, #fffbe7 0%, #d1d1d1 100%) !important;
+  border: 1.5px solid #bcbcbc !important;
+}
+/* 3º: fondo blanco a bronce */
+.ranking-row.top-3,
+.ranking-row.top-3.ranking-row,
+li.ranking-row.top-3 {
+  background: linear-gradient(90deg, #fffbe7 0%, #f1c59a 100%) !important;
+  border: 1.5px solid #b97a56 !important;
+}
+/* Resto: fondo blanco a azul */
+.ranking-row:not(.top-1):not(.top-2):not(.top-3) {
+  background: linear-gradient(90deg, #fffbe7 0%, #e3f0ff 100%) !important;
+  border: 1.5px solid var(--futbolin-color-primary, #b3d4fc) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.07) !important;
+}
+/* Para posiciones >=4, fondo azul blanquecino original */
+/* Resto: fondo blanco a azul (degradado izquierda a derecha) */
+.ranking-row:not(.top-1):not(.top-2):not(.top-3) {
+  background: linear-gradient(90deg, #fffbe7 0%, #e3f0ff 100%) !important;
+  border: 1.5px solid var(--futbolin-color-primary, #b3d4fc) !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.07) !important;
+}
+/* Hover general: solo para top-1/2/3, brillo leve según color */
+/* Hover top-1: resplandor dorado intenso y borde animado */
+/* Hover top-1: más amarillo y "sale" */
+/* Hover top-1: amarillo claro a más oscuro, animación igual que el resto */
+.ranking-row.top-1 > .ranking-position {
+  transition: background 0.18s, box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+}
+/* HOVER UNIFICADO: el contenedor .ranking-row hace zoom y cambia de color */
+.ranking-row {
+  transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+/* Se elimina la animación de zoom/hover en filas de ranking */
+.ranking-row > .ranking-position,
+.ranking-row > .ranking-player-details,
+.ranking-row > .ranking-points {
+
+  align-items: center !important;
+  margin: 0 !important;
+}
+.ranking-row > .ranking-player-details {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  justify-content: flex-start !important;
+}
+.ranking-row > .ranking-position,
+.ranking-row > .ranking-points {
+  flex: 0 0 auto !important;
+}
+.ranking-player-details {
+  text-align: left !important;
+}
+/* OVERRIDE fuerte para tabs pill y back gris (Shadow DOM, purged) */
+/* Tabs pill: sin subrayado nunca */
+.futbolin-full-bleed-wrapper .futbolin-tabs-nav a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  border-radius: 999px !important;
+  background: #f4f5f7 !important;
+  color: var(--futbolin-text-muted) !important;
+  font-weight: 600 !important;
+  padding: 10px 16px !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+  border-left: none !important;
+  font-size: 1em !important;
+  transition: background-color .2s, color .2s, box-shadow .2s !important;
+  text-decoration: none !important;
+}
+.futbolin-full-bleed-wrapper .futbolin-tabs-nav a.active,
+.futbolin-full-bleed-wrapper .futbolin-tabs-nav a:hover {
+  background: var(--futbolin-color-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12) !important;
+  text-decoration: none !important;
+}
+/* Botón volver: siempre azul, nunca subrayado */
+.futbolin-full-bleed-wrapper .futbolin-tabs-nav .back-to-ranking-button {
+  background: var(--futbolin-color-primary) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  border: none !important;
+  font-weight: 600 !important;
+  margin-right: auto !important;
+  padding: 10px 14px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12) !important;
+  text-decoration: none !important;
+}
+.futbolin-full-bleed-wrapper .futbolin-tabs-nav .back-to-ranking-button:hover {
+  background: var(--futbolin-color-primary) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+/* Flat build: perfil.css */
+/* Generado por flatten.js. Fuente original: entries/perfil.css + assets/css/... */
+/* ---- BEGIN ../assets/css/08-player-profile.css ---- */
+/* 8. PERFIL DE JUGADOR
+------------------------------------------------------------------- */
+.futbolin-tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--futbolin-bg-card);
+    margin: 30px 0 20px 0;
+    position: relative;
+    z-index: 1;
+    border-radius: var(--futbolin-border-radius-pill);
+    padding: 8px;
+    border: 1px solid var(--futbolin-border-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+.futbolin-tabs-nav a {
+    padding: 8px 20px; /* Padding reducido */
+    font-size: 0.95em; /* Fuente reducida */
+    text-align: center;
+    text-decoration: none;
+    color: var(--futbolin-text-muted);
+    font-weight: 500;
+    border-radius: var(--futbolin-border-radius-pill);
+    transition: all 0.2s ease-in-out;
+}
+.futbolin-tabs-nav a.active, .futbolin-tabs-nav a:hover {
+    color: #fff;
+    background-color: var(--futbolin-color-primary);
+}
+.futbolin-tabs-nav a {
+    text-decoration: none;
+    color: #555;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    border-left: 3px solid transparent;
+    margin-bottom: 8px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
+}
+.futbolin-tabs-nav a:hover {
+    background-color: #e0e0e1;
+    color: #000;
+}
+.futbolin-tabs-nav a.active {
+    background-color: #fff;
+    border-left-color: #0073aa;
+    color: #000;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+.futbolin-tabs-nav .dashicons {
+    margin-right: 10px;
+    color: #8c8f94;
+    font-size: 20px;
+}
+.futbolin-tabs-nav a.active .dashicons {
+    color: #0073aa;
+}
+/* Botón "Volver a principal" y su icono */
+.back-to-ranking-button {
+    background-color: var(--futbolin-text-muted) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    margin-right: auto;
+}
+.back-to-ranking-button:hover {
+    background-color: var(--futbolin-text-dark) !important;
+}
+.back-to-ranking-button .icon {
+    margin-right: 5px;
+}
+.futbolin-tabs-content {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.futbolin-tab-content { display: none; }
+.futbolin-tab-content.active { display: block; }
+.stats-list li:nth-child(even) { background-color: var(--futbolin-bg-highlight); }
+.puntos-positivos { color: var(--futbolin-color-success); }
+.puntos-negativos { color: var(--futbolin-color-danger); }
+/* En pantallas más pequeñas, ocultamos texto y ajustamos padding */
+@media (max-width: 960px) {
+    .back-to-ranking-button .text {
+        display: none;
+    }
+    .back-to-ranking-button .icon {
+        margin-right: 0;
+    }
+    .futbolin-tabs-nav a {
+        padding: 8px 15px;
+    }
+}
+/* Estilos específicos para la pestaña Perfil (#tab-general) */
+#tab-general .futbolin-card {
+  background: linear-gradient(to top, var(--futbolin-bg-highlight), var(--futbolin-bg-card) 70%);
+  box-shadow: 0 4px 18px 0 rgba(59,130,246,0.07), 0 1.5px 0 0 rgba(59,130,246,0.04), inset 0 2px 4px 0 rgba(0,0,0,0.04);
+  border: 1.5px solid var(--futbolin-color-primary, #b3d4fc);
+  border-radius: 18px;
+  margin-bottom: 32px;
+  padding: 24px 18px 18px 18px;
+  transition: box-shadow .18s, background .18s, border .18s;
+}
+
+/* Refuerza separación entre Competiciones TOTALES y por Tipo */
+#tab-general .futbolin-card + .futbolin-card {
+  margin-top: 48px;
+  border-top: 2.5px solid #e3e7ee;
+  box-shadow: 0 8px 32px 0 rgba(59,130,246,0.10), 0 1.5px 0 0 rgba(59,130,246,0.04), inset 0 2px 4px 0 rgba(0,0,0,0.04);
+}
+#tab-general .futbolin-card h3 {
+  border-color: rgba(59, 130, 246, 0.5);
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.25em;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+#tab-general .stats-list {
+    padding: 0 15px;
+}
+/* Cuadrícula de estadísticas en la pestaña "Perfil" */
+.player-career-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+.stat-box {
+  background-color: var(--futbolin-bg-highlight);
+  border-radius: var(--futbolin-border-radius-main);
+  border: 1px solid var(--futbolin-border-color, rgba(203, 213, 225, 0.7));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  text-align: center;
+}
+
+.stat-box.stat-box-won {
+  border-color: rgba(6, 95, 70, 0.85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 0 2px rgba(4, 120, 87, 0.45);
+}
+
+.stat-box.stat-box-lost {
+  border-color: rgba(239, 68, 68, 0.65);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 0 0 1px rgba(220, 38, 38, 0.25);
+}
+
+.stat-box-won {
+  background: linear-gradient(135deg, #e8fbe7 0%, #b6f0c2 60%, #4caf50 100%) !important;
+  color: #17692a !important;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.08);
+}
+.stat-box-won .stat-value {
+  color: #17692a !important;
+}
+.stat-box-lost {
+  background: linear-gradient(135deg, #fdeaea 0%, #f8bcbc 60%, #e53935 100%) !important;
+  color: #a11a1a !important;
+  box-shadow: 0 2px 8px rgba(229, 57, 53, 0.08);
+}
+.stat-box-lost .stat-value {
+  color: #a11a1a !important;
+}
+.stat-box .stat-value {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: var(--futbolin-text-headings);
+    display: block;
+}
+.stat-box .stat-label {
+    font-size: 0.9em;
+    color: var(--futbolin-text-muted);
+}
+/* Corrige el espaciado en la lista detallada de estadísticas */
+/*
+/*
+ * Ajustes de estilo para los títulos del historial
+ * para que coincidan con la estética del resto de pestañas.
+ * -------------------------------------------------------------------
+ */
+/*
+ * Ajustes de tipografía para unificar los títulos de la pestaña de historial.
+ * -------------------------------------------------------------------
+ */
+#tab-historial h3.history-main-title,
+#tab-historial h4.season-title,
+#tab-historial .tournament-header h5 {
+    font-family: inherit !important; /* Hereda la tipografía principal del sitio */
+    letter-spacing: normal !important; /* Resetea el espaciado entre letras */
+    text-transform: none !important; /* Resetea cualquier transformación a mayúsculas */
+}
+/* Ajustes específicos para el h3 principal */
+#tab-historial h3.history-main-title {
+    font-size: 1.5em !important;
+    font-weight: 600 !important;
+    color: var(--futbolin-text-headings) !important;
+    text-align: center !important;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.5) !important;
+    padding-bottom: 15px !important;
+}
+/* Ajustes específicos para el h4 de temporada */
+#tab-historial h4.season-title {
+    font-size: clamp(11px, 1.5vw, 14px) !important;
+    font-weight: 400 !important;
+    color: #fff !important;
+    background-color: var(--futbolin-color-primary) !important;
+    padding: 8px 15px !important;
+    border-radius: var(--futbolin-border-radius-pill) !important;
+    text-align: right !important;
+    display: inline-block !important;
+}
+/* Ajustes específicos para el h5 de torneo */
+#tab-historial .tournament-header h5 {
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    color: var(--futbolin-text-dark) !important;
+    text-align: center !important;
+}
+/*
+ * Estilos mejorados para la pestaña Historial
+ * -------------------------------------------------------------------
+ */
+/* Contenedor para la lista de partidos de una competición */
+.history-matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre cada partido, igual que en el ranking */
+}
+/* Estilo para la "Fase" del partido, reutilizando el estilo de la posición */
+.history-match-phase {
+    width: auto !important; /* Ancho automático según contenido */
+    padding: 0 10px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-align: center;
+}
+/* Contenedor principal para los detalles del partido (ganador vs perdedor) */
+.history-match-details {
+    display: flex;
+    flex-direction: column; /* Apila ganador y perdedor verticalmente */
+    align-items: center; /* Centra los elementos */
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    gap: 5px;
+    text-align: center;
+}
+.history-match-winner,
+.history-match-loser {
+    font-weight: 600;
+    width: 100%;
+}
+.history-match-winner {
+    color: var(--futbolin-color-success);
+}
+.history-match-loser {
+    color: var(--futbolin-color-danger);
+    opacity: 0.7; /* Hacemos al perdedor un poco menos prominente */
+}
+/* El texto 'vs' que separa a los equipos */
+.history-match-vs {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--futbolin-text-muted);
+}
+/*
+ * Corrección para solapamiento en el historial
+ * -------------------------------------------------------------------
+ */
+/* 1. Permite que el contenedor de los detalles del partido se encoja */
+.history-match-details {
+    min-width: 0; /* MUY IMPORTANTE: Permite que este bloque flex se encoja por debajo del tamaño de su contenido */
+}
+/* 2. Permite que el texto largo de los nombres se divida en varias líneas */
+.history-match-winner,
+.history-match-loser {
+    word-break: break-word; /* Rompe la palabra si es necesario para que no se desborde */
+    white-space: normal;  /* Asegura que el texto pueda pasar a la siguiente línea */
+}
+/*
+ * Mejora para la vista del historial en móviles
+ * -------------------------------------------------------------------
+ */
+@media (max-width: 600px) {
+    .ranking-row.history-match-row {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center;    /* Centra los elementos apilados */
+        gap: 10px;
+    }
+
+    .history-match-phase {
+        width: 100% !important; /* Ocupa todo el ancho */
+        text-align: center;
+    }
+}
+/*
+ * Estilos para el indicador de Victoria / Derrota en el historial
+ * -------------------------------------------------------------------
+ */
+/* Estilo base para la píldora de estado */
+.history-match-phase {
+    font-size: 0.9em !important;
+    font-weight: 700 !important;
+    color: #fff !important; /* Texto blanco para ambas */
+    border: none;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+/* Color para la Victoria */
+.history-match-phase.status-victoria {
+    background-color: var(--futbolin-color-success) !important; /* Verde */
+}
+/* Color para la Derrota */
+.history-match-phase.status-derrota {
+    background-color: var(--futbolin-color-danger) !important; /* Rojo */
+}
+/*
+ * Estilos para la Evolución de ELO en la pestaña Historial
+ * -------------------------------------------------------------------
+ */
+.history-match-row {
+    gap: 20px; /* Aumentamos el espacio para que quepa todo */
+}
+.history-match-elo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: monospace, sans-serif;
+    font-size: 1.1em;
+    margin-left: auto; /* Empuja el bloque a la derecha */
+    flex-shrink: 0; /* Evita que el bloque se encoja */
+    background-color: var(--futbolin-bg-highlight);
+    padding: 6px 12px;
+    border-radius: var(--futbolin-border-radius-pill);
+}
+.history-match-elo .elo-value {
+    color: var(--futbolin-text-dark);
+}
+.history-match-elo .elo-initial {
+    opacity: 0.7;
+}
+.history-match-elo .elo-final {
+    font-weight: 700;
+}
+.history-match-elo .elo-arrow {
+    color: var(--futbolin-text-muted);
+    font-size: 0.9em;
+}
+.history-match-elo .elo-change {
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--futbolin-border-radius-main);
+    color: #fff;
+}
+.elo-change.puntos-positivos {
+    background-color: var(--futbolin-color-success);
+}
+.elo-change.puntos-negativos {
+    background-color: var(--futbolin-color-danger);
+}
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .history-match-elo {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+/*
+ * Estilos para la fila de Puntos por Inactividad en el Historial
+ * (Versión Corregida para Visibilidad)
+ */
+.history-inactivity-row {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--futbolin-bg-highlight) !important;
+    font-style: italic;
+    color: var(--futbolin-text-muted);
+}
+.history-inactivity-row .inactivity-icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+.history-inactivity-row .inactivity-text {
+    flex-grow: 1;
+}
+.history-inactivity-row .elo-change {
+    font-style: normal;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--futbolin-border-radius-main);
+    background-color: var(--futbolin-color-danger); /* Fondo rojo */
+    color: #ffffff !important; /* CORRECCIÓN: Forzamos el color del texto a blanco */
+}
+/* === PERFIL: reforzar visual de posición dentro de filas (sin tocar encabezado) */
+/* === OVERRIDE PERFIL: nav horizontal, alineado a la izquierda (fijo) === */
+.player-profile-container nav.futbolin-tabs-nav{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:wrap !important;
+  justify-content:flex-start !important;
+  align-items:center !important;
+  gap:12px !important;
+  text-align:left !important;
+}
+.player-profile-container nav.futbolin-tabs-nav a{
+  display:inline-flex !important;
+  align-items:center !important;
+  width:auto !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+  flex:0 0 auto !important;
+}
+.player-profile-container nav.futbolin-tabs-nav .back-to-ranking-button{
+  order:-1 !important;
+  margin-right:auto !important;
+}
+/* === Perfil: bloques ELO/Anual (separación específica Glicko) =============== */
+.player-ranking-block{background-color:var(--futbolin-bg-card);border:1px solid var(--futbolin-border-color);border-radius:var(--futbolin-border-radius-main);padding:12px 16px;margin:16px 0 24px 0}
+.player-ranking-block+.player-ranking-block{margin-top:28px}
+.player-ranking-block.annual-block{background-color:var(--futbolin-bg-highlight);border-top:3px solid rgba(59,130,246,.35)}
+#tab-glicko-rankings .player-ranking-block{margin:18px 0 28px 0}
+#tab-glicko-rankings .player-ranking-block+.player-ranking-block{margin-top:56px}
+#tab-glicko-rankings .player-ranking-block.annual-block{border-top-width:4px;padding-top:20px}
+#tab-glicko-rankings .player-ranking-block.annual-block+h5{margin-top:28px}
+/* === /Perfil: bloques ELO/Anual ============================================ */
+
+/* === Pro Gold Gradient — restored (2025-09-16) =============================== */
+.section-title.section-pro {
+  background: linear-gradient(90deg, #B68C2E 0%, #FFD700 45%, #B8860B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+.futbolin-card .section-title.section-pro {
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.player-career-stats-grid.pro-emphasis .stat-box {
+  background:
+    linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+    linear-gradient(135deg, #B68C2E, #FFD776, #B88A00) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 18px rgba(184, 138, 0, .18);
+}
+/* Removed unsupported :has():contains() block (use server-side class) */
+/* Quita borde azul SOLO en el bloque de estadísticas profesionales */
+.futbolin-card:has(.section-title.section-pro) {
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+@supports (-webkit-background-clip: text) and (not ((-webkit-background-clip: text) or (background-clip: text))) {
+  .section-title.section-pro {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(2) {
+
+  border: 1px solid rgba(6, 95, 70, 0.75) !important;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 0 2px rgba(4, 120, 87, 0.35) !important;
+
+}
+
+
+
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) {
+
+  border: 1px solid rgba(182, 140, 46, 0.75) !important;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 0 0 2px rgba(182, 140, 46, 0.35) !important;
+
+}
+
+
+
+.player-career-stats-grid.global-muted > .stat-box:nth-child(2) {
+
+  border: 1px solid rgba(6, 95, 70, 0.75) !important;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 0 2px rgba(4, 120, 87, 0.3) !important;
+
+}
+
+
+
+.player-career-stats-grid.global-muted > .stat-box:nth-child(5) {
+
+  border: 1px solid rgba(182, 140, 46, 0.75) !important;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 0 0 2px rgba(182, 140, 46, 0.3) !important;
+
+}
+
+/* === /Pro Gold Gradient ===================================================== */
+/* ---- END ../assets/css/08-player-profile.css ---- */
+/* ---- BEGIN ../assets/css/19-player-profile-dynamic.css ---- */
+/* 19. ESTILOS DINÁMICOS DE PERFIL DE JUGADOR
+------------------------------------------------------------------- */
+/* Aplicamos los fondos de categoría (las variables ya están en 01-variables.css) */
+.futbolin-main-header.header-gm { background: var(--color-cat-gm); }
+/* Estilo para que el texto sea visible sobre los degradados */
+.futbolin-main-header[class*="header-"] .header-text h1,
+.futbolin-main-header[class*="header-"] .header-text h2 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.futbolin-main-header.header-gm .header-text h1 {
+    color: #3b300f; /* Texto oscuro */
+    /* Contorno negro muy sutil */
+    text-shadow:
+        -1px -1px 0 rgba(0, 0, 0, 0.2),
+        1px -1px 0 rgba(0, 0, 0, 0.2),
+        -1px  1px 0 rgba(0, 0, 0, 0.2),
+        1px  1px 0 rgba(0, 0, 0, 0.2);
+}
+.futbolin-main-header.header-gm .header-text h2 {
+    color: rgba(60, 50, 15, 0.8);
+    text-shadow: none;
+}
+/* Insignia de Gran Maestro (GM) */
+.gm-badge-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 5px;
+}
+.gm-badge {
+    display: inline-block; padding: 4px 10px; background: #111;
+    color: #ffd700; font-weight: bold; border-radius: 5px;
+    font-size: 1.2rem; border: 2px solid #ffd700;
+    text-shadow: 0 0 5px #ffd700; margin-right: -20px;
+    transform: rotate(-10deg);
+}
+/* Ribete dorado animado para GM (solo en Dobles) */
+.futbolin-main-header.header-gm {
+    position: relative;
+    overflow: hidden;
+}
+.futbolin-main-header.header-gm::before {
+    content: ''; position: absolute; top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(transparent, rgba(255, 215, 0, 0.4), transparent 30%);
+    animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+/* Etiqueta de categoría bajo la bandera */
+.player-main-category {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 6px 12px;
+    border-radius: var(--futbolin-border-radius-pill);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* === Historial: sumatorio y búsqueda === */
+.history-summary-search{
+  display:flex; flex-wrap:wrap; align-items:flex-end; gap:1rem;
+  margin: .5rem 0 1rem 0; padding:.75rem; background:#f8f9fb; border:1px solid #e3e7ee; border-radius:12px;
+}
+.history-summary-cards{ display:flex; gap:.75rem; flex:1 1 auto; flex-wrap:wrap; }
+.history-summary-cards .hs-item{ background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:.5rem .75rem; min-width:110px; display:flex; flex-direction:column; align-items:flex-start; }
+.history-summary-cards .hs-item span{ font-size:.8rem; color:#6b7280; }
+.history-summary-cards .hs-item strong{ font-size:1.25rem; line-height:1.3; }
+.history-summary-cards .hs-won strong{ color:#0a7a2c; }
+.history-summary-cards .hs-lost strong{ color:#b00020; }
+.history-search-box{ flex:0 0 260px; display:flex; gap:.5rem; justify-content:flex-end; align-items:center; }
+.history-search-box .history-search-input{ width:100%; border:1px solid #cbd5e1; border-radius:10px; padding:.5rem .75rem; font-size: .95rem; }
+@media (max-width: 720px){
+  .history-search-box{ flex-basis:100%; }
+}
+/* v16 minimal: separador vertical + flag Filtro activo sin reordenar layout */
+.history-summary-search{ position: relative; }
+.history-v-sep{ width:1px; background:#e5e7eb; display:none; align-self:stretch; }
+.history-summary-search.filter-on .history-v-sep{ display:block; }
+.filter-active-flag{
+  position:absolute; top:8px; right:12px;
+  font-size:.8rem; font-weight:700; color:#374151; letter-spacing:.3px;
+  display:none;
+}
+.history-summary-search.filter-on .filter-active-flag{ display:block; }
+/* v17: separador más visible + flag inline dentro del H2H */
+.history-v-sep{
+  width:3px !important;
+  background:#6b7280 !important; /* más oscuro */
+  border-radius:2px;
+  display:none; align-self:flex-start;
+}
+.history-summary-search.filter-on .history-v-sep{ display:block; }
+/* ===============================================================
+   Hitos UI — badges dorados/plata/bronce + grid
+   Fecha: 2025-09-16
+   --------------------------------------------------------------- */
+.futbolin-card .trophy-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+.futbolin-card .trophy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(184,138,0,.35);
+  background: linear-gradient(180deg, #fff7db, #ffeaa0);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 2px 6px rgba(0,0,0,.06);
+  line-height: 1;
+}
+.futbolin-card .trophy .star, .futbolin-card .trophy .crown {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  flex: 0 0 16px;
+}
+.futbolin-card .trophy .trophy-year {
+  font-weight: 700;
+  font-size: .92rem;
+}
+/* Doble estrella (dobles) */
+/* Tonos por tipo */
+.futbolin-card .trophy-wall.tone-gold .trophy {
+  border-color: rgba(184,138,0,.45);
+  background: linear-gradient(180deg, #fff7db, #ffeaa0);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65), 0 3px 10px rgba(184,138,0,.18);
+}
+.futbolin-card .trophy-wall.tone-silver .trophy {
+  border-color: rgba(128,128,128,.35);
+  background: linear-gradient(180deg, #f7f7f8, #e7e9ee);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 2px 8px rgba(90,100,120,.12);
+}
+.futbolin-card .trophy-wall.tone-bronze .trophy {
+  border-color: rgba(170,110,60,.35);
+  background: linear-gradient(180deg, #ffe7cf, #f1c59a);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65), 0 2px 8px rgba(160,90,30,.14);
+}
+/* =============================================================== */
+/* ---- END ../assets/css/19-player-profile-dynamic.css ---- */
+/* ---- BEGIN ../assets/css/15-futbolin-h2h.css ---- */
+/**
+ * Archivo: assets/css/15-futbolin-h2h.css
+ * Descripción: Estilos para la comparativa Head-to-Head (H2H).
+ */
+.h2h-results-area {
+  background: var(--futbolin-bg, #111);
+  color: var(--futbolin-text, #fff);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: inherit;
+}
+.h2h-results-area.dark-theme {
+  background: #1a1a1a;
+  color: #f2f2f2;
+}
+.h2h-main-scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.h2h-main-scoreboard .player-card {
+  flex: 1;
+  text-align: center;
+}
+.h2h-main-scoreboard .player-name {
+  font-size: 1.2em;
+  margin-top: 8px;
+  font-weight: 600;
+}
+.h2h-main-scoreboard .score-center {
+  flex: 1;
+  text-align: center;
+}
+.score-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.score-number.player-1-color {
+  color: #4cafef;
+}
+.score-number.player-2-color {
+  color: #e74c3c;
+}
+.vs-text {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+.h2h-stats-comparison {
+  margin-bottom: 25px;
+}
+.h2h-stats-comparison .stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.h2h-stats-comparison .stat-row.highlighted {
+  font-weight: bold;
+  background: rgba(255,255,255,0.05);
+}
+.h2h-stats-comparison .stat-label {
+  flex: 1;
+  text-align: center;
+  opacity: 0.8;
+}
+.h2h-match-breakdown {
+  margin-top: 25px;
+}
+.h2h-breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.h2h-breakdown-table th,
+.h2h-breakdown-table td {
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+.h2h-breakdown-table th {
+  background: rgba(255,255,255,0.08);
+  font-weight: 600;
+}
+.h2h-breakdown-table tr.winner-p1 {
+  background: rgba(76, 175, 239, 0.1);
+}
+.h2h-breakdown-table tr.winner-p2 {
+  background: rgba(231, 76, 60, 0.1);
+}
+@media (max-width: 768px) {
+  .h2h-main-scoreboard {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .h2h-stats-comparison .stat-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* ---- END ../assets/css/15-futbolin-h2h.css ---- */
+/* ---- BEGIN ../assets/css/25-futbolin-torneos.css ---- */
+/* Resumen y buscador */
+#tab-torneos .torneos-summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+#tab-torneos .torneos-summary-context,
+#tab-torneos .torneos-filter-context {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--futbolin-text-muted, #4b5563);
+  line-height: 1.5;
+}
+
+#tab-torneos .torneos-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+#tab-torneos .torneos-summary-cards .ts-item {
+  background: linear-gradient(180deg, rgba(248,250,252,0.95) 0%, rgba(219,234,254,0.7) 100%);
+  border: 1px solid rgba(203,213,225,0.7);
+  border-radius: var(--futbolin-border-radius-main, 16px);
+  padding: 16px 18px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#tab-torneos .torneos-summary-cards .ts-item span {
+  font-size: 0.82em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--futbolin-text-muted, #4b5563);
+}
+
+#tab-torneos .torneos-summary-cards .ts-item strong {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--futbolin-text-headings, #0f172a);
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-won {
+  background: linear-gradient(135deg, #fffbe7 0%, #ffe259 45%, #b68c2e 100%);
+  border: 1px solid rgba(230, 185, 79, 0.8);
+  box-shadow: 0 6px 16px rgba(182, 140, 46, 0.18);
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-won strong {
+  color: #b68c2e;
+}
+
+#tab-torneos .torneos-summary-cards .ts-item.ts-rate strong {
+  font-size: 1.6em;
+  color: var(--futbolin-color-primary, #2563eb);
+}
+
+#tab-torneos .torneos-filter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+#tab-torneos .torneos-filter-box--participation {
+  margin: 24px 0 12px 0;
+}
+
+#tab-torneos .torneos-filter-box--distribution {
+  margin-top: 4px;
+}
+
+#tab-torneos .torneos-filter-input {
+  width: 100%;
+  max-width: 320px;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(203,213,225,0.9);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 0.95em;
+  color: var(--futbolin-text-base, #1f2937);
+  box-shadow: inset 0 1px 2px rgba(15,23,42,0.08);
+}
+
+#tab-torneos .torneos-filter-input:focus {
+  outline: none;
+  border-color: var(--futbolin-color-primary, #2563eb);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+#tab-torneos .torneos-search-empty {
+  margin: -4px 0 0 0;
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--futbolin-text-muted, #6b7280);
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #tab-torneos .torneos-summary-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  #tab-torneos .torneos-summary-cards .ts-item {
+    padding: 14px 16px;
+  }
+  #tab-torneos .torneos-filter-input {
+    max-width: 100%;
+  }
+}
+
+#tab-torneos .torneos-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--futbolin-bg-card, #ffffff) 0%, rgba(248,250,252,0.92) 100%);
+  border: 1px solid var(--futbolin-border-color, #dce0e8);
+  border-radius: var(--futbolin-border-radius-main, 16px);
+  box-shadow: 0 14px 28px rgba(15,23,42,0.08);
+  padding: 24px;
+}
+
+#tab-torneos .torneos-card + .torneos-card {
+  margin-top: 26px;
+}
+
+#tab-torneos .torneos-card .futbolin-card-header h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.45em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--futbolin-text-headings, #101828);
+  border-bottom: 2px solid rgba(59,130,246,0.45);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+
+#tab-torneos .torneos-card .futbolin-card-header h3::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--futbolin-color-primary,#2563eb) 0%, rgba(37,99,235,0) 100%);
+}
+
+#tab-torneos .torneos-distribution-groups,
+#tab-torneos .torneos-participation-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#tab-torneos .torneos-distribution-group,
+#tab-torneos .torneos-participation-group {
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(249,250,251,0.55) 100%);
+  border: 1px solid rgba(226,232,240,0.75);
+  border-radius: var(--futbolin-border-radius-main, 16px);
+  padding: 18px 20px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+#tab-torneos .torneos-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(203,213,225,0.7);
+}
+
+#tab-torneos .torneos-group-title {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--futbolin-text-headings, #0f172a);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#tab-torneos .torneos-group-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.12);
+  color: var(--futbolin-color-primary,#2563eb);
+  font-size: 0.82em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#tab-torneos .torneos-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#tab-torneos .torneos-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(226,232,240,0.7);
+}
+
+#tab-torneos .torneos-table thead th {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78em;
+  font-weight: 700;
+  padding: 12px 14px;
+  color: var(--futbolin-text-muted, #4b5563);
+  background: linear-gradient(90deg, rgba(241,245,249,0.9) 0%, rgba(219,234,254,0.65) 100%);
+  border-bottom: 1px solid rgba(203,213,225,0.6);
+}
+
+#tab-torneos .torneos-table tbody td {
+  padding: 12px 14px;
+  font-size: 0.92em;
+  color: var(--futbolin-text-base, #1f2937);
+  border-bottom: 1px solid rgba(237,242,247,0.9);
+}
+
+#tab-torneos .torneos-table tbody tr:nth-child(even) {
+  background: rgba(248,250,252,0.85);
+}
+
+#tab-torneos .torneos-table tbody tr:hover {
+  background: rgba(59,130,246,0.08);
+  transition: background-color 0.2s ease;
+}
+
+#tab-torneos .torneos-table td:last-child,
+#tab-torneos .torneos-table th:last-child {
+  text-align: center;
+}
+
+#tab-torneos .torneos-table td:last-child {
+  font-weight: 700;
+  color: var(--futbolin-color-primary,#2563eb);
+}
+
+#tab-torneos .torneos-table td:nth-child(3) {
+  font-weight: 600;
+  color: var(--futbolin-text-headings, #0f172a);
+}
+
+#tab-torneos .torneos-table td:nth-child(1) {
+  font-weight: 600;
+}
+
+#tab-torneos .torneos-table .pos-gold {
+  color: #b45309;
+}
+
+#tab-torneos .torneos-table .pos-silver {
+  color: #6b7280;
+}
+
+#tab-torneos .torneos-table .pos-bronze {
+  color: #92400e;
+}
+
+@media (max-width: 1024px) {
+  #tab-torneos .torneos-card {
+    padding: 20px;
+  }
+  #tab-torneos .torneos-table {
+    min-width: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  #tab-torneos .torneos-card {
+    padding: 18px;
+    box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+  }
+  #tab-torneos .torneos-group-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #tab-torneos .torneos-group-meta {
+    margin-left: 0;
+  }
+  #tab-torneos .torneos-table {
+    min-width: 360px;
+  }
+}
+/* ---- END ../assets/css/25-futbolin-torneos.css ---- */
+/* CLASIFICACIÓN: filas y posiciones con bordes redondeados */
+.ranking-row,
+.ranking-row > .ranking-position,
+.ranking-row:not(.top-1):not(.top-2):not(.top-3) > .ranking-position {
+  border-radius: 12px !important;
+}
+
+/* SOLO PARTIDOS DEL HISTORIAL: sin bordes redondeados */
+#tab-historial .ranking-row.history-match-row,
+#tab-historial .ranking-row.history-match-row > .ranking-position {
+  border-radius: 0 !important;
+}
+
+/* === ULTRA-OVERRIDE: Fuerza círculo dorado para el 1º puesto, pase lo que pase === */
+.ranking-row.top-1 > .ranking-position,
+.ranking-row.top-1.ranking-row > .ranking-position,
+li.ranking-row.top-1 > .ranking-position {
+  background: linear-gradient(135deg, #b68c2e 0%, #ffe259 45%, #ffa751 100%) !important;
+  color: #fff !important;
+  border-radius: 50% !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  width: 38px !important;
+  height: 38px !important;
+  border: 2px solid #ffd700 !important;
+  box-shadow: 0 2px 8px rgba(184, 138, 0, 0.18) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700 !important;
+  font-size: 1.1em !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  /* Anula cualquier color: transparent heredado */
+  .rf-force-visible-top3 .ranking-row.top-1 > .ranking-position,
+  .rf-force-visible-top3 .ranking-row.top-2 > .ranking-position,
+  .rf-force-visible-top3 .ranking-row.top-3 > .ranking-position,
+  .rf-force-visible-top3 .ranking-row.top-1 > .ranking-position *,
+  .rf-force-visible-top3 .ranking-row.top-2 > .ranking-position *,
+  .rf-force-visible-top3 .ranking-row.top-3 > .ranking-position * {
+    color:#fff !important;
+    -webkit-text-fill-color:#fff !important;
+    visibility:visible !important;
+  }
+
+  /* Fallback global (si no se añade clase al contenedor) */
+  .ranking-row.top-1 > .ranking-position,
+  .ranking-row.top-2 > .ranking-position,
+  .ranking-row.top-3 > .ranking-position,
+  .ranking-row.top-1 > .ranking-position *,
+  .ranking-row.top-2 > .ranking-position *,
+  .ranking-row.top-3 > .ranking-position * {
+    color:#fff !important;
+    -webkit-text-fill-color:#fff !important;
+    visibility:visible !important;
+  }
+  -webkit-text-fill-color: #fff !important;
+  text-emphasis-color: #fff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+
+
+
+
+.torneos-summary-cards .ts-item.ts-lost{background:linear-gradient(135deg,#ffe2e5 0%,#f8b4b4 45%,#dc2626 100%)!important;border:1px solid rgba(220,38,38,.55)!important;box-shadow:0 6px 16px rgba(220,38,38,.18)!important;} .torneos-summary-cards .ts-item.ts-lost strong{color:#dc2626!important;}
+
+
+.section-subtitle{margin:16px 0 12px 0;font-size:1.2em;font-weight:600;color:var(--futbolin-text-headings);border-bottom:1px solid rgba(59,130,246,.25);padding-bottom:6px;}
+
+.ranking-annual-banner{margin:24px 0 0 0;padding:14px 18px;background:linear-gradient(90deg,rgba(59,130,246,0.08),rgba(59,130,246,0));border:1px solid rgba(59,130,246,0.25);border-radius:var(--futbolin-border-radius-main,12px);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;color:var(--futbolin-text-headings);}
+
+/* === PODIUM OVERRIDE A (fila completa oro/plata/bronce + badge intenso) === */
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3 {position:relative;background:linear-gradient(90deg,var(--rf-podium-base-start,#fffdf5) 0%,var(--rf-podium-base-mid,#ffffff) 35%,var(--rf-podium-base-end,#ffffff) 100%)!important;box-shadow:0 1px 4px rgba(0,0,0,.04),0 2px 10px -2px rgba(0,0,0,.05)!important;overflow:hidden;border:1px solid transparent!important;}
+/* Bordes metalizados finos para contorno fila */
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1 {border-color:#e0b437!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2 {border-color:#b5bec4!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3 {border-color:#d38a49!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1::before,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2::before,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3::before {content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(110deg,rgba(255,215,0,.18),rgba(255,255,255,0) 40%);pointer-events:none;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1 {--rf-podium-base-start:#ffe8a3;--rf-podium-base-mid:#ffd166;--rf-podium-base-end:#fff4cf;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2 {--rf-podium-base-start:#dde3e8;--rf-podium-base-mid:#c2ccd3;--rf-podium-base-end:#eef2f5;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3 {--rf-podium-base-start:#ffd9b3;--rf-podium-base-mid:#ffb073;--rf-podium-base-end:#ffe7cf;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1 > .ranking-position,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2 > .ranking-position,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3 > .ranking-position {position:relative;z-index:1;color:#222!important;-webkit-text-fill-color:#222!important;font-weight:700;border:2px solid transparent!important;box-shadow:0 2px 6px -1px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.18)!important;}
+/* Gradientes + borde metalizado individual */
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1 > .ranking-position {background:linear-gradient(135deg,#cf9d1e 0%,#ffcc3d 45%,#e5a300 100%)!important;border-color:#b17e00!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2 > .ranking-position {background:linear-gradient(135deg,#b8c2c8 0%,#dde5ea 45%,#8e989f 100%)!important;border-color:#7c868d!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3 > .ranking-position {background:linear-gradient(135deg,#cf8440 0%,#e79a55 40%,#b65f18 100%)!important;border-color:#a95317!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1:hover,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2:hover,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3:hover {transform:scale(1.02);box-shadow:0 4px 22px -4px rgba(0,0,0,.20),0 6px 28px -6px rgba(0,0,0,.16)!important;background:linear-gradient(90deg,var(--rf-podium-base-start) 0%,var(--rf-podium-base-mid) 50%,var(--rf-podium-base-end) 100%)!important;filter:none!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1:hover > .ranking-position,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2:hover > .ranking-position,
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3:hover > .ranking-position {transform:scale(1.08);box-shadow:0 4px 18px -4px rgba(0,0,0,.30)!important; outline:none!important;}
+/* Mantener color exacto de fondo en hover (sin overlays azules) */
+.player-ranking-block .stats-list > li.ranking-row.has-pos-1:hover > .ranking-position {background:linear-gradient(135deg,#cf9d1e 0%,#ffcc3d 45%,#e5a300 100%)!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-2:hover > .ranking-position {background:linear-gradient(135deg,#b8c2c8 0%,#dde5ea 45%,#8e989f 100%)!important;}
+.player-ranking-block .stats-list > li.ranking-row.has-pos-3:hover > .ranking-position {background:linear-gradient(135deg,#cf8440 0%,#e79a55 40%,#b65f18 100%)!important;}
+/* === FIN PODIUM OVERRIDE A === */

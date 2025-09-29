@@ -1,0 +1,11 @@
+{
+  "_comment": "Fallback local para años como nº1/2/3 por temporada cuando el endpoint per-season devuelve vacío. Rellena con jugadorId reales.",
+  "i": {
+    "6": [101, 202, 303],
+    "7": [101, 404, 505]
+  },
+  "d": {
+    "6": [101, 202, 303],
+    "7": [101, 999, 888]
+  }
+}

@@ -1,0 +1,159 @@
+/* 19. ESTILOS DINÃMICOS DE PERFIL DE JUGADOR
+------------------------------------------------------------------- */
+
+/* Aplicamos los fondos de categorÃ­a (las variables ya estÃ¡n en 01-variables.css) */
+.futbolin-main-header.header-gm { background: var(--color-cat-gm); }
+.futbolin-main-header.header-elite { background: var(--color-cat-elite); }
+.futbolin-main-header.header-master { background: var(--color-cat-master); }
+.futbolin-main-header.header-amateur,
+.futbolin-main-header.header-amater { background: var(--color-cat-amateur); }
+.futbolin-main-header.header-rookie { background: var(--color-cat-rookie); }
+
+/* Estilo para que el texto sea visible sobre los degradados */
+.futbolin-main-header[class*="header-"] .header-text h1,
+.futbolin-main-header[class*="header-"] .header-text h2 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.futbolin-main-header.header-gm .header-text h1,
+.futbolin-main-header.header-elite .header-text h1 {
+    color: #3b300f; /* Texto oscuro */
+    /* Contorno negro muy sutil */
+    text-shadow:
+        -1px -1px 0 rgba(0, 0, 0, 0.2),
+        1px -1px 0 rgba(0, 0, 0, 0.2),
+        -1px  1px 0 rgba(0, 0, 0, 0.2),
+        1px  1px 0 rgba(0, 0, 0, 0.2);
+}
+.futbolin-main-header.header-gm .header-text h2,
+.futbolin-main-header.header-elite .header-text h2 {
+    color: rgba(60, 50, 15, 0.8);
+    text-shadow: none;
+}
+/* Insignia de Gran Maestro (GM) */
+.gm-badge-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 5px;
+}
+.gm-badge {
+    display: inline-block; padding: 4px 10px; background: #111;
+    color: #ffd700; font-weight: bold; border-radius: 5px;
+    font-size: 1.2rem; border: 2px solid #ffd700;
+    text-shadow: 0 0 5px #ffd700; margin-right: -20px;
+    transform: rotate(-10deg);
+}
+
+/* Ribete dorado animado para GM (solo en Dobles) */
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+
+/* Etiqueta de categorÃ­a bajo la bandera */
+.player-main-category {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 6px 12px;
+    border-radius: var(--futbolin-border-radius-pill);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* === Historial: sumatorio y bÃºsqueda === */
+.history-summary-search{
+  display:flex; flex-wrap:wrap; align-items:flex-end; gap:1rem;
+  margin: .5rem 0 1rem 0; padding:.75rem; background:#f8f9fb; border:1px solid #e3e7ee; border-radius:12px;
+}
+.history-summary-cards{ display:flex; gap:.75rem; flex:1 1 auto; flex-wrap:wrap; }
+.history-summary-cards .hs-item{ background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:.5rem .75rem; min-width:110px; display:flex; flex-direction:column; align-items:flex-start; }
+.history-summary-cards .hs-item span{ font-size:.8rem; color:#6b7280; }
+.history-summary-cards .hs-item strong{ font-size:1.25rem; line-height:1.3; }
+.history-summary-cards .hs-won strong{ color:#0a7a2c; }
+.history-summary-cards .hs-lost strong{ color:#b00020; }
+
+.history-search-box{ flex:0 0 260px; display:flex; gap:.5rem; justify-content:flex-end; align-items:center; }
+.history-search-box .history-search-input{ width:100%; border:1px solid #cbd5e1; border-radius:10px; padding:.5rem .75rem; font-size: .95rem; }
+@media (max-width: 720px){
+  .history-search-box{ flex-basis:100%; }
+}
+
+
+/* v16 minimal: separador vertical + flag Filtro activo sin reordenar layout */
+.history-summary-search{ position: relative; }
+.history-v-sep{ width:1px; background:#e5e7eb; display:none; align-self:stretch; }
+.history-summary-search.filter-on .history-v-sep{ display:block; }
+.filter-active-flag{
+  position:absolute; top:8px; right:12px;
+  font-size:.8rem; font-weight:700; color:#374151; letter-spacing:.3px;
+  display:none;
+}
+.history-summary-search.filter-on .filter-active-flag{ display:block; }
+
+
+/* v17: separador mÃ¡s visible + flag inline dentro del H2H */
+.history-v-sep{
+  width:3px !important;
+  background:#6b7280 !important; /* mÃ¡s oscuro */
+  border-radius:2px;
+  display:none; align-self:flex-start;
+}
+.history-summary-search.filter-on .history-v-sep{ display:block; }
+.filter-active-flag-inline{
+  font-weight:700; font-size:.85rem; color:#374151;
+  margin: 0 0 4px 0;
+}
+
+/* ===============================================================
+   Hitos UI â€” badges dorados/plata/bronce + grid
+   Fecha: 2025-09-16
+   --------------------------------------------------------------- */
+.futbolin-card .trophy-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+.futbolin-card .trophy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(184,138,0,.35);
+  background: linear-gradient(180deg, #fff7db, #ffeaa0);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 2px 6px rgba(0,0,0,.06);
+  line-height: 1;
+}
+.futbolin-card .trophy .star, .futbolin-card .trophy .crown {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  flex: 0 0 16px;
+}
+.futbolin-card .trophy .trophy-year {
+  font-weight: 700;
+  font-size: .92rem;
+}
+/* Doble estrella (dobles) */
+/* Tonos por tipo */
+.futbolin-card .trophy-wall.tone-gold .trophy {
+  border-color: rgba(184,138,0,.45);
+  background: linear-gradient(180deg, #fff7db, #ffeaa0);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65), 0 3px 10px rgba(184,138,0,.18);
+}
+.futbolin-card .trophy-wall.tone-silver .trophy {
+  border-color: rgba(128,128,128,.35);
+  background: linear-gradient(180deg, #f7f7f8, #e7e9ee);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 2px 8px rgba(90,100,120,.12);
+}
+.futbolin-card .trophy-wall.tone-bronze .trophy {
+  border-color: rgba(170,110,60,.35);
+  background: linear-gradient(180deg, #ffe7cf, #f1c59a);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.65), 0 2px 8px rgba(160,90,30,.14);
+}
+/* =============================================================== */
+

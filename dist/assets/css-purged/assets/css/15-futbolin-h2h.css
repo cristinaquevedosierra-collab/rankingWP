@@ -1,0 +1,128 @@
+/**
+ * Archivo: assets/css/15-futbolin-h2h.css
+ * Descripción: Estilos para la comparativa Head-to-Head (H2H).
+ */
+
+.h2h-results-area {
+  background: var(--futbolin-bg, #111);
+  color: var(--futbolin-text, #fff);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: inherit;
+}
+
+.h2h-results-area.dark-theme {
+  background: #1a1a1a;
+  color: #f2f2f2;
+}
+
+.h2h-main-scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.h2h-main-scoreboard .player-card {
+  flex: 1;
+  text-align: center;
+}
+
+.h2h-main-scoreboard .player-name {
+  font-size: 1.2em;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.h2h-main-scoreboard .score-center {
+  flex: 1;
+  text-align: center;
+}
+
+.score-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.score-number.player-1-color {
+  color: #4cafef;
+}
+
+.score-number.player-2-color {
+  color: #e74c3c;
+}
+
+.vs-text {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
+.h2h-stats-comparison {
+  margin-bottom: 25px;
+}
+
+.h2h-stats-comparison .stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.h2h-stats-comparison .stat-row.highlighted {
+  font-weight: bold;
+  background: rgba(255,255,255,0.05);
+}
+
+.h2h-stats-comparison .stat-label {
+  flex: 1;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.h2h-match-breakdown {
+  margin-top: 25px;
+}
+
+.h2h-breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.h2h-breakdown-table th,
+.h2h-breakdown-table td {
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.h2h-breakdown-table th {
+  background: rgba(255,255,255,0.08);
+  font-weight: 600;
+}
+
+.h2h-breakdown-table tr.winner-p1 {
+  background: rgba(76, 175, 239, 0.1);
+}
+
+.h2h-breakdown-table tr.winner-p2 {
+  background: rgba(231, 76, 60, 0.1);
+}
+
+@media (max-width: 768px) {
+  .h2h-main-scoreboard {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .h2h-stats-comparison .stat-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}

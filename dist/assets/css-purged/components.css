@@ -1,0 +1,410 @@
+/* Flat build: components.css */
+/* Generado por flatten.js. Fuente original: entries/components.css + assets/css/... */
+/* ---- BEGIN ../assets/css/05-sidebar-forms.css ---- */
+/* 5. SIDEBAR Y FORMULARIOS
+------------------------------------------------------------------- */
+.futbolin-sidebar .futbolin-card {
+    background-color: var(--futbolin-bg-card-hover);
+    border: 1px solid var(--futbolin-border-color);
+    padding: 25px;
+    border-radius: var(--futbolin-border-radius-main);
+}
+.futbolin-sidebar-block { 
+    margin-bottom: 30px; 
+}
+.futbolin-sidebar-block h3 {
+    color: var(--futbolin-text-headings);
+    border-bottom: 1px solid var(--futbolin-border-color);
+    padding-bottom: 10px;
+    margin: 0 0 15px 0;
+    font-size: 1.2em;
+}
+.futbolin-search-form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: stretch;
+}
+.futbolin-search-form .search-wrapper {
+    flex-grow: 1;
+    position: relative;
+}
+.futbolin-search-form input[type="text"] {
+    width: 100%;
+    height: 60%; /* Para que ocupe la misma altura que el botón */
+    border: 1px solid var(--futbolin-border-color);
+    background: var(--futbolin-bg-input);
+    color: var(--futbolin-text-dark);
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+.futbolin-search-form input[type="text"]:focus {
+    outline: none;
+    border-color: var(--futbolin-color-primary);
+    box-shadow: 0 0 0 3px var(--futbolin-bg-highlight);
+}
+.futbolin-search-form button {
+    height: 50%;
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid var(--futbolin-color-primary);
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+.futbolin-search-form button:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+/* ---- END ../assets/css/05-sidebar-forms.css ---- */
+/* ---- BEGIN ../assets/css/06-sidebar-menu.css ---- */
+/* 6. MENÚ LATERAL (ESTILO FIJO)
+------------------------------------------------------------------- */
+.futbolin-sidebar-nav { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre la sección Ranking y Estadísticas */
+}
+/* Estilo para los títulos de sección (antes eran .accordion-trigger) */
+.futbolin-sidebar-nav .sidebar-title {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600; /* Letra más gruesa */
+    font-size: 1.1em; /* Un poco más grande */
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent; /* Borde transparente por defecto */
+}
+/* Color para el título INACTIVO (Azul muy claro, como pediste) */
+.futbolin-sidebar-nav .sidebar-title {
+    background-color: rgba(59, 130, 246, 0.08); /* Azul primario al 8% de opacidad */
+    color: var(--futbolin-text-dark);
+}
+/* Color para el título ACTIVO */
+.futbolin-sidebar-nav .sidebar-title.active {
+    background-color: var(--futbolin-color-primary); 
+    color: #fff;
+    border-color: var(--futbolin-color-primary);
+}
+/* El submenú ahora es siempre visible */
+.submenu {
+    list-style: none; 
+    padding-left: 15px; 
+    margin-top: 8px;
+    overflow: visible;
+    max-height: none; /* Eliminamos la limitación de altura */
+}
+.submenu li a {
+    display: block; 
+    padding: 8px 10px; 
+    font-size: 0.9em;
+    color: var(--futbolin-text-muted); 
+    text-decoration: none; 
+    border-radius: 4px;
+}
+.submenu li:hover a, 
+.submenu li.active-submenu-item a { 
+    background-color: var(--futbolin-bg-highlight); 
+    color: var(--futbolin-color-primary); 
+}
+.submenu li.active-submenu-item a { 
+    font-weight: 600; 
+}
+/* ---- END ../assets/css/06-sidebar-menu.css ---- */
+/* ---- BEGIN ../assets/css/11-ajax-search.css ---- */
+/* 11. BÚSQUEDA CON SUGERENCIAS (AJAX)
+------------------------------------------------------------------- */
+.search-wrapper {
+    position: relative;
+}
+.search-results-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    border-top: none;
+    border-radius: 0 0 var(--futbolin-border-radius-main) var(--futbolin-border-radius-main);
+    z-index: 1000;
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.search-results-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.search-results-dropdown ul li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--futbolin-text-dark);
+    transition: all 0.2s ease;
+}
+.search-results-dropdown ul li a:hover {
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+}
+.search-results-dropdown .no-results {
+    padding: 12px 15px;
+    color: var(--futbolin-text-muted);
+}
+/* Auto applied when submit removed */
+
+form[data-rf-search] { display: flex; gap: .5rem; }
+
+form[data-rf-search] input[type="search"],
+form[data-rf-search] input[type="text"] { flex: 1 1 auto; width: 100%; }
+.search-wrapper .rf-search-hint{display:block;margin:0 0 4px 0;font-size:12px;opacity:.75;line-height:1.2}
+/* ---- END ../assets/css/11-ajax-search.css ---- */
+/* ---- BEGIN ../assets/css/14-tab-content.css ---- */
+/* 14. ESTILOS UNIFICADOS PARA CONTENIDO DE PESTAÑAS
+------------------------------------------------------------------- */
+/* Le da a cada pestaña un fondo de "tarjeta" consistente */
+.futbolin-tab-content > .futbolin-card {
+    background-color: var(--futbolin-bg-card-hover);
+    border: 1px solid var(--futbolin-border-color);
+    padding: 25px;
+    border-radius: var(--futbolin-border-radius-main);
+}
+/* Estilo general para todas las listas de estadísticas dentro del perfil */
+.futbolin-tab-content .stats-list {
+    list-style: none; /* Quita los puntos de las listas */
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+}
+.futbolin-tab-content .stats-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--futbolin-border-color);
+}
+.futbolin-tab-content .stats-list li:last-child {
+    border-bottom: none;
+}
+.futbolin-tab-content .stats-list li strong {
+    color: var(--futbolin-text-dark);
+    font-weight: 600;
+}
+.futbolin-tab-content .stats-list .value {
+    font-weight: 500;
+    color: var(--futbolin-text-muted);
+    text-align: right;
+}
+/* Contenedor de las "píldoras" de estadísticas en la pestaña Perfil */
+/* TAB VISIBILITY */
+.futbolin-tab-content{display:none}
+.futbolin-tab-content.active{display:block}
+/* ---- END ../assets/css/14-tab-content.css ---- */
+/* ---- BEGIN ../assets/css/17-loader.css ---- */
+/**
+ * 17-loader.css — Overlay + Spinner + Texto con tres puntos animados
+ */
+/* Overlay pantalla completa */
+#futbolin-loader-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.85);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .3s ease-in-out;
+  opacity: 1;
+}
+#futbolin-loader-overlay.futbolin-loader-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Contenido centrado */
+.futbolin-loader-content { text-align: center; }
+/* Spinner por puntos alrededor (si lo usas) */
+@keyframes spinDots { to { transform: rotate(360deg); } }
+/* Tamaño del Lottie (ajústalo si quieres) */
+#futbolin-loader-overlay .lottie-2x {
+  width: 640px;
+  height: 640px;
+  display: block;
+  margin: 0 auto;
+}
+/* Texto grande y en negrita */
+#futbolin-loader-overlay .futbolin-loader-text {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: clamp(28px, 4.5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: .02em;
+  color: #0f172a;
+}
+/* Tres puntos animados (sin desplazar el texto) */
+#futbolin-loader-overlay .dots {
+  display: inline-flex;
+  align-items: center;
+  gap: .22em;
+  margin-left: .18em;
+}
+#futbolin-loader-overlay .dots i {
+  display: inline-block;
+  width: .3em;
+  height: .3em;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .25;
+  transform: scale(1);
+  transform-origin: center;
+  animation: dotPulse 1.2s ease-in-out infinite;
+  will-change: opacity, transform;
+  vertical-align: middle; /* evita “bailes” con la línea de base */
+}
+#futbolin-loader-overlay .dots i:nth-child(2) { animation-delay: .15s; }
+#futbolin-loader-overlay .dots i:nth-child(3) { animation-delay: .30s; }
+@keyframes dotPulse {
+  0%, 100% { opacity: .25; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.6); }
+}
+/* Accesibilidad: menos movimiento si el usuario lo pide */
+@media (prefers-reduced-motion: reduce) {
+  
+  #futbolin-loader-overlay .dots i {
+    animation: none;
+  }
+}
+/* === Texto: pulso sutil (opacidad) === */
+#futbolin-loader-overlay .futbolin-loader-text {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: clamp(28px, 4.5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: .02em;
+  color: #0f172a;
+  animation: textPulse 1.8s ease-in-out infinite; /* <- solo opacidad */
+  will-change: opacity;
+}
+@keyframes textPulse {
+  0%, 100% { opacity: .85; }
+  50%      { opacity: 1;   }
+}
+/* === Tres puntos: solo opacidad (sin translate/scale) === */
+#futbolin-loader-overlay .dots {
+  display: inline-flex;
+  gap: .22em;
+  margin-left: .18em;
+}
+#futbolin-loader-overlay .dots i {
+  width: .28em;
+  height: .28em;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .2;
+  animation: dotFade 1.2s ease-in-out infinite;
+  will-change: opacity;
+}
+#futbolin-loader-overlay .dots i:nth-child(2) { animation-delay: .15s; }
+#futbolin-loader-overlay .dots i:nth-child(3) { animation-delay: .30s; }
+@keyframes dotFade {
+  0%, 100% { opacity: .2; }
+  50%      { opacity: 1;  }
+}
+/* Respeto de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  #futbolin-loader-overlay .futbolin-loader-text,
+  #futbolin-loader-overlay .dots i {
+    animation: none;
+  }
+}
+/* Efecto shimmer interno (sin desplazar el contenedor) */
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+/* ====== FORZAR ANIMACIONES DEL LOADER (ignora reduced motion) ====== */
+#futbolin-loader-overlay.force-motion .futbolin-loader-text {
+  animation: textPulse 1.8s ease-in-out infinite !important;
+  will-change: opacity;
+}
+#futbolin-loader-overlay.force-motion .dots i {
+  animation: dotFade 1.2s ease-in-out infinite !important;
+  will-change: opacity;
+}
+/* Pulso sutil del texto */
+@keyframes textPulse {
+  0%, 100% { opacity: .85; }
+  50%      { opacity: 1;   }
+}
+/* Puntos con fade escalonado (sin mover el texto) */
+@keyframes dotFade {
+  0%, 100% { opacity: .2; }
+  50%      { opacity: 1;  }
+}
+/* ---- END ../assets/css/17-loader.css ---- */
+/* ---- BEGIN ../assets/css/18-ranking-controls.css ---- */
+/* 18. CONTROLES DEL RANKING (TAMAÑO DE PÁGINA)
+------------------------------------------------------------------- */
+.page-size-form {
+    display: flex;
+    gap: 5px;
+    background-color: var(--futbolin-bg-main);
+    padding: 5px;
+    border-radius: var(--futbolin-border-radius-main);
+    border: 1px solid var(--futbolin-border-color);
+    margin-left: auto; 
+}
+.page-size-form button {
+    background-color: transparent;
+    border: none;
+    color: var(--futbolin-text-muted);
+    font-weight: 500;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    
+}
+.page-size-form button:hover {
+    background-color: var(--futbolin-bg-highlight);
+    color: var(--futbolin-color-primary);
+}
+.page-size-form button.active {
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* ---- END ../assets/css/18-ranking-controls.css ---- */
+/* ---- BEGIN ../assets/css/20-hitos-cards.css ---- */
+/* Hitos – tarjetas estilo profesional (sin depender de estilos globales) */
+.rf-hitos{ --rf-grad-gold: linear-gradient(135deg,#ffe7a3,#ffd36b,#e6b84e,#d4af37,#f3d27c); color:#e7edf5; font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,"Helvetica Neue",Arial,sans-serif; }
+.rf-hitos__title{ font-weight:800; background:var(--rf-grad-gold); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.rf-hitos__grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+@media (max-width:780px){ .rf-hitos__grid{ grid-template-columns:1fr; } }
+.rf-card{ position:relative; border-radius:14px; padding:1px; background-origin:border-box; background-clip:padding-box,border-box; box-shadow:0 8px 24px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.2); }
+.rf-card.tone-gold{ background-image:linear-gradient(135deg,#ffe7a3,#ffd36b,#e6b84e,#d4af37,#f3d27c); }
+.rf-card.tone-silver{ background-image:linear-gradient(135deg,#f2f4f7,#e4e7eb,#c9ced6,#b8bec7,#dfe3e8); }
+.rf-card.tone-bronze{ background-image:linear-gradient(135deg,#ffd2a1,#f0b275,#d98642,#b56a2e,#e3a76f); }
+.rf-card__frame{ border-radius:13px; background:linear-gradient(180deg,#0b0f14,#0e1319); padding:16px; }
+.rf-card__title{ display:flex; align-items:center; gap:10px; margin:4px 0 12px; font-size:16px; font-weight:800; color:#fff; }
+.rf-badges{ display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:0; }
+.rf-badge{ display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; font-size:13px; font-weight:700; line-height:1; border:1px solid transparent; box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 1px 1px rgba(0,0,0,.25); }
+.rf-badge.gold{ background:linear-gradient(180deg,#fff3c4,#ffe083); border-color:#d4af37; color:#3b2e00; }
+.rf-badge.silver{ background:linear-gradient(180deg,#f8fafc,#e5e9ef); border-color:#b7bcc4; color:#222a33; }
+.rf-badge.bronze{ background:linear-gradient(180deg,#ffe1c7,#f2b988); border-color:#b87333; color:#3a1f00; }
+.rf-empty{ color:#9fb0c6; font-size:13px; font-weight:600; opacity:.85; }
+/* ---- END ../assets/css/20-hitos-cards.css ---- */
+

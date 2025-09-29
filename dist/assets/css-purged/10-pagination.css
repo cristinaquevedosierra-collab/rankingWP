@@ -1,0 +1,44 @@
+/* 10. PAGINACIÓN
+------------------------------------------------------------------- */
+.futbolin-paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    border-radius: var(--futbolin-border-radius-main);
+    padding: 15px 25px;
+    margin-top: 20px;
+}
+
+.futbolin-paginacion a, .futbolin-paginacion span {
+    color: var(--futbolin-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.futbolin-paginacion a {
+    color: var(--futbolin-color-primary);
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid var(--futbolin-border-color);
+    transition: all 0.2s;
+}
+
+.futbolin-paginacion a:hover {
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+    border-color: var(--futbolin-color-primary);
+}
+/* Quitar “burbuja” en los números de la leyenda del pager */
+.futbolin-paginacion .page-indicator #hof-page-now,
+.futbolin-paginacion .page-indicator #hof-page-total {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  line-height: inherit !important;
+  font-weight: 600; /* opcional: que destaque sin burbuja */
+}

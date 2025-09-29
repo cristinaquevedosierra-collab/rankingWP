@@ -1,0 +1,195 @@
+.rf-hitos{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1f1f1f;}
+.rf-hitos__title{margin:0 0 20px;font-weight:800;font-size:22px;line-height:1.2;letter-spacing:0.02em;background:linear-gradient(135deg,#ffe7a3 0%,#d4af37 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;}
+.rf-hitos__title::after{content:"";flex:1 1 auto;height:2px;background:linear-gradient(135deg,rgba(212,175,55,0.45),rgba(212,175,55,0));border-radius:999px;}
+.rf-hitos__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+@media (max-width:820px){.rf-hitos__grid{grid-template-columns:1fr;}}
+.rf-card{position:relative;border-radius:20px;background:linear-gradient(180deg,#ffffff,#ffffff) padding-box,var(--rf-card-border,linear-gradient(135deg,#ffe3a1,#d4af37)) border-box;border:1.5px solid transparent;box-shadow:0 18px 35px rgba(22,20,16,0.16);transition:transform .25s ease,box-shadow .25s ease;}
+.rf-card:hover,.rf-card:focus-within{transform:translateY(-2px);box-shadow:0 22px 42px rgba(18,16,12,0.22);}
+.rf-card__frame{border-radius:calc(20px - 1.5px);padding:20px 22px 22px;background:var(--rf-card-fill,#ffffff);display:flex;flex-direction:column;gap:16px;}
+.rf-card.tone-gold{--rf-card-border:linear-gradient(135deg,#ffe7a3 0%,#d4af37 100%);--rf-card-fill:linear-gradient(180deg,#fffdf2 0%,#fff4d2 100%);--rf-badge-border:#d4af37;--rf-badge-glow:rgba(212,175,55,0.28);--rf-count-color:#b38600;}
+.rf-card.tone-silver{--rf-card-border:linear-gradient(135deg,#dbe2f1 0%,#a4afc0 100%);--rf-card-fill:linear-gradient(180deg,#f8fbff 0%,#eef1f6 100%);--rf-badge-border:#aab3c2;--rf-badge-glow:rgba(156,170,186,0.24);--rf-count-color:#5a6574;}
+.rf-card.tone-bronze{--rf-card-border:linear-gradient(135deg,#ffd9b7 0%,#b87333 100%);--rf-card-fill:linear-gradient(180deg,#fff3e5 0%,#f7d4b0 100%);--rf-badge-border:#b87333;--rf-badge-glow:rgba(184,115,51,0.22);--rf-count-color:#8a4b0f;}
+.rf-card__title{margin:0;font-weight:800;font-size:18px;line-height:1.35;color:#1f1f1f;display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
+.rf-card__title-count{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,0.7);box-shadow:0 0 0 1px rgba(0,0,0,0.06);font-size:17px;font-weight:800;color:var(--rf-count-color,#704600);}
+.rf-card__title-count-number{line-height:1;}
+.rf-card__title-count-symbol{line-height:1;font-size:17px;}
+.rf-card__title-text{line-height:1.3;}
+.rf-badges{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px;}
+.rf-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:14px;border:1px solid var(--rf-badge-border,#d4af37);background:linear-gradient(180deg,#fff7cf 0%,#ffe089 100%);box-shadow:0 10px 18px var(--rf-badge-glow,rgba(212,175,55,0.24));font-weight:700;color:#2b1f00;line-height:1.1;transition:transform .2s ease,box-shadow .2s ease;}
+.rf-card.tone-silver .rf-badge{background:linear-gradient(180deg,#f9fbff 0%,#e5e9f2 100%);color:#1f2733;}
+.rf-card.tone-bronze .rf-badge{background:linear-gradient(180deg,#ffe6d2 0%,#f2b57d 100%);color:#301503;}
+.rf-badge:hover,.rf-badge:focus{transform:translateY(-2px);box-shadow:0 12px 22px var(--rf-badge-glow,rgba(212,175,55,0.32));}
+.rf-badge--double{padding-right:26px;}
+.rf-badge__icon{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:28px;}
+.rf-badge__icon-asset{display:inline-flex;align-items:center;justify-content:center;}
+.rf-badge__icon-asset svg{width:26px;height:26px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.18));}
+.rf-badge__icon-asset--secondary{position:absolute;right:-14px;top:0;transform:scale(0.88) translateY(3px);}
+.rf-badge__text{white-space:nowrap;}
+@media (max-width:520px){
+  .rf-badge{width:100%;justify-content:flex-start;}
+  .rf-badge__text{white-space:normal;}
+}
+.rf-empty{margin:0;font-size:14px;font-weight:600;color:rgba(31,31,31,0.55);}
+.rf-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+/* Equal height cards and empty hero */
+.rf-hitos__grid{align-items:stretch;}
+.rf-card{position:relative;display:flex;}
+.rf-card__frame{flex:1;display:flex;flex-direction:column;}
+.rf-card.is-empty{--rf-fold:32px; 
+  /* Paleta por defecto del pliegue (neutra) */
+  --rf-fold-hl: rgba(255,255,255,0.96); /* highlight */
+  --rf-fold-mid: rgba(244,247,251,0.82); /* mid tone */
+  --rf-fold-shadow: rgba(0,0,0,0.10);
+  --rf-fold-back1: #e9eef5; /* cara trasera gradiente */
+  --rf-fold-back2: #d6dde7;
+  --rf-fold-tint: rgba(0,0,0,0); /* tinte opcional */
+}
+/* Overrides de tono para integrar ligeramente el pliegue con la tarjeta */
+.rf-card.tone-gold.is-empty{
+  --rf-fold-hl: rgba(255,252,240,0.98);
+  --rf-fold-mid: rgba(255,246,210,0.86);
+  --rf-fold-back1: #fff7cf;
+  --rf-fold-back2: #ffe089;
+  --rf-fold-tint: rgba(212,175,55,0.08);
+}
+.rf-card.tone-silver.is-empty{
+  --rf-fold-hl: rgba(255,255,255,0.98);
+  --rf-fold-mid: rgba(242,246,252,0.86);
+  --rf-fold-back1: #f1f5fb;
+  --rf-fold-back2: #dce3ee;
+  --rf-fold-tint: rgba(156,170,186,0.08);
+}
+.rf-card.tone-bronze.is-empty{
+  /* Bronce más sutil y papel más neutro para evitar sobreteñido */
+  --rf-fold-hl: rgba(255,255,255,0.98);
+  --rf-fold-mid: rgba(252,252,252,0.86);
+  --rf-fold-back1: #fff6ef;
+  --rf-fold-back2: #ffe9d9;
+  --rf-fold-tint: rgba(184,115,51,0.04);
+}
+.rf-card.is-empty .rf-card__frame{justify-content:center;align-items:center;text-align:center;min-height:240px;position:relative;overflow:hidden;z-index:1;
+  /* efecto desactivado/transparente del contenedor grande (más notorio) */
+  opacity:.5; filter:saturate(0.75) contrast(0.96) brightness(1.02);
+}
+/* Marco intermitente (dash) y esquina doblada en el contenedor grande cuando está vacío */
+.rf-card.is-empty .rf-card__frame::after{content:"";position:absolute;inset:12px;pointer-events:none;border:2px dashed rgba(107,114,128,0.38);border-radius:14px;z-index:2;mix-blend-mode:multiply}
+  .rf-card.is-empty .rf-card__frame::after{content:"";position:absolute;inset:12px;pointer-events:none;border:2px dashed rgba(107,114,128,0.38);border-radius:14px;z-index:3;mix-blend-mode:multiply}
+/* pliegue superior derecho — efecto pegatina despegada con curvatura y cara trasera */
+.rf-card.is-empty::before{content:"";position:absolute;top:0;right:0;width:var(--rf-fold);height:var(--rf-fold);z-index:4;pointer-events:none;
+  /* Cara frontal del pliegue con curvatura (conic + linear) + tinte por tono */
+  background:
+    linear-gradient(225deg, rgba(0,0,0,0.22) 0 1px, var(--rf-fold-hl) 1px 2px, rgba(255,255,255,0) 2px) no-repeat,
+    conic-gradient(from 210deg at 100% 0,
+      var(--rf-fold-shadow) 0deg,
+      var(--rf-fold-hl) 40deg,
+      var(--rf-fold-mid) 75deg,
+      rgba(0,0,0,0.12) 110deg,
+      rgba(0,0,0,0.06) 180deg
+    ),
+    linear-gradient(180deg, var(--rf-fold-tint), var(--rf-fold-tint));
+  background-size:100% 100%, 100% 100%, 100% 100%;
+  background-blend-mode:normal, normal, multiply;
+  clip-path:polygon(100% 0, 0 100%, 100% 100%);
+  /* máscara para redondear la arista interior y simular curvatura */
+  -webkit-mask: radial-gradient(100% 100% at 100% 0, transparent 0 14px, black 16px);
+  mask: radial-gradient(100% 100% at 100% 0, transparent 0 14px, black 16px);
+  box-shadow:-1px 1px 0 rgba(255,255,255,0.85) inset, 0 4px 8px rgba(0,0,0,0.18);
+  /* sombra proyectada como en la referencia: hacia abajo-izquierda */
+  filter: drop-shadow(-6px 8px 12px rgba(0,0,0,0.18));
+  border-top-right-radius:10px; opacity:.98}
+/* Cara trasera ligeramente visible bajo el pliegue (papel) */
+.rf-card.is-empty::after{content:"";position:absolute;top:0;right:0;width:calc(var(--rf-fold) - 2px);height:calc(var(--rf-fold) - 2px);z-index:3;pointer-events:none;
+  background:linear-gradient(225deg, var(--rf-fold-back1) 0%, var(--rf-fold-back2) 100%);
+  clip-path:polygon(100% 8%, 8% 100%, 100% 100%);
+  filter:blur(.2px) saturate(.92);
+  opacity:.85; transform:translate(-2px, 2px);
+}
+/* (se elimina el pliegue izquierdo para no confundir: solo derecha) */
+/* Barras difusas decorativas detrás cuando está vacío */
+.rf-card.is-empty .rf-card__frame::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(135deg, rgba(102,112,133,0.16) 0 10px, rgba(102,112,133,0.06) 10px 30px);
+  filter:blur(1px);transform:rotate(-1deg) scale(1.02);opacity:.92}
+
+/* Sticker de estado bloqueado (sin logros) — apariencia de pegatina */
+.rf-sticker{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px 20px;border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.82) 0%, rgba(246,248,252,0.78) 100%);
+  border:1.2px dashed rgba(120,130,150,0.32);
+  box-shadow:0 10px 18px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(255,255,255,0.55);
+  transform:rotate(-0.9deg);
+  -webkit-backdrop-filter:saturate(1.02) blur(4px);
+  backdrop-filter:saturate(1.02) blur(4px);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+/* tono por tarjeta */
+/* neutralizar el tinte por tono para aspecto más "transparente" */
+.rf-card.tone-gold .rf-sticker{background:linear-gradient(180deg,rgba(255,255,255,0.84) 0%, rgba(248,250,252,0.78) 100%);border-color:rgba(212,175,55,0.28);} 
+.rf-card.tone-silver .rf-sticker{background:linear-gradient(180deg,rgba(255,255,255,0.84) 0%, rgba(248,250,252,0.78) 100%);border-color:rgba(156,170,186,0.28);} 
+.rf-card.tone-bronze .rf-sticker{background:linear-gradient(180deg,rgba(255,255,255,0.84) 0%, rgba(248,250,252,0.78) 100%);border-color:rgba(184,115,51,0.26);} 
+/* chincheta/sujeción decorativa */
+.rf-sticker::before{content:"";position:absolute;top:-10px;left:18px;width:18px;height:18px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #fff 0%, #e2e8f0 48%, #94a3b8 100%);
+  box-shadow:0 3px 6px rgba(0,0,0,0.20);opacity:.7;
+}
+.rf-sticker::after{content:"";position:absolute;bottom:-8px;right:18px;width:56px;height:14px;border-radius:5px;opacity:.55;
+  background:linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.04) 100%);
+  filter:blur(1.2px);
+}
+/* cinta adhesiva superior derecha */
+.rf-sticker .rf-tape{position:absolute;top:-10px;right:18px;width:42px;height:16px;transform:rotate(8deg);
+  background:linear-gradient(180deg, rgba(250,250,250,0.55) 0%, rgba(245,245,245,0.35) 100%);
+  box-shadow:0 2px 3px rgba(0,0,0,0.10);border-radius:3px;opacity:.7}
+/* esquina doblada (peel) para efecto de pegatina por pegar — con curvatura y cara trasera */
+.rf-sticker{--rf-stk-fold:20px;
+  --rf-stk-hl: rgba(255,255,255,0.96);
+  --rf-stk-mid: rgba(244,247,251,0.82);
+  --rf-stk-back1: #e9eef5; --rf-stk-back2:#d6dde7; --rf-stk-tint: rgba(0,0,0,0);
+}
+/* Overrides por tono para el pliegue del sticker */
+.rf-card.tone-gold .rf-sticker{ --rf-stk-hl: rgba(255,252,240,0.98); --rf-stk-mid: rgba(255,246,210,0.86); --rf-stk-back1:#fff7cf; --rf-stk-back2:#ffe089; --rf-stk-tint: rgba(212,175,55,0.06) }
+.rf-card.tone-silver .rf-sticker{ --rf-stk-hl: rgba(255,255,255,0.98); --rf-stk-mid: rgba(242,246,252,0.86); --rf-stk-back1:#f1f5fb; --rf-stk-back2:#dce3ee; --rf-stk-tint: rgba(156,170,186,0.06) }
+.rf-card.tone-bronze .rf-sticker{ --rf-stk-hl: rgba(255,255,255,0.98); --rf-stk-mid: rgba(252,252,252,0.86); --rf-stk-back1:#fff6ef; --rf-stk-back2:#ffe9d9; --rf-stk-tint: rgba(184,115,51,0.04) }
+.rf-sticker .rf-corner{position:absolute;top:-1px;right:-1px;width:var(--rf-stk-fold);height:var(--rf-stk-fold);z-index:2;pointer-events:none;
+  background:
+    linear-gradient(225deg, rgba(0,0,0,0.24) 0 1px, var(--rf-stk-hl) 1px 2px, rgba(255,255,255,0) 2px) no-repeat,
+    conic-gradient(from 210deg at 100% 0,
+      rgba(0,0,0,0.10) 0deg,
+      var(--rf-stk-hl) 40deg,
+      var(--rf-stk-mid) 75deg,
+      rgba(0,0,0,0.12) 110deg,
+      rgba(0,0,0,0.06) 180deg
+    ),
+    linear-gradient(180deg, var(--rf-stk-tint), var(--rf-stk-tint));
+  background-blend-mode:normal, normal, multiply;
+  clip-path:polygon(100% 0, 0 100%, 100% 100%);
+  -webkit-mask: radial-gradient(85% 85% at 100% 0, transparent 0 7px, black 9px);
+  mask: radial-gradient(85% 85% at 100% 0, transparent 0 7px, black 9px);
+  box-shadow:-1px 1px 0 rgba(255,255,255,0.75) inset, 0 3px 6px rgba(0,0,0,0.14);
+  filter: drop-shadow(-4px 5px 8px rgba(0,0,0,0.16));
+  opacity:.96}
+.rf-sticker .rf-corner::after{content:"";position:absolute;inset:0;transform:translate(-2px,2px);z-index:-1;
+  background:linear-gradient(225deg, var(--rf-stk-back1) 0%, var(--rf-stk-back2) 100%);
+  clip-path:polygon(100% 10%, 10% 100%, 100% 100%);
+  filter:blur(.2px) saturate(.92);opacity:.85}
+/* borde inferior con efecto rasgado sutil */
+.rf-sticker{mask-image:radial-gradient(120% 18px at 50% 100%, transparent 46%, black 48%); -webkit-mask-image:radial-gradient(120% 18px at 50% 100%, transparent 46%, black 48%)}
+/* hover lift */
+.rf-sticker:hover{transform:rotate(-0.6deg) translateY(-1px); box-shadow:0 12px 22px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(255,255,255,0.65)}
+.rf-sticker__icon{display:inline-flex;align-items:center;justify-content:center;opacity:.8}
+.rf-sticker__icon svg{width:56px;height:56px;opacity:.75;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.14)) saturate(0.85) blur(0.3px);mix-blend-mode:multiply}
+/* convertir icono a "trazo" para aspecto boceto/transparente */
+.rf-sticker__icon svg *{fill:none !important;stroke:rgba(71,85,105,0.58) !important;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.rf-sticker__text{font-weight:800;font-size:14px;letter-spacing:.32px;color:rgba(31,41,55,0.58);text-transform:uppercase;text-shadow:0 1px 0 rgba(255,255,255,0.55)}
+
+/* Championships: tiles 3-col with icon on top and text below */
+
+/* Number1/23: reuse tiles with crowns */
+
+/* Reset visual: sin pliegue; mantener degradado, marco dashed y barras difusas */
+.rf-card.is-empty::before,
+.rf-card.is-empty::after{content:none !important;display:none !important;box-shadow:none !important;filter:none !important}
+/* Restaurar barras difusas detrás cuando está vacío */
+.rf-card.is-empty .rf-card__frame::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(135deg, rgba(102,112,133,0.06) 0 6px, rgba(102,112,133,0.02) 6px 16px);
+  filter:blur(1px);transform:rotate(-1deg) scale(1.02);opacity:.85}
+/* Sin mini-pliegue en la pegatina */
+.rf-sticker .rf-corner{display:none !important}

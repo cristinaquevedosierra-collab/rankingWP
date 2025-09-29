@@ -1,0 +1,159 @@
+/* === RANKING (limpio) ==================================================== */
+
+/* Fila base */
+.ranking-row{
+  background:var(--futbolin-bg-card);
+  border:1px solid var(--futbolin-border-color);
+  border-radius:var(--futbolin-border-radius-main);
+  padding:10px 12px;
+  transition:all .2s;
+  margin-bottom:10px;
+}
+.ranking-row:hover{
+  transform:translateY(-2px);
+  border-color:var(--futbolin-color-primary);
+  background:var(--futbolin-bg-card-hover);
+  box-shadow:0 4px 6px -1px rgb(0 0 0 / .07), 0 2px 4px -2px rgb(0 0 0 / .07);
+}
+
+/* Posición (podio con texto blanco coherente) */
+.ranking-position{
+  font-weight:700; font-size:1.1em;
+  width:35px; height:35px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  color:#fff; background:var(--futbolin-text-light);
+}
+.ranking-position.pos-1{ background:#d4af37; }
+.ranking-position.pos-2{ background:#c0c0c0; }
+.ranking-position.pos-3{ background:#cd7f32; }
+
+/* Layout por defecto: 4 columnas (Pos | Jug | Cat | Pts) */
+.futbolin-card .futbolin-ranking .ranking-header,
+.futbolin-card .futbolin-ranking .ranking-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 180px 120px;
+  align-items:center;
+  gap:12px;
+}
+.futbolin-card .ranking-header{
+  font-weight:600; text-transform:uppercase; letter-spacing:.02em;
+  padding:10px 12px; border-bottom:1px solid rgba(0,0,0,.08);
+}
+.futbolin-card .ranking-header .ranking-th{ text-align:center; }
+.futbolin-card .ranking-position,
+.futbolin-card .ranking-points{ text-align:center; }
+
+/* Compactado suave */
+.futbolin-card .ranking-header,
+.futbolin-card .ranking-row{ grid-template-columns: 70px 1fr 180px 120px; gap:10px; }
+.futbolin-card .points-pill{ padding:6px 10px; }
+.futbolin-card .ranking-player-details a{ font-size:1.05em; }
+
+/* Título + contador en columna (contador pequeño) */
+.futbolin-card .ranking-top-bar{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:12px;
+}
+.futbolin-card .ranking-title-wrap.column{
+  display:flex; flex-direction:column; align-items:flex-start; gap:4px;
+}
+.futbolin-card .ranking-title-wrap.column h2{ margin:0; }
+.futbolin-card .sub-count{ font-size:.85rem; opacity:.75; margin:0; }
+
+/* Badge tipo (Individual/Dobles) */
+.ranking-type-badge{
+  display:inline-block; font-size:.75rem; font-weight:700;
+  padding:2px 8px; border-radius:999px;
+  background:#eef2ff; color:#1d4ed8; border:1px solid #dbe3ff;
+}
+
+/* Selector tamaños */
+.futbolin-card .ranking-controls-right{ display:flex; align-items:center; gap:16px; }
+.futbolin-card .page-size-form .button,
+.futbolin-card .page-size-form .psize-btn{
+  display:inline-block; padding:6px 10px; border:1px solid rgba(0,0,0,.15);
+  border-radius:6px; background:#fff; cursor:pointer; margin-left:6px;
+}
+.futbolin-card .page-size-form .button.active,
+.futbolin-card .page-size-form .psize-btn.active{ background:#111;color:#fff;border-color:#111; }
+
+/* Categoría (solo en Individual/Dobles; ver variante no-category más abajo) */
+.futbolin-card .ranking-player-category{ display:flex; justify-content:center; }
+.category-pill{
+  display:inline-block; padding:5px 10px; border-radius:999px;
+  font-size:13px; font-weight:700; line-height:1; border:1px solid transparent;
+  text-transform:capitalize;
+}
+
+/* Puntos */
+.ranking-points{ margin-left:auto; flex-shrink:0; }
+.points-pill{ background:var(--futbolin-bg-main); border-radius:var(--futbolin-border-radius-pill); text-align:center; }
+.points-value{ font-weight:700; color:var(--futbolin-text-headings); font-size:1.1em; }
+
+/* Paginación */
+.futbolin-card .futbolin-paginacion{
+  display:flex; align-items:center; justify-content:center; gap:12px; margin-top:16px;
+}
+.futbolin-card .futbolin-paginacion .button{
+  text-decoration:none; padding:8px 12px; border:1px solid rgba(0,0,0,.15); border-radius:6px; background:#fff;
+}
+.futbolin-card .page-indicator{ opacity:.8; }
+
+/* Colores de categorías */
+.category-pill[data-category="master"]      { background:#f6e58d; color:#7c5f00; border-color:#e8d25b; }
+.category-pill[data-category="amateur"]     { background:#dfe6e9; color:#2d3436; border-color:#c8d0d4; }
+
+/* Variante SIN categoría: 3 columnas (Pos | Jug | Pts) */
+.futbolin-card.no-category .ranking-header,
+.futbolin-card.no-category .ranking-row{
+  grid-template-columns: 90px 1fr 160px;
+}
+.futbolin-card.no-category .ranking-player-category{ display:none !important; }
+
+/* Disclaimer bajo la paginación */
+.futbolin-card .ranking-disclaimer{
+  margin-top:10px; font-size:.85rem; color:rgba(0,0,0,.7);
+}
+
+/* Bloque especial para Win Rate (se mantiene separado) */
+
+/* Utilidad: placeholder de foto */
+/* Compactar filtro y botones a ~50% */
+.futbolin-card .futbolin-search-form .futbolin-live-filter{
+  font-size:.8rem; padding:4px 6px; height:38px;
+}
+.futbolin-card .page-size-form .button,
+.futbolin-card .page-size-form .psize-btn,
+.futbolin-card .futbolin-paginacion .button{
+  font-size:.8rem; padding:4px 8px;
+}
+
+
+/* === PODIO UNIVERSAL (Top 1–3) =========================================== */
+/* No añadimos iconos; SOLO color. Aplica a cualquier .ranking-row con .podium-N */
+.ranking-row { position: relative; }
+
+/* Colores base (tonos medalla) */
+:root{
+  --podium-gold-bg:   #ffefb3;
+  --podium-gold-bd:   #d4af37;
+  --podium-silver-bg: #ececec;
+  --podium-silver-bd: #bfbfbf;
+  --podium-bronze-bg: #efd1ac;
+  --podium-bronze-bd: #c27a33;
+
+  --podium-text:      #111827; /* gris muy oscuro para contraste */
+}
+
+/* Fila completa coloreada (sin cebreado) */
+
+/* Refuerzos de contraste del texto dentro de filas podium */
+
+/* CETRO: el número de posición se hace muy visible con una “pill” sólida.
+   NUNCA se inyectan iconos. Funciona con .pos-cell, .ranking-position,
+   o .ranking-cell.pos (Hall of Fame) */
+.pos-cell, .ranking-position, .ranking-cell.pos{ display:flex; align-items:center; justify-content:center; }
+
+/* Hover conserva el color (evita que el hover global “aclare” y cree cebreado) */
+
+
+/* Estrellita junto al número (solo en HOF y resultados de torneos) */

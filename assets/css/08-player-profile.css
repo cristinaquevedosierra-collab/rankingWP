@@ -1,0 +1,610 @@
+/* Headline uniform for profile cards */
+.futbolin-card h3.history-main-title {
+    margin: 0 0 20px 0 !important;
+    padding-bottom: 12px !important;
+    text-align: center !important;
+    font-size: 1.5em !important;
+    font-weight: 600 !important;
+    color: var(--futbolin-text-headings) !important;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.5) !important;
+    display: block !important;
+}
+
+/* Headline uniform for profile cards */
+ .futbolin-card h3.history-main-title {
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--futbolin-text-headings);
+    border-bottom: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+/* 8. PERFIL DE JUGADOR
+------------------------------------------------------------------- */
+.player-header {
+    background-color: var(--futbolin-bg-card-hover);
+    border: 1px solid var(--futbolin-border-color);
+    padding: 30px;
+    border-radius: var(--futbolin-border-radius-main);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 30px;
+}
+.player-header-info {
+    flex-grow: 1;
+}
+.player-photo-placeholder-large {
+    width: 150px; height: 150px;
+    background-color: var(--futbolin-bg-main);
+    border-radius: 50%;
+    border: 4px solid var(--futbolin-color-primary);
+}
+.player-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    font-weight: 700;
+    display: flex; align-items: center;
+}
+.player-career-stats {
+    background-color: var(--futbolin-bg-highlight);
+    border-radius: var(--futbolin-border-radius-main);
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.futbolin-tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--futbolin-bg-card);
+    margin: 30px 0 20px 0;
+    padding: 8px;
+    border-radius: var(--futbolin-border-radius-pill);
+    border: 1px solid var(--futbolin-border-color);
+}
+.futbolin-tabs-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 999px; /* redondito */
+    font-weight: 600;
+    color: var(--futbolin-text-muted);
+    background: #f4f5f7;
+    transition: background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.futbolin-tabs-nav a:hover {
+    background-color: #e1effe; /* azul claro hover */
+    color: #0b5ed7;
+}
+.futbolin-tabs-nav a.active {
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+.futbolin-tabs-nav .dashicons {
+    margin-right: 10px;
+    color: #8c8f94;
+    font-size: 20px;
+}
+
+.futbolin-tabs-nav a.active .dashicons {
+    color: #0073aa;
+}
+
+
+/* Botón "Volver a principal" y su icono */
+.back-to-ranking-button {
+    margin-right: auto;
+    background-color: #e5e7eb !important; /* gris claro */
+    color: #ffffff !important; /* texto blanco como antes */
+    border: 1px solid #d1d5db !important;
+    border-radius: 999px !important;
+    padding: 10px 14px !important;
+}
+.back-to-ranking-button:hover {
+    background-color: #d1d5db !important;
+}
+.back-to-ranking-button .icon {
+    margin-right: 6px;
+}
+
+.futbolin-tabs-content {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.futbolin-tab-content { display: none; }
+.futbolin-tab-content.active { display: block; }
+
+.stats-list li:nth-child(even) { background-color: var(--futbolin-bg-highlight); }
+.puntos-positivos { color: var(--futbolin-color-success); }
+.puntos-negativos { color: var(--futbolin-color-danger); }
+
+
+/* En pantallas más pequeñas, ocultamos texto y ajustamos padding */
+@media (max-width: 960px) {
+    .back-to-ranking-button .text {
+        display: none;
+    }
+    .back-to-ranking-button .icon {
+        margin-right: 0;
+    }
+    .futbolin-tabs-nav a {
+        padding: 8px 15px;
+    }
+}
+/* Estilos específicos para la pestaña Perfil (#tab-general) */
+#tab-general .futbolin-card {
+    background: linear-gradient(to top, var(--futbolin-bg-highlight), var(--futbolin-bg-card) 70%);
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.04);
+    border: 1px solid var(--futbolin-border-color);
+}
+
+#tab-general .futbolin-card h3 {
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+#tab-general .stats-list {
+    padding: 0 15px;
+}
+
+#tab-general .player-career-stats {
+    background-color: transparent;
+    padding: 10px 0;
+}
+
+#tab-general .player-career-stats .points-pill {
+    background-color: var(--futbolin-bg-card);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+/* Cuadrícula de estadísticas en la pestaña "Perfil" */
+.player-career-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.stat-box {
+    background-color: var(--futbolin-bg-highlight);
+    border-radius: var(--futbolin-border-radius-main);
+    border: 1px solid var(--futbolin-border-color, rgba(203, 213, 225, 0.7));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-box.stat-box-won {
+    border-color: rgba(6, 95, 70, 0.85);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 0 2px rgba(4, 120, 87, 0.45);
+}
+
+.stat-box.stat-box-lost {
+    border-color: rgba(239, 68, 68, 0.65);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 0 0 1px rgba(220, 38, 38, 0.25);
+}
+
+
+.stat-box .stat-value {
+    font-size: 1.75em;
+    font-weight: 700;
+    color: var(--futbolin-text-headings);
+    display: block;
+}
+
+.stat-box .stat-label {
+    font-size: 0.9em;
+    color: var(--futbolin-text-muted);
+}
+.stats-footnote {
+    display: inline-block;
+    margin-left: 4px;
+    font-weight: bold;
+    color: var(--futbolin-color-primary);
+    cursor: help;
+}
+/* Corrige el espaciado en la lista detallada de estadísticas */
+.futbolin-indented-list li .list-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.futbolin-indented-list li strong {
+    flex-grow: 1; /* Permite que el nombre ocupe el espacio sobrante */
+}
+
+.futbolin-indented-list li span {
+    flex-shrink: 0; /* Evita que las estadísticas se encojan */
+    padding-left: 15px; /* Añade un espacio mínimo de seguridad */
+}
+/*
+/*
+ * Ajustes de estilo para los títulos del historial
+ * para que coincidan con la estética del resto de pestañas.
+ * -------------------------------------------------------------------
+ */
+
+/*
+ * Ajustes de tipografía para unificar los títulos de la pestaña de historial.
+ * -------------------------------------------------------------------
+ */
+
+#tab-historial h3.history-main-title,
+#tab-historial h4.season-title,
+#tab-historial .tournament-header h5 {
+    font-family: inherit !important; /* Hereda la tipografía principal del sitio */
+    letter-spacing: normal !important; /* Resetea el espaciado entre letras */
+    text-transform: none !important; /* Resetea cualquier transformación a mayúsculas */
+}
+
+/* Ajustes específicos para el h3 principal */
+#tab-historial h3.history-main-title {
+    font-size: 1.5em !important;
+    font-weight: 600 !important;
+    color: var(--futbolin-text-headings) !important;
+    text-align: center !important;
+    border-bottom: 2px solid rgba(59, 130, 246, 0.5) !important;
+    padding-bottom: 15px !important;
+}
+
+/* Ajustes específicos para el h4 de temporada */
+#tab-historial h4.season-title {
+    font-size: clamp(11px, 1.5vw, 14px) !important;
+    font-weight: 400 !important;
+    color: #fff !important;
+    background-color: var(--futbolin-color-primary) !important;
+    padding: 8px 15px !important;
+    border-radius: var(--futbolin-border-radius-pill) !important;
+    text-align: right !important;
+    display: inline-block !important;
+}
+
+/* Ajustes específicos para el h5 de torneo */
+#tab-historial .tournament-header h5 {
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    color: var(--futbolin-text-dark) !important;
+    text-align: center !important;
+}
+
+/*
+ * Estilos mejorados para la pestaña Historial
+ * -------------------------------------------------------------------
+ */
+
+/* Contenedor para la lista de partidos de una competición */
+.history-matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre cada partido, igual que en el ranking */
+}
+
+/* Estilo para la "Fase" del partido, reutilizando el estilo de la posición */
+.history-match-phase {
+    width: auto !important; /* Ancho automático según contenido */
+    padding: 0 10px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Contenedor principal para los detalles del partido (ganador vs perdedor) */
+.history-match-details {
+    display: flex;
+    flex-direction: column; /* Apila ganador y perdedor verticalmente */
+    align-items: center; /* Centra los elementos */
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    gap: 5px;
+    text-align: center;
+}
+
+.history-match-winner,
+.history-match-loser {
+    font-weight: 600;
+    width: 100%;
+}
+
+.history-match-winner {
+    color: var(--futbolin-color-success);
+}
+
+.history-match-loser {
+    color: var(--futbolin-color-danger);
+    opacity: 0.7; /* Hacemos al perdedor un poco menos prominente */
+}
+
+/* El texto 'vs' que separa a los equipos */
+.history-match-vs {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--futbolin-text-muted);
+}
+/*
+ * Corrección para solapamiento en el historial
+ * -------------------------------------------------------------------
+ */
+
+/* Bloques de clasificación del perfil (ELO y Anual) */
+.player-ranking-block {
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    border-radius: var(--futbolin-border-radius-main);
+    padding: 12px 16px;
+    margin: 16px 0 24px 0; /* más aire arriba y abajo */
+}
+.player-ranking-block + .player-ranking-block {
+    margin-top: 28px; /* separación clara entre ELO y Anual */
+}
+.player-ranking-block .section-subtitle {
+    margin: 0 0 10px 0;
+}
+.player-ranking-block .stats-list {
+    padding: 0;
+}
+.player-ranking-block.annual-block {
+    background-color: var(--futbolin-bg-highlight);
+    border-top: 3px solid rgba(59, 130, 246, 0.35); /* divisor sutil superior */
+}
+.season-badge {
+    background: var(--futbolin-chip, #eceff4);
+    color: var(--futbolin-text, #222);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: .85em;
+}
+@media (max-width: 600px) {
+    .player-ranking-block {
+        padding: 10px 12px;
+    }
+}
+
+/* Separación explícita en la pestaña de Glicko (más fuerte que las reglas genéricas) */
+#tab-glicko-rankings .player-ranking-block { margin: 18px 0 28px 0; }
+#tab-glicko-rankings .player-ranking-block + .player-ranking-block { margin-top: 56px; }
+#tab-glicko-rankings .player-ranking-block.annual-block { border-top-width: 4px; padding-top: 20px; }
+/* Separación adicional para el texto de ayuda bajo el bloque anual */
+#tab-glicko-rankings .player-ranking-block.annual-block + h5 { margin-top: 28px; }
+
+/* 1. Permite que el contenedor de los detalles del partido se encoja */
+.history-match-details {
+    min-width: 0; /* MUY IMPORTANTE: Permite que este bloque flex se encoja por debajo del tamaño de su contenido */
+}
+
+/* 2. Permite que el texto largo de los nombres se divida en varias líneas */
+.history-match-winner,
+.history-match-loser {
+    word-break: break-word; /* Rompe la palabra si es necesario para que no se desborde */
+    white-space: normal;  /* Asegura que el texto pueda pasar a la siguiente línea */
+}
+/*
+ * Mejora para la vista del historial en móviles
+ * -------------------------------------------------------------------
+ */
+@media (max-width: 600px) {
+    .ranking-row.history-match-row {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center;    /* Centra los elementos apilados */
+        gap: 10px;
+    }
+
+    .history-match-phase {
+        width: 100% !important; /* Ocupa todo el ancho */
+        text-align: center;
+    }
+}
+/*
+ * Estilos para el indicador de Victoria / Derrota en el historial
+ * -------------------------------------------------------------------
+ */
+
+/* Estilo base para la píldora de estado */
+.history-match-phase {
+    font-size: 0.9em !important;
+    font-weight: 700 !important;
+    color: #fff !important; /* Texto blanco para ambas */
+    border: none;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+/* Color para la Victoria */
+.history-match-phase.status-victoria {
+    background-color: var(--futbolin-color-success) !important; /* Verde */
+}
+
+/* Color para la Derrota */
+.history-match-phase.status-derrota {
+    background-color: var(--futbolin-color-danger) !important; /* Rojo */
+}
+/*
+ * Estilos para la Evolución de ELO en la pestaña Historial
+ * -------------------------------------------------------------------
+ */
+
+.history-match-row {
+    gap: 20px; /* Aumentamos el espacio para que quepa todo */
+}
+
+.history-match-elo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: monospace, sans-serif;
+    font-size: 1.1em;
+    margin-left: auto; /* Empuja el bloque a la derecha */
+    flex-shrink: 0; /* Evita que el bloque se encoja */
+    background-color: var(--futbolin-bg-highlight);
+    padding: 6px 12px;
+    border-radius: var(--futbolin-border-radius-pill);
+}
+
+.history-match-elo .elo-value {
+    color: var(--futbolin-text-dark);
+}
+
+.history-match-elo .elo-initial {
+    opacity: 0.7;
+}
+
+.history-match-elo .elo-final {
+    font-weight: 700;
+}
+
+.history-match-elo .elo-arrow {
+    color: var(--futbolin-text-muted);
+    font-size: 0.9em;
+}
+
+.history-match-elo .elo-change {
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--futbolin-border-radius-main);
+    color: #fff;
+}
+
+.elo-change.puntos-positivos {
+    background-color: var(--futbolin-color-success);
+}
+
+.elo-change.puntos-negativos {
+    background-color: var(--futbolin-color-danger);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .history-match-elo {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+/*
+ * Estilos para la fila de Puntos por Inactividad en el Historial
+ * (Versión Corregida para Visibilidad)
+ */
+
+.history-inactivity-row {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--futbolin-bg-highlight) !important;
+    font-style: italic;
+    color: var(--futbolin-text-muted);
+}
+
+.history-inactivity-row .inactivity-icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.history-inactivity-row .inactivity-text {
+    flex-grow: 1;
+}
+
+.history-inactivity-row .elo-change {
+    font-style: normal;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--futbolin-border-radius-main);
+    background-color: var(--futbolin-color-danger); /* Fondo rojo */
+    color: #ffffff !important; /* CORRECCIÓN: Forzamos el color del texto a blanco */
+}
+
+/* === PERFIL: reforzar visual de posición dentro de filas (sin tocar encabezado) */
+#tab-glicko-rankings .ranking-row.podium-1 .ranking-position{ background: var(--podium-gold-bd); color:#fff; border-radius:999px; font-weight:800; }
+#tab-glicko-rankings .ranking-row.podium-2 .ranking-position{ background: var(--podium-silver-bd); color:#fff; border-radius:999px; font-weight:800; }
+#tab-glicko-rankings .ranking-row.podium-3 .ranking-position{ background: var(--podium-bronze-bd); color:#fff; border-radius:999px; font-weight:800; }
+
+
+/* === OVERRIDE PERFIL: nav horizontal, alineado a la izquierda (fijo) === */
+.player-profile-container nav.futbolin-tabs-nav{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:wrap !important;
+  justify-content:flex-start !important;
+  align-items:center !important;
+  gap:12px !important;
+  text-align:left !important;
+}
+.player-profile-container nav.futbolin-tabs-nav a{
+  display:inline-flex !important;
+  align-items:center !important;
+  width:auto !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+  flex:0 0 auto !important;
+}
+.player-profile-container nav.futbolin-tabs-nav .back-to-ranking-button{
+  order:-1 !important;
+  margin-right:auto !important;
+}
+
+/* === Pro Gold Gradient — restored (2025-09-16) =============================== */
+.section-title.section-pro {
+  background: linear-gradient(90deg, #B68C2E 0%, #FFD700 45%, #B8860B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+.futbolin-card .section-title.section-pro {
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.player-career-stats-grid.pro-emphasis .stat-box {
+  background:
+    linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+    linear-gradient(135deg, #B68C2E, #FFD776, #B88A00) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 18px rgba(184, 138, 0, .18);
+}
+
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(2) {
+  border: 1px solid rgba(6, 95, 70, 0.75) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 0 2px rgba(4, 120, 87, 0.35) !important;
+}
+
+.player-career-stats-grid.pro-emphasis > .stat-box:nth-child(5) {
+  border: 1px solid rgba(182, 140, 46, 0.75) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78), 0 0 0 2px rgba(182, 140, 46, 0.35) !important;
+}
+
+.player-career-stats-grid.global-muted > .stat-box:nth-child(2) {
+  border: 1px solid rgba(6, 95, 70, 0.75) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 0 2px rgba(4, 120, 87, 0.3) !important;
+}
+
+.player-career-stats-grid.global-muted > .stat-box:nth-child(5) {
+  border: 1px solid rgba(182, 140, 46, 0.75) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 0 0 2px rgba(182, 140, 46, 0.3) !important;
+}
+
+
+@supports (-webkit-background-clip: text) and (not (background-clip: text)) {
+  .section-title.section-pro {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+/* === /Pro Gold Gradient ===================================================== */
+
+
+
+.section-subtitle {
+    margin: 16px 0 12px 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--futbolin-text-headings);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.25);
+    padding-bottom: 6px;
+}
+
+
+.ranking-annual-banner{margin:24px 0 0 0;padding:14px 18px;background:linear-gradient(90deg,rgba(59,130,246,0.08),rgba(59,130,246,0));border:1px solid rgba(59,130,246,0.25);border-radius:var(--futbolin-border-radius-main,12px);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;color:var(--futbolin-text-headings);}

@@ -1,0 +1,498 @@
+/* -- 22-ranking-styles.css -- */
+
+/* Estilos para la lista de campeonatos */
+.futbolin-tournaments-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.tournament-list-item {
+    background-color: #f7f8f9;
+    border: 1px solid #e0e0e1;
+    border-radius: 8px;
+    padding: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.tournament-list-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tournament-list-item:hover {
+    background-color: #ededee;
+}
+
+.tournament-details {
+    flex-grow: 1;
+}
+
+.tournament-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    border-bottom: none;
+}
+
+.tournament-info {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ======================================================= */
+/* ESTILOS PARA LAS ESTADÍSTICAS DE UN TORNEO (MODIFICADO) */
+/* ======================================================= */
+
+.tournament-competicion-block {
+    margin-bottom: 25px;
+}
+
+.competicion-header {
+    background-color: #0073aa;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 0 0 10px 0; /* Ajustado */
+}
+
+/* Contenedor de las filas del ranking del torneo */
+.ranking-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre filas */
+}
+
+/* Fila individual del ranking del torneo (ahora con Grid) */
+.ranking-row.tournament-row {
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    border-radius: var(--futbolin-border-radius-main);
+    display: grid;
+    grid-template-columns: 50px 1fr; /* Columna para Posición y Columna para Equipo */
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.ranking-row.tournament-row:hover {
+    transform: translateY(-2px);
+    border-color: var(--futbolin-color-primary);
+    background-color: var(--futbolin-bg-card-hover);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+}
+
+/* Celda para la posición */
+.tournament-position-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Celda para los detalles del equipo */
+.tournament-team-details {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--futbolin-text-headings);
+}
+
+.ranking-position {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--futbolin-text-dark);
+    background-color: var(--futbolin-text-light);
+    width: 35px; height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.ranking-position.pos-1 { background-color: #d4af37; color: #fff; }
+.ranking-position.pos-2 { background-color: #c0c0c0; color: #fff; }
+.ranking-position.pos-3 { background-color: #cd7f32; color: #fff; }
+
+
+/* ==================================================== */
+/* ESTILOS DEL HALL OF FAME (SIN CAMBIOS) */
+/* ======================================================= */
+
+.futbolin-hall-of-fame-wrapper {
+    padding: 20px;
+}
+.futbolin-hall-of-fame-wrapper .futbolin-main-title {
+    margin-top: 0;
+    border-bottom: 2px solid #0073aa;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #0073aa;
+}
+
+/* Estilos de la tabla principal del Hall of Fame */
+.hall-of-fame-table-container {
+    overflow-x: auto; /* Permite el scroll horizontal si es necesario */
+}
+
+/* Encabezado de la tabla */
+
+/* Filas de la tabla */
+.ranking-table-content .ranking-row {
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    border-radius: var(--futbolin-border-radius-main);
+    display: grid;
+    grid-template-columns: 50px minmax(150px, 1.5fr) repeat(7, minmax(70px, 1fr));
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+.ranking-table-content .ranking-row:hover {
+    transform: translateY(-2px);
+    border-color: var(--futbolin-color-primary);
+    background-color: var(--futbolin-bg-card-hover);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+}
+
+/* Estilos de las celdas */
+ .ranking-player-name-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ranking-player-name-cell {
+    justify-content: flex-start;
+}
+.ranking-player-name-cell a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--futbolin-text-headings);
+}
+
+/* ======================================================= */
+/* ESTILOS PARA BOTONES, BÚSQUEDA Y PAGINACIÓN */
+/* ======================================================= */
+
+.futbolin-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--futbolin-color-primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    padding: 8px 12px;
+    border-radius: var(--futbolin-border-radius-main);
+}
+.futbolin-back-button:hover {
+    color: var(--futbolin-text-headings);
+    background-color: var(--futbolin-bg-card-hover);
+    border-color: var(--futbolin-color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+}
+
+/* Esto asegurará que el icono tenga un tamaño y visualización definidos,
+   superando a otras reglas CSS más genéricas que puedan ocultarlo. */
+.futbolin-back-button .dashicons {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    vertical-align: middle !important;
+}
+
+.futbolin-paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.futbolin-paginacion a,
+.futbolin-paginacion span {
+    text-decoration: none;
+    color: var(--futbolin-text-dark);
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    padding: 8px 12px;
+    border-radius: var(--futbolin-border-radius-main);
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    min-width: 35px;
+}
+
+.futbolin-paginacion a:hover {
+    background-color: var(--futbolin-bg-card-hover);
+    border-color: var(--futbolin-color-primary);
+    color: var(--futbolin-color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+}
+
+.futbolin-paginacion span {
+    color: var(--futbolin-text-muted);
+}
+
+/* Estilos para los botones de tamaño de página y búsqueda */
+
+.page-size-form {
+    display: flex;
+    gap: 10px;
+}
+
+.page-size-form button {
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    border-radius: var(--futbolin-border-radius-main);
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: var(--futbolin-text-dark);
+    font-weight: 600;
+}
+
+.page-size-form button:hover,
+.page-size-form button.active {
+    background-color: var(--futbolin-color-primary);
+    border-color: var(--futbolin-color-primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+}
+
+/* Estilo para el formulario de búsqueda */
+.futbolin-search-form {
+    display: flex;
+    gap: 10px;
+}
+.futbolin-search-form .search-wrapper {
+    flex-grow: 1;
+}
+.futbolin-search-form input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--futbolin-border-color);
+    border-radius: var(--futbolin-border-radius-main);
+}
+.futbolin-search-form button {
+    background-color: var(--futbolin-color-primary);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--futbolin-border-radius-main);
+    cursor: pointer;
+    font-weight: 600;
+}
+/* ======================================================= */
+/* ESTILOS PARA LA PÁGINA DE INFORMES DE FINALES           */
+/* ======================================================= */
+
+.futbolin-tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--futbolin-border-color);
+    padding-bottom: 15px;
+}
+.futbolin-tabs-nav a {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: var(--futbolin-border-radius-main);
+    background-color: var(--futbolin-bg-card);
+    border: 1px solid var(--futbolin-border-color);
+    color: var(--futbolin-text-dark);
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+.futbolin-tabs-nav a:hover,
+.futbolin-tabs-nav a.active {
+    background-color: var(--futbolin-color-primary);
+    border-color: var(--futbolin-color-primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+}
+.futbolin-back-button::before {
+    content: "\f141"; /* El código del icono de la flecha izquierda */
+    font-family: "dashicons"; /* Le dices que use la fuente de Dashicons */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 20px;
+}
+/* Estilos para el mensaje de "no hay resultados" o "error" */
+/* Estilos para el mensaje de "no hay resultados" o "error" */
+.ranking-table-content .no-results {
+    padding: 15px;
+    text-align: center;
+    background-color: #fce8e8; /* Un color de fondo suave para el error */
+    border: 1px solid #e5b2b2;
+    color: #d8000c; /* Color de texto rojo */
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ranking-table-content .no-results::before {
+    content: "\f534"; /* Código para el icono de advertencia */
+    font-family: "dashicons";
+    font-size: 20px;
+}
+/* === Historial: compactar “Derrota/Victoria + marcador + fase” a máx. 3 líneas === */
+
+/* 0) Resetear el cuadrado de .ranking-position solo cuando es history-match-phase */
+.ranking-position.history-match-phase{
+  width:auto !important;
+  height:auto !important;
+  padding:6px 10px !important;
+  border-radius:8px !important;
+
+  /* tipografía compacta + cortes correctos */
+  font-size:0.92rem;
+  line-height:1.25;
+  white-space:normal !important;
+  word-break:break-word;
+
+  /* clamp cross-browser */
+  overflow:hidden !important;
+  text-overflow:ellipsis;
+  max-width:100%;
+}
+
+/* 1) Si la fila usa el grid (1ª col = 50px), saca el chip de esa columna estrecha */
+.ranking-row .ranking-position.history-match-phase{
+  justify-self:start;
+  align-self:start;
+}
+
+/* 2) Clamp real en navegadores WebKit */
+@supports (-webkit-line-clamp: 3){
+  .ranking-position.history-match-phase{
+    display:-webkit-box !important;
+    -webkit-box-orient:vertical !important;
+    -webkit-line-clamp:3 !important;    /* <-- máximo 3 líneas */
+  }
+}
+
+/* 3) Fallback universal (por si no hay -webkit-line-clamp) */
+@supports not (-webkit-line-clamp: 3){
+  .ranking-position.history-match-phase{
+    display:block !important;
+    max-height:calc(1.25em * 3);        /* 3 líneas * line-height */
+  }
+}
+
+/* 4) Colores de estado (opcional) */
+.ranking-position.history-match-phase.status-derrota{
+  background:#fee2e2; color:#991b1b; border:1px solid #fecaca;
+}
+.ranking-position.history-match-phase.status-victoria{
+  background:#dcfce7; color:#166534; border:1px solid #bbf7d0;
+}
+/* === PATCH: Historial - compactar a 3 líneas máx === */
+
+/* Fila del historial: grid compacto + tipografía contenida */
+.history-matches-list .ranking-row.history-match-row {
+  display: grid !important;
+  grid-template-columns: max-content 1fr max-content !important; /* Fase | Detalles | ELO */
+  column-gap: 10px !important;
+  align-items: start !important;
+
+  /* anula el font-size/line-height heredado que la infla */
+  font-size: 14px !important;     /* ajusta a 15–16 si lo ves pequeño */
+  line-height: 1.3 !important;
+}
+
+/* “Victoria/Derrota” como pill, 1 línea, sin caja cuadrada */
+.history-matches-list .ranking-position.history-match-phase {
+  width: auto !important;
+  height: auto !important;
+  padding: 4px 8px !important;
+  border-radius: 8px !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Detalles: 3 líneas máximo con elipsis */
+.history-matches-list .history-match-details {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;   /* <= aquí decides 2/3 líneas */
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  min-width: 0;                        /* permite cortar correctamente */
+}
+
+/* Sub-líneas dentro de los detalles más compactas y sin márgenes extra */
+.history-matches-list .history-match-details > * {
+  margin: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* ELO en una sola línea, números alineados */
+.history-matches-list .history-match-elo {
+  white-space: nowrap !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Colores (opcional, por si no los tienes) */
+.history-matches-list .ranking-position.history-match-phase.status-derrota {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+.history-matches-list .ranking-position.history-match-phase.status-victoria {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+.ranking-player-details { cursor: pointer; }
+.ranking-player-details:hover h4 { color: var(--futbolin-color-primary); }
+
+/* === OVERRIDE PERFIL: nav horizontal, alineado a la izquierda (fijo) === */
+.player-profile-container nav.futbolin-tabs-nav{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:wrap !important;
+  justify-content:flex-start !important;
+  align-items:center !important;
+  gap:12px !important;
+  text-align:left !important;
+}
+.player-profile-container nav.futbolin-tabs-nav a{
+  display:inline-flex !important;
+  align-items:center !important;
+  width:auto !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+  flex:0 0 auto !important;
+}
+.player-profile-container nav.futbolin-tabs-nav .back-to-ranking-button{
+  order:-1 !important;
+  margin-right:auto !important;
+}

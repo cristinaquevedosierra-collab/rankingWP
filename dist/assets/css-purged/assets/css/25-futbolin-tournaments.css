@@ -1,0 +1,179 @@
+/* ===== Campeonatos (lista + detalle) ===== */
+
+.futbolin-tournaments-wrapper .tournaments-list { display:flex; flex-direction:column; gap:8px; }
+.futbolin-tournaments-wrapper .t-item {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 12px; border:1px solid #e9eef3; border-radius:8px; background:#fff; text-decoration:none;
+}
+.futbolin-tournaments-wrapper .t-item:hover { background:#f7fbff; border-color:#cfe4f1; }
+.futbolin-tournaments-wrapper .t-name { font-weight:600; }
+.futbolin-tournaments-wrapper .t-date { opacity:.75; font-size:.95rem; }
+
+/* Chips de modalidades (anclas) */
+.futbolin-tournaments-wrapper .comp-chips { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 12px; }
+.futbolin-tournaments-wrapper .comp-chip { display:inline-flex; align-items:center; padding:6px 10px; border:1px solid #e5e7eb; border-radius:999px; background:#fff; text-decoration:none; }
+.futbolin-tournaments-wrapper .comp-chip:hover { background:#f3f4f6; border-color:#d1d5db; }
+
+/* Filtro local por jugador */
+.futbolin-tournaments-wrapper .tournament-controls { margin: 6px 0 8px; }
+.futbolin-tournaments-wrapper .tournament-controls .futbolin-live-search {
+  width:100%; max-width:420px; padding:10px 12px; border:1px solid #d1d5db; border-radius:6px;
+}
+.futbolin-tournaments-wrapper .tournament-controls .futbolin-live-search:focus{
+  border-color:#0073aa; box-shadow:0 0 0 2px rgba(0,115,170,.2);
+}
+
+/* Título de cada competición */
+.futbolin-tournaments-wrapper .comp-title { margin:10px 0 6px; font-weight:700; }
+
+/* Cabecera de la tabla (2 columnas: Equipo | Pos.) */
+.futbolin-tournaments-wrapper .torneo-comp .finals-table-container { margin-top: 6px; }
+.futbolin-tournaments-wrapper .torneo-comp .ranking-header {
+  background:#0073aa; color:#fff; font-weight:700; padding:10px 12px;
+  border-radius:8px; margin-bottom:10px; display:grid; gap:10px; align-items:center; font-size:.92rem;
+  grid-template-columns: minmax(260px, 3fr) 80px;
+}
+.futbolin-tournaments-wrapper .torneo-comp .ranking-header .ranking-th{
+  text-align:center; padding:4px 6px;
+}
+.futbolin-tournaments-wrapper .torneo-comp .ranking-header .ranking-th:first-child{
+  text-align:left;
+}
+
+/* Filas */
+.futbolin-tournaments-wrapper .torneo-comp .ranking-table-content .ranking-row{
+  display:grid; grid-template-columns: minmax(260px, 3fr) 80px;
+  gap:10px; align-items:center; padding:10px 12px; border:1px solid #e5e7eb; border-radius:8px; margin-bottom:8px; background:#fff;
+  transition:box-shadow .15s ease, transform .15s ease, background-color .15s ease;
+}
+.futbolin-tournaments-wrapper .torneo-comp .ranking-table-content .ranking-row:hover{
+  transform: translateY(-1px);
+  background:#f9fafb;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.07), 0 2px 4px -2px rgba(0,0,0,.06);
+}
+
+/* Celda de nombre multi-línea */
+.futbolin-tournaments-wrapper .ranking-player-name-cell,
+.futbolin-tournaments-wrapper .ranking-player-name-cell span,
+.futbolin-tournaments-wrapper .ranking-player-name-cell a{
+  white-space:normal !important; overflow:visible !important; text-overflow:unset !important; line-height:1.3;
+  text-align:left;
+}
+
+/* Posición centrada + medallas */
+.futbolin-tournaments-wrapper .pos-cell{
+  display:flex; align-items:center; justify-content:center;
+}
+.futbolin-tournaments-wrapper .badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:26px; height:26px; border-radius:50%;
+  font-weight:700; font-size:.9rem; color:#222; background:#eee;
+}
+.futbolin-tournaments-wrapper .badge.pos-1{ background:#d4af37; }
+.futbolin-tournaments-wrapper .badge.pos-2{ background:#c0c0c0; }
+.futbolin-tournaments-wrapper .badge.pos-3{ background:#cd7f32; }
+
+/* Responsive */
+@media (max-width: 640px){
+  .futbolin-tournaments-wrapper .torneo-comp .ranking-header{
+    grid-template-columns: minmax(200px, 2fr) 68px;
+  }
+  .futbolin-tournaments-wrapper .torneo-comp .ranking-table-content .ranking-row{
+    grid-template-columns: minmax(200px, 2fr) 68px;
+  }
+}
+/* Filtro de búsqueda (más compacto) */
+.futbolin-card .futbolin-search-form .futbolin-live-filter {
+  font-size: 0.8rem;
+  padding: 4px 6px;   /* antes era ~8-12 */
+  height: 38px;       /* antes más grande */
+}
+
+/* Botones de paginación (compactos) */
+.futbolin-card .page-size-form .button,
+.futbolin-card .page-size-form .psize-btn,
+.futbolin-card .futbolin-paginacion .button {
+  font-size: 0.8rem;
+  padding: 4px 8px;   /* antes 8-12 aprox */
+}
+/* === TORNEOS: forzar 2 líneas en la cabecera === */
+.futbolin-tournaments-wrapper .ranking-top-bar{
+  display:flex !important;
+  flex-direction:column;      /* 1ª línea título, 2ª línea controles */
+  gap:10px;
+  padding:10px 0;
+}
+
+/* Ajustes de la columna de título */
+.futbolin-tournaments-wrapper .ranking-title-wrap.column{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:4px;
+}
+.futbolin-tournaments-wrapper .ranking-title-wrap h2{
+  margin:0;
+}
+.futbolin-tournaments-wrapper .ranking-title-wrap .sub-count{
+  font-size:.85rem;
+  opacity:.75;
+}
+
+/* 2ª línea: buscador + botones */
+.futbolin-tournaments-wrapper .tournaments-controls-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:nowrap;
+  width:100%;
+}
+.futbolin-tournaments-wrapper .tournaments-controls-row .search-wrapper{ flex:1; min-width:220px; }
+.futbolin-tournaments-wrapper .tournaments-controls-row .futbolin-live-search{ margin-bottom:0 !important; }
+
+/* Botones */
+.futbolin-tournaments-wrapper .page-size-form a.button,
+.futbolin-tournaments-wrapper .page-size-form .button{
+  display:inline-block;
+  padding:5px 10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  background:#fff;
+  text-decoration:none;
+  cursor:pointer;
+  transition:all .2s ease-in-out;
+  line-height:1;
+}
+.futbolin-tournaments-wrapper .page-size-form a.button.active,
+.futbolin-tournaments-wrapper .page-size-form .button.active,
+.futbolin-tournaments-wrapper .page-size-form a.button:hover,
+.futbolin-tournaments-wrapper .page-size-form .button:hover{
+  background:#0073aa; color:#fff; border-color:#0073aa;
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  .futbolin-tournaments-wrapper .tournaments-controls-row{ flex-wrap:wrap; }
+}
+.futbolin-tournaments-wrapper .ranking-top-bar{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:8px;
+}
+.futbolin-tournaments-wrapper .tournaments-controls-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.futbolin-tournaments-wrapper .tournaments-controls-row .search-wrapper{ flex:1; min-width:220px; }
+.futbolin-tournaments-wrapper .tournaments-controls-row .futbolin-live-search{ margin-bottom:0; }
+
+.futbolin-tournaments-wrapper .page-size-form .button{
+  display:inline-block; padding:6px 10px; border:1px solid #ccc; border-radius:6px; background:#fff;
+  text-decoration:none; line-height:1;
+}
+.futbolin-tournaments-wrapper .page-size-form .button.active,
+.futbolin-tournaments-wrapper .page-size-form .button:hover{
+  background:#0073aa; color:#fff; border-color:#0073aa;
+}

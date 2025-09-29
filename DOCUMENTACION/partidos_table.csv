@@ -1,0 +1,1155 @@
+registroId,jugadorId,torneoId,tipoCompeticionId,modalidadId,categoriaId,fase,isLiguilla,isWin
+1,4,133,12,2,5,Eliminacion Doble Ko,False,False
+2,4,133,12,2,5,Eliminacion Doble Ko,False,True
+3,4,133,12,2,5,Eliminacion Doble Ko,False,False
+4,4,133,12,2,5,Eliminacion Doble Ko,False,True
+5,4,133,12,2,5,Eliminacion Doble Ko,False,True
+6,4,133,12,2,5,Eliminacion Doble Ko,False,True
+7,4,133,25,2,5,Eliminacion Doble Ko,False,False
+8,4,133,25,2,5,Eliminacion Doble Ko,False,True
+9,4,133,25,2,5,Eliminacion Doble Ko,False,True
+10,4,133,25,2,5,Eliminacion Doble Ko,False,True
+11,4,133,25,2,5,Eliminacion Doble Ko,False,True
+12,4,133,1,2,5,Eliminacion Directa,False,False
+13,4,133,1,2,5,Eliminacion Directa,False,True
+14,4,130,12,2,5,Eliminacion Doble Ko,False,True
+15,4,130,12,2,5,Eliminacion Doble Ko,False,True
+16,4,130,12,2,5,Eliminacion Doble Ko,False,True
+17,4,130,12,2,5,Eliminacion Doble Ko,False,True
+18,4,130,12,2,5,Eliminacion Doble Ko,False,True
+19,4,130,12,2,5,Eliminacion Doble Ko,False,True
+20,4,130,12,2,5,Eliminacion Doble Ko,False,False
+21,4,130,1,2,5,Eliminacion Doble Ko,False,False
+22,4,130,1,2,5,Eliminacion Doble Ko,False,True
+23,4,130,1,2,5,Eliminacion Doble Ko,False,False
+24,4,130,1,2,5,Eliminacion Doble Ko,False,True
+25,4,130,1,2,5,Eliminacion Doble Ko,False,True
+26,4,130,1,2,5,Eliminacion Doble Ko,False,True
+27,4,128,12,2,5,Eliminacion Doble Ko,False,False
+28,4,128,12,2,5,Eliminacion Doble Ko,False,True
+29,4,128,12,2,5,Eliminacion Doble Ko,False,True
+30,4,128,12,2,5,Eliminacion Doble Ko,False,True
+31,4,128,12,2,5,Eliminacion Doble Ko,False,True
+32,4,128,12,2,5,Eliminacion Doble Ko,False,False
+33,4,128,1,2,5,Eliminacion Directa,False,False
+34,4,128,1,2,5,Eliminacion Directa,False,True
+35,4,126,12,2,5,Eliminacion Doble Ko,False,True
+36,4,126,12,2,5,Eliminacion Doble Ko,False,True
+37,4,126,12,2,5,Eliminacion Doble Ko,False,True
+38,4,126,12,2,5,Eliminacion Doble Ko,False,True
+39,4,126,1,2,5,Eliminacion Doble Ko,False,False
+40,4,126,1,2,5,Eliminacion Doble Ko,False,True
+41,4,126,1,2,5,Eliminacion Doble Ko,False,True
+42,4,126,1,2,5,Eliminacion Doble Ko,False,True
+43,4,126,1,2,5,Eliminacion Doble Ko,False,False
+44,4,125,12,2,5,Eliminacion Doble Ko,False,False
+45,4,125,12,2,5,Eliminacion Doble Ko,False,True
+46,4,125,12,2,5,Eliminacion Doble Ko,False,True
+47,4,125,12,2,5,Eliminacion Doble Ko,False,True
+48,4,125,12,2,5,Eliminacion Doble Ko,False,False
+49,4,125,12,2,5,Eliminacion Doble Ko,False,True
+50,4,125,1,2,5,Eliminacion Directa,False,False
+51,4,125,1,2,5,Eliminacion Directa,False,True
+52,4,125,1,2,5,Eliminacion Directa,False,True
+53,4,125,1,2,5,Eliminacion Directa,False,True
+54,4,125,1,2,0,Liguilla,True,False
+55,4,125,1,2,0,Liguilla,True,True
+56,4,125,1,2,0,Liguilla,True,False
+57,4,125,1,2,0,Liguilla,True,True
+58,4,125,1,2,0,Liguilla,True,True
+59,4,124,12,2,4,Eliminacion Doble Ko,False,False
+60,4,124,12,2,4,Eliminacion Doble Ko,False,False
+61,4,124,25,2,4,Eliminacion Doble Ko,False,False
+62,4,124,25,2,4,Eliminacion Doble Ko,False,False
+63,4,124,25,2,4,Eliminacion Doble Ko,False,True
+64,4,124,25,2,4,Eliminacion Doble Ko,False,True
+65,4,124,25,2,4,Eliminacion Doble Ko,False,True
+66,4,124,1,2,4,Eliminacion Directa,False,False
+67,4,122,12,2,4,Eliminacion Doble Ko,False,False
+68,4,122,12,2,4,Eliminacion Doble Ko,False,True
+69,4,122,12,2,4,Eliminacion Doble Ko,False,False
+70,4,122,12,2,4,Eliminacion Doble Ko,False,True
+71,4,122,12,2,4,Eliminacion Doble Ko,False,True
+72,4,122,1,2,4,Eliminacion Doble Ko,False,False
+73,4,122,1,2,4,Eliminacion Doble Ko,False,True
+74,4,122,1,2,4,Eliminacion Doble Ko,False,True
+75,4,122,1,2,4,Eliminacion Doble Ko,False,True
+76,4,122,1,2,4,Eliminacion Doble Ko,False,True
+77,4,122,1,2,4,Eliminacion Doble Ko,False,True
+78,4,121,12,2,4,Eliminacion Doble Ko,False,False
+79,4,121,12,2,4,Eliminacion Doble Ko,False,True
+80,4,121,12,2,4,Eliminacion Doble Ko,False,True
+81,4,121,12,2,4,Eliminacion Doble Ko,False,False
+82,4,121,12,2,4,Eliminacion Doble Ko,False,True
+83,4,121,1,2,4,Eliminacion Doble Ko,False,False
+84,4,121,1,2,4,Eliminacion Doble Ko,False,True
+85,4,121,1,2,4,Eliminacion Doble Ko,False,True
+86,4,121,1,2,4,Eliminacion Doble Ko,False,True
+87,4,121,1,2,4,Eliminacion Doble Ko,False,True
+88,4,121,1,2,4,Eliminacion Doble Ko,False,True
+89,4,121,1,2,4,Eliminacion Doble Ko,False,True
+90,4,121,1,2,4,Eliminacion Doble Ko,False,False
+91,4,121,1,2,4,Eliminacion Doble Ko,False,True
+92,4,120,12,2,4,Eliminacion Doble Ko,False,False
+93,4,120,12,2,4,Eliminacion Doble Ko,False,False
+94,4,120,12,2,4,Eliminacion Doble Ko,False,True
+95,4,120,1,2,4,Eliminacion Doble Ko,False,False
+96,4,120,1,2,4,Eliminacion Doble Ko,False,True
+97,4,120,1,2,4,Eliminacion Doble Ko,False,False
+98,4,120,1,2,4,Eliminacion Doble Ko,False,True
+99,4,120,1,2,4,Eliminacion Doble Ko,False,True
+100,4,120,1,2,4,Eliminacion Doble Ko,False,True
+101,4,119,12,2,4,Eliminacion Doble Ko,False,True
+102,4,119,12,2,4,Eliminacion Doble Ko,False,True
+103,4,119,12,2,4,Eliminacion Doble Ko,False,True
+104,4,119,12,2,4,Eliminacion Doble Ko,False,True
+105,4,119,12,2,4,Eliminacion Doble Ko,False,True
+106,4,119,1,2,4,Eliminacion Doble Ko,False,True
+107,4,119,1,2,4,Eliminacion Doble Ko,False,True
+108,4,119,1,2,4,Eliminacion Doble Ko,False,True
+109,4,119,1,2,4,Eliminacion Doble Ko,False,True
+110,4,119,1,2,4,Eliminacion Doble Ko,False,True
+111,4,119,1,2,4,Eliminacion Doble Ko,False,True
+112,4,118,12,2,4,Eliminacion Doble Ko,False,False
+113,4,118,12,2,4,Eliminacion Doble Ko,False,True
+114,4,118,12,2,4,Eliminacion Doble Ko,False,True
+115,4,118,12,2,4,Eliminacion Doble Ko,False,False
+116,4,118,25,2,4,Eliminacion Doble Ko,False,False
+117,4,118,25,2,4,Eliminacion Doble Ko,False,False
+118,4,118,25,2,4,Eliminacion Doble Ko,False,True
+119,4,118,25,2,4,Eliminacion Doble Ko,False,True
+120,4,117,12,2,4,Eliminacion Doble Ko,False,False
+121,4,117,12,2,4,Eliminacion Doble Ko,False,True
+122,4,117,12,2,4,Eliminacion Doble Ko,False,False
+123,4,117,12,2,4,Eliminacion Doble Ko,False,True
+124,4,117,12,2,4,Eliminacion Doble Ko,False,True
+125,4,117,1,2,4,Eliminacion Doble Ko,False,False
+126,4,117,1,2,4,Eliminacion Doble Ko,False,True
+127,4,117,1,2,4,Eliminacion Doble Ko,False,False
+128,4,117,1,2,4,Eliminacion Doble Ko,False,True
+129,4,117,1,2,4,Eliminacion Doble Ko,False,True
+130,4,117,1,2,4,Eliminacion Doble Ko,False,True
+131,4,117,1,2,4,Eliminacion Doble Ko,False,True
+132,4,116,12,2,4,Eliminacion Doble Ko,False,True
+133,4,116,12,2,4,Eliminacion Doble Ko,False,True
+134,4,116,12,2,4,Eliminacion Doble Ko,False,False
+135,4,116,12,2,4,Eliminacion Doble Ko,False,True
+136,4,116,12,2,4,Eliminacion Doble Ko,False,True
+137,4,116,1,2,4,Eliminacion Doble Ko,False,False
+138,4,116,1,2,4,Eliminacion Doble Ko,False,True
+139,4,116,1,2,4,Eliminacion Doble Ko,False,False
+140,4,116,1,2,4,Eliminacion Doble Ko,False,True
+141,4,116,1,2,4,Eliminacion Doble Ko,False,True
+142,4,116,1,2,4,Eliminacion Doble Ko,False,True
+143,4,116,1,2,4,Eliminacion Doble Ko,False,True
+144,4,115,12,2,4,Eliminacion Doble Ko,False,True
+145,4,115,12,2,4,Eliminacion Doble Ko,False,True
+146,4,115,12,2,4,Eliminacion Doble Ko,False,True
+147,4,115,12,2,4,Eliminacion Doble Ko,False,True
+148,4,115,25,2,4,Eliminacion Doble Ko,False,False
+149,4,115,25,2,4,Eliminacion Doble Ko,False,True
+150,4,115,25,2,4,Eliminacion Doble Ko,False,False
+151,4,115,25,2,4,Eliminacion Doble Ko,False,True
+152,4,115,25,2,4,Eliminacion Doble Ko,False,True
+153,4,115,25,2,4,Eliminacion Doble Ko,False,True
+154,4,114,12,2,4,Eliminacion Doble Ko,False,True
+155,4,114,12,2,4,Eliminacion Doble Ko,False,True
+156,4,114,12,2,4,Eliminacion Doble Ko,False,True
+157,4,114,12,2,4,Eliminacion Doble Ko,False,True
+158,4,114,25,2,4,Eliminacion Doble Ko,False,False
+159,4,114,25,2,4,Eliminacion Doble Ko,False,True
+160,4,114,25,2,4,Eliminacion Doble Ko,False,True
+161,4,114,25,2,4,Eliminacion Doble Ko,False,True
+162,4,114,25,2,4,Eliminacion Doble Ko,False,False
+163,4,114,25,2,4,Eliminacion Doble Ko,False,True
+164,4,112,25,2,4,Eliminacion Doble Ko,False,False
+165,4,112,25,2,4,Eliminacion Doble Ko,False,True
+166,4,112,25,2,4,Eliminacion Doble Ko,False,True
+167,4,112,25,2,4,Eliminacion Doble Ko,False,True
+168,4,112,25,2,4,Eliminacion Doble Ko,False,True
+169,4,112,25,2,4,Eliminacion Doble Ko,False,True
+170,4,112,1,2,4,Eliminacion Doble Ko,False,False
+171,4,112,1,2,4,Eliminacion Doble Ko,False,True
+172,4,112,1,2,4,Eliminacion Doble Ko,False,False
+173,4,112,1,2,4,Eliminacion Doble Ko,False,True
+174,4,112,1,2,4,Eliminacion Doble Ko,False,True
+175,4,111,1,2,4,Eliminacion Doble Ko,False,False
+176,4,111,1,2,4,Eliminacion Doble Ko,False,True
+177,4,111,1,2,4,Eliminacion Doble Ko,False,True
+178,4,111,1,2,4,Eliminacion Doble Ko,False,False
+179,4,110,25,2,4,Eliminacion Doble Ko,False,True
+180,4,110,25,2,4,Eliminacion Doble Ko,False,True
+181,4,110,25,2,4,Eliminacion Doble Ko,False,True
+182,4,110,25,2,4,Eliminacion Doble Ko,False,True
+183,4,110,25,2,4,Eliminacion Doble Ko,False,True
+184,4,110,25,2,4,Eliminacion Doble Ko,False,True
+185,4,107,1,2,4,Eliminacion Doble Ko,False,False
+186,4,107,1,2,4,Eliminacion Doble Ko,False,False
+187,4,107,1,2,4,Eliminacion Doble Ko,False,True
+188,4,103,1,2,4,Eliminacion Doble Ko,False,False
+189,4,103,1,2,4,Eliminacion Doble Ko,False,True
+190,4,103,1,2,4,Eliminacion Doble Ko,False,True
+191,4,103,1,2,4,Eliminacion Doble Ko,False,True
+192,4,103,1,2,4,Eliminacion Doble Ko,False,True
+193,4,103,1,2,0,Liguilla,True,True
+194,4,103,1,2,0,Liguilla,True,True
+195,4,103,1,2,0,Liguilla,True,True
+196,4,103,1,2,0,Liguilla,True,True
+197,4,103,1,2,0,Liguilla,True,True
+198,4,103,1,2,0,Liguilla,True,True
+199,4,103,1,2,0,Liguilla,True,True
+200,4,102,1,2,4,Eliminacion Directa,False,False
+201,4,102,1,2,4,Eliminacion Directa,False,True
+202,4,102,1,2,4,Eliminacion Directa,False,True
+203,4,102,1,2,4,Eliminacion Directa,False,True
+204,4,102,1,2,0,Liguilla,True,True
+205,4,102,1,2,0,Liguilla,True,True
+206,4,102,1,2,0,Liguilla,True,True
+207,4,102,1,2,0,Liguilla,True,True
+208,4,102,1,2,0,Liguilla,True,True
+209,4,102,1,2,0,Liguilla,True,False
+210,4,101,25,2,4,Eliminacion Doble Ko,False,False
+211,4,101,25,2,4,Eliminacion Doble Ko,False,True
+212,4,101,25,2,4,Eliminacion Doble Ko,False,True
+213,4,101,25,2,4,Eliminacion Doble Ko,False,False
+214,4,101,25,2,4,Eliminacion Doble Ko,False,True
+215,4,101,25,2,0,Liguilla,True,True
+216,4,101,25,2,0,Liguilla,True,False
+217,4,101,25,2,0,Liguilla,True,True
+218,4,101,25,2,0,Liguilla,True,True
+219,4,101,25,2,0,Liguilla,True,True
+220,4,101,25,2,0,Liguilla,True,True
+221,4,100,1,2,4,Eliminacion Directa,False,False
+222,4,100,1,2,0,Liguilla,True,True
+223,4,100,1,2,0,Liguilla,True,True
+224,4,100,1,2,0,Liguilla,True,True
+225,4,100,1,2,0,Liguilla,True,True
+226,4,98,1,2,4,Eliminacion Doble Ko,False,False
+227,4,98,1,2,4,Eliminacion Doble Ko,False,False
+228,4,98,1,2,4,Eliminacion Doble Ko,False,True
+229,4,98,1,2,4,Eliminacion Doble Ko,False,True
+230,4,98,1,2,0,Liguilla,True,True
+231,4,98,1,2,0,Liguilla,True,False
+232,4,98,1,2,0,Liguilla,True,True
+233,4,98,1,2,0,Liguilla,True,True
+234,4,98,1,2,0,Liguilla,True,True
+235,4,98,1,2,0,Liguilla,True,True
+236,4,97,1,2,4,Eliminacion Doble Ko,False,False
+237,4,97,1,2,4,Eliminacion Doble Ko,False,True
+238,4,97,1,2,4,Eliminacion Doble Ko,False,True
+239,4,97,1,2,4,Eliminacion Doble Ko,False,True
+240,4,97,1,2,4,Eliminacion Doble Ko,False,True
+241,4,97,1,2,4,Eliminacion Doble Ko,False,True
+242,4,97,1,2,4,Eliminacion Doble Ko,False,False
+243,4,97,1,2,0,Liguilla,True,True
+244,4,97,1,2,0,Liguilla,True,True
+245,4,97,1,2,0,Liguilla,True,True
+246,4,97,1,2,0,Liguilla,True,True
+247,4,97,1,2,0,Liguilla,True,False
+248,4,97,1,2,0,Liguilla,True,True
+249,4,97,1,2,0,Liguilla,True,False
+250,4,97,1,2,0,Liguilla,True,True
+251,4,96,1,2,4,Eliminacion Directa,False,False
+252,4,96,1,2,4,Eliminacion Directa,False,True
+253,4,96,1,2,0,Liguilla,True,True
+254,4,96,1,2,0,Liguilla,True,True
+255,4,96,1,2,0,Liguilla,True,True
+256,4,96,1,2,0,Liguilla,True,False
+257,4,96,1,2,0,Liguilla,True,True
+258,4,96,1,2,0,Liguilla,True,True
+259,4,95,25,2,4,Eliminacion Directa,False,True
+260,4,95,25,2,4,Eliminacion Directa,False,True
+261,4,95,25,2,4,Eliminacion Directa,False,True
+262,4,95,25,2,4,Eliminacion Directa,False,True
+263,4,95,25,2,0,Liguilla,True,True
+264,4,95,25,2,0,Liguilla,True,True
+265,4,95,25,2,0,Liguilla,True,True
+266,4,95,25,2,0,Liguilla,True,True
+267,4,95,25,2,0,Liguilla,True,True
+268,4,95,25,2,0,Liguilla,True,True
+269,4,94,1,2,4,Eliminacion Directa,False,False
+270,4,94,1,2,0,Liguilla,True,False
+271,4,94,1,2,0,Liguilla,True,True
+272,4,94,1,2,0,Liguilla,True,True
+273,4,94,1,2,0,Liguilla,True,True
+274,4,94,1,2,0,Liguilla,True,True
+275,4,91,1,2,4,Eliminacion Directa,False,True
+276,4,91,1,2,4,Eliminacion Directa,False,True
+277,4,91,1,2,4,Eliminacion Directa,False,True
+278,4,91,1,2,0,Liguilla,True,True
+279,4,91,1,2,0,Liguilla,True,True
+280,4,91,1,2,0,Liguilla,True,True
+281,4,91,1,2,0,Liguilla,True,True
+282,4,89,25,2,4,Eliminacion Directa,False,True
+283,4,89,25,2,4,Eliminacion Directa,False,True
+284,4,89,25,2,4,Eliminacion Directa,False,True
+285,4,89,25,2,4,Eliminacion Directa,False,True
+286,4,89,25,2,0,Liguilla,True,True
+287,4,89,25,2,0,Liguilla,True,True
+288,4,89,25,2,0,Liguilla,True,True
+289,4,89,25,2,0,Liguilla,True,True
+290,4,89,25,2,0,Liguilla,True,False
+291,4,88,1,2,0,Liguilla,True,True
+292,4,88,1,2,0,Liguilla,True,True
+293,4,88,1,2,0,Liguilla,True,False
+294,4,88,1,2,0,Liguilla,True,True
+295,4,88,1,2,0,Liguilla,True,False
+296,4,88,1,2,0,Liguilla,True,True
+297,4,88,1,2,4,Eliminacion Directa,False,False
+298,4,88,1,2,4,Eliminacion Directa,False,True
+299,4,88,1,2,4,Eliminacion Directa,False,True
+300,4,88,1,2,4,Eliminacion Directa,False,True
+301,4,86,1,2,4,Eliminacion Doble Ko,False,False
+302,4,86,1,2,4,Eliminacion Doble Ko,False,False
+303,4,86,1,2,4,Eliminacion Doble Ko,False,True
+304,4,86,1,2,4,Eliminacion Doble Ko,False,True
+305,4,86,1,2,4,Eliminacion Doble Ko,False,True
+306,4,85,1,2,4,Eliminacion Doble Ko,False,True
+307,4,85,1,2,4,Eliminacion Doble Ko,False,True
+308,4,85,1,2,4,Eliminacion Doble Ko,False,True
+309,4,82,1,2,4,Eliminacion Doble Ko,False,True
+310,4,82,1,2,4,Eliminacion Doble Ko,False,True
+311,4,82,1,2,4,Eliminacion Doble Ko,False,True
+312,4,82,1,2,4,Eliminacion Doble Ko,False,True
+313,4,82,1,2,4,Eliminacion Doble Ko,False,True
+314,4,82,1,2,4,Eliminacion Doble Ko,False,True
+315,4,81,1,2,4,Eliminacion Doble Ko,False,False
+316,4,81,1,2,4,Eliminacion Doble Ko,False,True
+317,4,81,1,2,4,Eliminacion Doble Ko,False,True
+318,4,81,1,2,4,Eliminacion Doble Ko,False,False
+319,4,81,1,2,4,Eliminacion Doble Ko,False,True
+320,4,81,1,2,4,Eliminacion Doble Ko,False,True
+321,4,81,1,2,4,Eliminacion Doble Ko,False,True
+322,4,79,1,2,4,Eliminacion Doble Ko,False,False
+323,4,79,1,2,4,Eliminacion Doble Ko,False,False
+324,4,79,1,2,4,Eliminacion Doble Ko,False,True
+325,4,79,1,2,4,Eliminacion Doble Ko,False,True
+326,4,79,1,2,4,Eliminacion Doble Ko,False,True
+327,4,75,1,2,4,Eliminacion Directa,False,False
+328,4,75,1,2,4,Eliminacion Directa,False,True
+329,4,21,25,2,4,Eliminacion Doble Ko,False,False
+330,4,21,25,2,4,Eliminacion Doble Ko,False,True
+331,4,21,25,2,4,Eliminacion Doble Ko,False,True
+332,4,21,25,2,4,Eliminacion Doble Ko,False,True
+333,4,21,25,2,4,Eliminacion Doble Ko,False,True
+334,4,21,25,2,4,Eliminacion Doble Ko,False,True
+335,4,21,25,2,4,Eliminacion Doble Ko,False,False
+336,4,21,25,2,4,Eliminacion Doble Ko,False,True
+337,4,21,25,2,0,Liguilla,True,True
+338,4,21,25,2,0,Liguilla,True,True
+339,4,21,25,2,0,Liguilla,True,True
+340,4,21,25,2,0,Liguilla,True,True
+341,4,21,25,2,0,Liguilla,True,True
+342,4,21,25,2,0,Liguilla,True,True
+343,4,21,25,2,0,Liguilla,True,True
+344,4,21,25,2,0,Liguilla,True,True
+345,4,20,1,2,4,Eliminacion Doble Ko,False,False
+346,4,20,1,2,4,Eliminacion Doble Ko,False,False
+347,4,20,1,2,4,Eliminacion Doble Ko,False,True
+348,4,20,1,2,4,Eliminacion Doble Ko,False,True
+349,4,20,1,2,0,Liguilla,True,False
+350,4,20,1,2,0,Liguilla,True,True
+351,4,20,1,2,0,Liguilla,True,True
+352,4,20,1,2,0,Liguilla,True,True
+353,4,20,1,2,0,Liguilla,True,True
+354,4,19,1,2,4,Eliminacion Doble Ko,False,False
+355,4,19,1,2,4,Eliminacion Doble Ko,False,False
+356,4,19,1,2,4,Eliminacion Doble Ko,False,True
+357,4,19,1,2,4,Eliminacion Doble Ko,False,True
+358,4,18,1,2,4,Eliminacion Doble Ko,False,False
+359,4,18,1,2,4,Eliminacion Doble Ko,False,True
+360,4,18,1,2,4,Eliminacion Doble Ko,False,True
+361,4,18,1,2,4,Eliminacion Doble Ko,False,True
+362,4,18,1,2,4,Eliminacion Doble Ko,False,False
+363,4,18,1,2,4,Eliminacion Doble Ko,False,True
+364,4,16,25,2,4,Eliminacion Doble Ko,False,True
+365,4,16,25,2,4,Eliminacion Doble Ko,False,True
+366,4,16,25,2,4,Eliminacion Doble Ko,False,True
+367,4,16,25,2,4,Eliminacion Doble Ko,False,True
+368,4,16,25,2,4,Eliminacion Doble Ko,False,False
+369,4,16,25,2,4,Eliminacion Doble Ko,False,True
+370,4,16,25,2,4,Eliminacion Doble Ko,False,True
+371,4,16,25,2,0,Liguilla,True,True
+372,4,16,25,2,0,Liguilla,True,True
+373,4,16,25,2,0,Liguilla,True,True
+374,4,16,25,2,0,Liguilla,True,False
+375,4,16,25,2,0,Liguilla,True,True
+376,4,16,25,2,0,Liguilla,True,True
+377,4,16,25,2,0,Liguilla,True,True
+378,4,16,25,2,0,Liguilla,True,True
+379,4,15,1,2,4,Eliminacion Doble Ko,False,True
+380,4,15,1,2,4,Eliminacion Doble Ko,False,True
+381,4,15,1,2,4,Eliminacion Doble Ko,False,True
+382,4,15,1,2,4,Eliminacion Doble Ko,False,True
+383,4,15,1,2,4,Eliminacion Doble Ko,False,True
+384,4,11,1,2,4,Eliminacion Doble Ko,False,True
+385,4,11,1,2,4,Eliminacion Doble Ko,False,True
+386,4,11,1,2,4,Eliminacion Doble Ko,False,False
+387,4,11,1,2,4,Eliminacion Doble Ko,False,True
+388,4,11,1,2,4,Eliminacion Doble Ko,False,True
+389,4,11,1,2,0,Liguilla,True,True
+390,4,11,1,2,0,Liguilla,True,True
+391,4,11,1,2,0,Liguilla,True,True
+392,4,11,1,2,0,Liguilla,True,False
+393,4,11,1,2,0,Liguilla,True,True
+394,4,11,1,2,0,Liguilla,True,False
+395,4,11,1,2,0,Liguilla,True,True
+396,4,11,1,2,0,Liguilla,True,True
+397,4,10,1,2,1,Eliminacion Doble Ko,False,False
+398,4,10,1,2,1,Eliminacion Doble Ko,False,True
+399,4,10,1,2,1,Eliminacion Doble Ko,False,True
+400,4,10,1,2,1,Eliminacion Doble Ko,False,False
+401,4,10,1,2,0,Liguilla,True,True
+402,4,10,1,2,0,Liguilla,True,True
+403,4,10,1,2,0,Liguilla,True,True
+404,4,10,1,2,0,Liguilla,True,True
+405,4,10,1,2,0,Liguilla,True,True
+406,4,10,1,2,0,Liguilla,True,True
+407,4,9,1,2,1,Eliminacion Doble Ko,False,False
+408,4,9,1,2,1,Eliminacion Doble Ko,False,True
+409,4,9,1,2,1,Eliminacion Doble Ko,False,True
+410,4,9,1,2,1,Eliminacion Doble Ko,False,True
+411,4,9,1,2,1,Eliminacion Doble Ko,False,False
+412,4,9,1,2,1,Eliminacion Doble Ko,False,True
+413,4,9,1,2,1,Eliminacion Doble Ko,False,True
+414,4,9,1,2,0,Liguilla,True,False
+415,4,9,1,2,0,Liguilla,True,True
+416,4,9,1,2,0,Liguilla,True,True
+417,4,9,1,2,0,Liguilla,True,True
+418,4,9,1,2,0,Liguilla,True,True
+419,4,9,1,2,0,Liguilla,True,True
+420,4,9,1,2,0,Liguilla,True,True
+421,4,9,1,2,0,Liguilla,True,False
+422,4,8,1,2,1,Eliminacion Directa,False,True
+423,4,8,1,2,1,Eliminacion Directa,False,True
+424,4,8,1,2,1,Eliminacion Directa,False,True
+425,4,8,1,2,0,Liguilla,True,True
+426,4,8,1,2,0,Liguilla,True,True
+427,4,8,1,2,0,Liguilla,True,True
+428,4,8,1,2,0,Liguilla,True,True
+429,4,8,1,2,0,Liguilla,True,False
+430,4,8,1,2,0,Liguilla,True,True
+431,4,4,1,2,1,Eliminacion Directa,False,True
+432,4,4,1,2,1,Eliminacion Directa,False,False
+433,4,4,1,2,1,Eliminacion Directa,False,True
+434,4,4,1,2,0,Liguilla,True,True
+435,4,4,1,2,0,Liguilla,True,True
+436,4,4,1,2,0,Liguilla,True,True
+437,4,4,1,2,0,Liguilla,True,True
+438,4,4,1,2,0,Liguilla,True,True
+439,4,4,1,2,0,Liguilla,True,True
+440,4,4,1,2,0,Liguilla,True,True
+441,4,4,1,2,0,Liguilla,True,True
+442,4,2,1,2,1,Eliminacion Directa,False,False
+443,4,2,1,2,0,Liguilla,True,False
+444,4,2,1,2,0,Liguilla,True,False
+445,4,2,1,2,0,Liguilla,True,True
+446,4,2,1,2,0,Liguilla,True,True
+447,4,2,1,2,0,Liguilla,True,True
+448,4,2,1,2,0,Liguilla,True,True
+449,4,1,1,2,1,Eliminacion Directa,False,False
+450,4,1,1,2,1,Eliminacion Directa,False,True
+451,4,1,1,2,0,Liguilla,True,True
+452,4,1,1,2,0,Liguilla,True,True
+453,4,1,1,2,0,Liguilla,True,True
+454,4,1,1,2,0,Liguilla,True,True
+455,4,1,1,2,0,Liguilla,True,False
+456,4,1,1,2,0,Liguilla,True,True
+457,4,133,24,1,5,Eliminacion Directa,False,False
+458,4,133,13,1,5,Eliminacion Directa,False,False
+459,4,133,13,1,5,Eliminacion Directa,False,True
+460,4,133,13,1,5,Eliminacion Directa,False,True
+461,4,130,13,1,5,Eliminacion Directa,False,False
+462,4,128,13,1,5,Eliminacion Directa,False,False
+463,4,128,13,1,5,Eliminacion Directa,False,True
+464,4,126,13,1,5,Eliminacion Doble Ko,False,False
+465,4,126,13,1,5,Eliminacion Doble Ko,False,True
+466,4,126,13,1,5,Eliminacion Doble Ko,False,True
+467,4,126,13,1,5,Eliminacion Doble Ko,False,False
+468,4,126,13,1,5,Eliminacion Doble Ko,False,True
+469,4,126,13,1,5,Eliminacion Doble Ko,False,True
+470,4,126,13,1,5,Eliminacion Doble Ko,False,True
+471,4,125,13,1,5,Eliminacion Directa,False,False
+472,4,125,13,1,5,Eliminacion Directa,False,True
+473,4,125,13,1,0,Liguilla,True,False
+474,4,125,13,1,0,Liguilla,True,True
+475,4,125,13,1,0,Liguilla,True,True
+476,4,125,13,1,0,Liguilla,True,True
+477,4,124,24,1,4,Eliminacion Doble Ko,False,False
+478,4,124,24,1,4,Eliminacion Doble Ko,False,True
+479,4,124,24,1,4,Eliminacion Doble Ko,False,True
+480,4,124,24,1,4,Eliminacion Doble Ko,False,True
+481,4,124,24,1,4,Eliminacion Doble Ko,False,False
+482,4,122,13,1,4,Eliminacion Doble Ko,False,True
+483,4,122,13,1,4,Eliminacion Doble Ko,False,True
+484,4,122,13,1,4,Eliminacion Doble Ko,False,True
+485,4,122,13,1,4,Eliminacion Doble Ko,False,True
+486,4,122,13,1,4,Eliminacion Doble Ko,False,False
+487,4,122,13,1,4,Eliminacion Doble Ko,False,True
+488,4,122,13,1,4,Eliminacion Doble Ko,False,True
+489,4,122,13,1,4,Eliminacion Doble Ko,False,True
+490,4,121,13,1,4,Eliminacion Doble Ko,False,False
+491,4,121,13,1,4,Eliminacion Doble Ko,False,True
+492,4,121,13,1,4,Eliminacion Doble Ko,False,True
+493,4,121,13,1,4,Eliminacion Doble Ko,False,False
+494,4,121,13,1,4,Eliminacion Doble Ko,False,True
+495,4,120,13,1,4,Eliminacion Doble Ko,False,False
+496,4,120,13,1,4,Eliminacion Doble Ko,False,False
+497,4,120,13,1,4,Eliminacion Doble Ko,False,True
+498,4,120,13,1,4,Eliminacion Doble Ko,False,True
+499,4,119,13,1,4,Eliminacion Doble Ko,False,False
+500,4,119,13,1,4,Eliminacion Doble Ko,False,True
+501,4,119,13,1,4,Eliminacion Doble Ko,False,True
+502,4,119,13,1,4,Eliminacion Doble Ko,False,False
+503,4,118,24,1,4,Eliminacion Doble Ko,False,False
+504,4,118,24,1,4,Eliminacion Doble Ko,False,True
+505,4,118,24,1,4,Eliminacion Doble Ko,False,False
+506,4,118,24,1,4,Eliminacion Doble Ko,False,True
+507,4,118,24,1,4,Eliminacion Doble Ko,False,True
+508,4,117,13,1,4,Eliminacion Doble Ko,False,False
+509,4,117,13,1,4,Eliminacion Doble Ko,False,True
+510,4,117,13,1,4,Eliminacion Doble Ko,False,True
+511,4,117,13,1,4,Eliminacion Doble Ko,False,False
+512,4,117,13,1,4,Eliminacion Doble Ko,False,True
+513,4,117,13,1,4,Eliminacion Doble Ko,False,True
+514,4,116,13,1,4,Eliminacion Doble Ko,False,False
+515,4,116,13,1,4,Eliminacion Doble Ko,False,True
+516,4,116,13,1,4,Eliminacion Doble Ko,False,False
+517,4,116,13,1,4,Eliminacion Doble Ko,False,True
+518,4,116,13,1,4,Eliminacion Doble Ko,False,True
+519,4,116,13,1,4,Eliminacion Doble Ko,False,True
+520,4,116,13,1,4,Eliminacion Doble Ko,False,True
+521,4,115,24,1,4,Eliminacion Doble Ko,False,True
+522,4,115,24,1,4,Eliminacion Doble Ko,False,True
+523,4,115,24,1,4,Eliminacion Doble Ko,False,True
+524,4,115,24,1,4,Eliminacion Doble Ko,False,True
+525,4,115,24,1,4,Eliminacion Doble Ko,False,True
+526,4,115,24,1,4,Eliminacion Doble Ko,False,True
+527,4,114,24,1,4,Eliminacion Doble Ko,False,False
+528,4,114,24,1,4,Eliminacion Doble Ko,False,True
+529,4,114,24,1,4,Eliminacion Doble Ko,False,True
+530,4,114,24,1,4,Eliminacion Doble Ko,False,False
+531,4,114,24,1,4,Eliminacion Doble Ko,False,True
+532,4,112,24,1,4,Eliminacion Doble Ko,False,False
+533,4,112,24,1,4,Eliminacion Doble Ko,False,False
+534,4,112,24,1,4,Eliminacion Doble Ko,False,True
+535,4,112,24,1,4,Eliminacion Doble Ko,False,True
+536,4,112,13,1,4,Eliminacion Doble Ko,False,False
+537,4,112,13,1,4,Eliminacion Doble Ko,False,True
+538,4,112,13,1,4,Eliminacion Doble Ko,False,True
+539,4,112,13,1,4,Eliminacion Doble Ko,False,False
+540,4,111,13,1,4,Eliminacion Doble Ko,False,False
+541,4,111,13,1,4,Eliminacion Doble Ko,False,False
+542,4,111,13,1,4,Eliminacion Doble Ko,False,True
+543,4,110,24,1,4,Eliminacion Doble Ko,False,True
+544,4,110,24,1,4,Eliminacion Doble Ko,False,True
+545,4,110,24,1,4,Eliminacion Doble Ko,False,False
+546,4,110,24,1,4,Eliminacion Doble Ko,False,True
+547,4,110,24,1,4,Eliminacion Doble Ko,False,True
+548,4,110,24,1,4,Eliminacion Doble Ko,False,True
+549,4,110,24,1,4,Eliminacion Doble Ko,False,True
+550,4,107,13,1,4,Eliminacion Doble Ko,False,True
+551,4,107,13,1,4,Eliminacion Doble Ko,False,True
+552,4,107,13,1,4,Eliminacion Doble Ko,False,False
+553,4,107,13,1,4,Eliminacion Doble Ko,False,True
+554,4,107,13,1,4,Eliminacion Doble Ko,False,True
+555,4,107,13,1,4,Eliminacion Doble Ko,False,True
+556,4,107,13,1,4,Eliminacion Doble Ko,False,True
+557,4,104,13,1,4,Eliminacion Directa,False,False
+558,4,104,13,1,4,Eliminacion Directa,False,True
+559,4,104,13,1,4,Eliminacion Directa,False,True
+560,4,104,13,1,4,Eliminacion Directa,False,True
+561,4,104,13,1,4,Eliminacion Directa,False,True
+562,4,104,13,1,0,Liguilla,True,False
+563,4,104,13,1,0,Liguilla,True,True
+564,4,104,13,1,0,Liguilla,True,True
+565,4,104,13,1,0,Liguilla,True,True
+566,4,104,13,1,0,Liguilla,True,True
+567,4,104,13,1,0,Liguilla,True,True
+568,4,101,24,1,4,Eliminacion Doble Ko,False,False
+569,4,101,24,1,4,Eliminacion Doble Ko,False,False
+570,4,101,24,1,4,Eliminacion Doble Ko,False,True
+571,4,101,24,1,4,Eliminacion Doble Ko,False,True
+572,4,101,24,1,0,Liguilla,True,True
+573,4,101,24,1,0,Liguilla,True,False
+574,4,101,24,1,0,Liguilla,True,True
+575,4,101,24,1,0,Liguilla,True,True
+576,4,101,24,1,0,Liguilla,True,True
+577,4,101,24,1,0,Liguilla,True,False
+578,4,100,13,1,4,Eliminacion Directa,False,False
+579,4,100,13,1,4,Eliminacion Directa,False,True
+580,4,100,13,1,4,Eliminacion Directa,False,True
+581,4,100,13,1,0,Liguilla,True,True
+582,4,100,13,1,0,Liguilla,True,True
+583,4,100,13,1,0,Liguilla,True,True
+584,4,100,13,1,0,Liguilla,True,True
+585,4,100,13,1,0,Liguilla,True,True
+586,4,96,13,1,4,Eliminacion Directa,False,True
+587,4,96,13,1,4,Eliminacion Directa,False,True
+588,4,96,13,1,4,Eliminacion Directa,False,True
+589,4,96,13,1,4,Eliminacion Directa,False,True
+590,4,96,13,1,4,Eliminacion Directa,False,True
+591,4,96,13,1,0,Liguilla,True,True
+592,4,96,13,1,0,Liguilla,True,True
+593,4,96,13,1,0,Liguilla,True,True
+594,4,96,13,1,0,Liguilla,True,True
+595,4,95,24,1,4,Eliminacion Directa,False,False
+596,4,95,24,1,4,Eliminacion Directa,False,True
+597,4,95,24,1,4,Eliminacion Directa,False,True
+598,4,95,24,1,4,Eliminacion Directa,False,True
+599,4,95,24,1,4,Eliminacion Directa,False,True
+600,4,94,13,1,4,Eliminacion Directa,False,False
+601,4,94,13,1,4,Eliminacion Directa,False,True
+602,4,94,13,1,4,Eliminacion Directa,False,True
+603,4,94,13,1,4,Eliminacion Directa,False,True
+604,4,94,13,1,4,Eliminacion Directa,False,True
+605,4,94,13,1,0,Liguilla,True,True
+606,4,94,13,1,0,Liguilla,True,True
+607,4,94,13,1,0,Liguilla,True,True
+608,4,94,13,1,0,Liguilla,True,True
+609,4,91,13,1,4,Eliminacion Directa,False,True
+610,4,91,13,1,4,Eliminacion Directa,False,False
+611,4,91,13,1,4,Eliminacion Directa,False,True
+612,4,91,13,1,4,Eliminacion Directa,False,True
+613,4,91,13,1,0,Liguilla,True,True
+614,4,91,13,1,0,Liguilla,True,True
+615,4,91,13,1,0,Liguilla,True,True
+616,4,91,13,1,0,Liguilla,True,True
+617,4,91,13,1,0,Liguilla,True,True
+618,4,89,24,1,4,Eliminacion Directa,False,False
+619,4,89,24,1,4,Eliminacion Directa,False,True
+620,4,89,24,1,4,Eliminacion Directa,False,True
+621,4,89,24,1,4,Eliminacion Directa,False,True
+622,4,89,24,1,0,Liguilla,True,True
+623,4,89,24,1,0,Liguilla,True,True
+624,4,89,24,1,0,Liguilla,True,True
+625,4,89,24,1,0,Liguilla,True,False
+626,4,88,13,1,4,Eliminacion Directa,False,True
+627,4,88,13,1,4,Eliminacion Directa,False,True
+628,4,88,13,1,4,Eliminacion Directa,False,True
+629,4,88,13,1,4,Eliminacion Directa,False,True
+630,4,88,13,1,0,Liguilla,True,True
+631,4,88,13,1,0,Liguilla,True,True
+632,4,88,13,1,0,Liguilla,True,True
+633,4,88,13,1,0,Liguilla,True,True
+634,4,86,13,1,4,Eliminacion Doble Ko,False,True
+635,4,86,13,1,4,Eliminacion Doble Ko,False,True
+636,4,86,13,1,4,Eliminacion Doble Ko,False,True
+637,4,86,13,1,4,Eliminacion Doble Ko,False,True
+638,4,86,13,1,4,Eliminacion Doble Ko,False,True
+639,4,86,13,1,4,Eliminacion Doble Ko,False,True
+640,4,85,13,1,4,Eliminacion Doble Ko,False,False
+641,4,85,13,1,4,Eliminacion Doble Ko,False,True
+642,4,85,13,1,4,Eliminacion Doble Ko,False,True
+643,4,85,13,1,4,Eliminacion Doble Ko,False,True
+644,4,85,13,1,4,Eliminacion Doble Ko,False,False
+645,4,75,13,1,4,Eliminacion Directa,False,False
+646,4,75,13,1,4,Eliminacion Directa,False,True
+647,4,75,13,1,4,Eliminacion Directa,False,True
+648,4,21,24,1,3,Eliminacion Doble Ko,False,False
+649,4,21,24,1,3,Eliminacion Doble Ko,False,True
+650,4,21,24,1,3,Eliminacion Doble Ko,False,True
+651,4,21,24,1,3,Eliminacion Doble Ko,False,True
+652,4,21,24,1,3,Eliminacion Doble Ko,False,True
+653,4,21,24,1,3,Eliminacion Doble Ko,False,True
+654,4,21,24,1,3,Eliminacion Doble Ko,False,True
+655,4,21,24,1,3,Eliminacion Doble Ko,False,False
+656,4,21,24,1,3,Eliminacion Doble Ko,False,True
+657,4,21,24,1,0,Liguilla,True,True
+658,4,21,24,1,0,Liguilla,True,True
+659,4,21,24,1,0,Liguilla,True,True
+660,4,21,24,1,0,Liguilla,True,True
+661,4,19,13,1,3,Eliminacion Doble Ko,False,False
+662,4,19,13,1,3,Eliminacion Doble Ko,False,True
+663,4,19,13,1,3,Eliminacion Doble Ko,False,True
+664,4,19,13,1,3,Eliminacion Doble Ko,False,False
+665,4,19,13,1,3,Eliminacion Doble Ko,False,True
+666,4,19,13,1,3,Eliminacion Doble Ko,False,True
+667,4,19,13,1,3,Eliminacion Doble Ko,False,True
+668,4,18,13,1,3,Eliminacion Doble Ko,False,False
+669,4,18,13,1,3,Eliminacion Doble Ko,False,False
+670,4,18,13,1,3,Eliminacion Doble Ko,False,True
+671,4,17,13,1,3,Eliminacion Doble Ko,False,False
+672,4,17,13,1,3,Eliminacion Doble Ko,False,True
+673,4,17,13,1,3,Eliminacion Doble Ko,False,True
+674,4,17,13,1,3,Eliminacion Doble Ko,False,False
+675,4,17,13,1,3,Eliminacion Doble Ko,False,True
+676,4,17,13,1,3,Eliminacion Doble Ko,False,True
+677,4,16,24,1,3,Eliminacion Doble Ko,False,False
+678,4,16,24,1,3,Eliminacion Doble Ko,False,True
+679,4,16,24,1,3,Eliminacion Doble Ko,False,False
+680,4,16,24,1,3,Eliminacion Doble Ko,False,True
+681,4,16,24,1,0,Liguilla,True,True
+682,4,16,24,1,0,Liguilla,True,True
+683,4,16,24,1,0,Liguilla,True,True
+684,4,16,24,1,0,Liguilla,True,True
+685,4,16,24,1,0,Liguilla,True,True
+686,4,16,24,1,0,Liguilla,True,True
+687,4,16,24,1,0,Liguilla,True,True
+688,4,16,24,1,0,Liguilla,True,False
+689,4,15,13,1,3,Eliminacion Doble Ko,False,False
+690,4,15,13,1,3,Eliminacion Doble Ko,False,False
+691,4,15,13,1,3,Eliminacion Doble Ko,False,True
+692,4,10,13,1,1,Eliminacion Doble Ko,False,False
+693,4,10,13,1,1,Eliminacion Doble Ko,False,True
+694,4,10,13,1,1,Eliminacion Doble Ko,False,False
+695,4,10,13,1,1,Eliminacion Doble Ko,False,True
+696,4,10,13,1,0,Liguilla,True,True
+697,4,10,13,1,0,Liguilla,True,True
+698,4,10,13,1,0,Liguilla,True,True
+699,4,10,13,1,0,Liguilla,True,True
+700,4,10,13,1,0,Liguilla,True,False
+701,4,10,13,1,0,Liguilla,True,True
+702,4,10,13,1,0,Liguilla,True,True
+703,4,10,13,1,0,Liguilla,True,True
+704,4,9,13,1,1,Eliminacion Doble Ko,False,False
+705,4,9,13,1,1,Eliminacion Doble Ko,False,True
+706,4,9,13,1,1,Eliminacion Doble Ko,False,False
+707,4,9,13,1,1,Eliminacion Doble Ko,False,True
+708,4,9,13,1,1,Eliminacion Doble Ko,False,True
+709,4,2,13,1,1,Eliminacion Directa,False,True
+710,4,2,13,1,1,Eliminacion Directa,False,True
+711,4,2,13,1,1,Eliminacion Directa,False,True
+712,4,2,13,1,1,Eliminacion Directa,False,True
+713,4,2,13,1,1,Eliminacion Directa,False,True
+714,4,2,13,1,0,Liguilla,True,True
+715,4,2,13,1,0,Liguilla,True,True
+716,4,2,13,1,0,Liguilla,True,False
+717,4,2,13,1,0,Liguilla,True,False
+718,4,1,13,1,1,Eliminacion Directa,False,False
+719,4,1,13,1,1,Eliminacion Directa,False,True
+720,4,1,13,1,1,Eliminacion Directa,False,True
+721,4,1,13,1,0,Liguilla,True,True
+722,4,1,13,1,0,Liguilla,True,True
+723,4,1,13,1,0,Liguilla,True,True
+724,4,1,13,1,0,Liguilla,True,True
+725,4,1,13,1,0,Liguilla,True,True
+726,4,1,13,1,0,Liguilla,True,True
+727,4,1,13,1,0,Liguilla,True,False
+728,4,1,13,1,0,Liguilla,True,True
+729,4,128,11,10,1,Eliminacion Doble Ko,False,False
+730,4,128,11,10,1,Eliminacion Doble Ko,False,False
+731,4,128,11,10,1,Eliminacion Doble Ko,False,True
+732,4,128,11,10,1,Eliminacion Doble Ko,False,True
+733,4,124,11,10,1,Eliminacion Doble Ko,False,False
+734,4,124,11,10,1,Eliminacion Doble Ko,False,False
+735,4,120,11,10,1,Eliminacion Doble Ko,False,True
+736,4,120,11,10,1,Eliminacion Doble Ko,False,True
+737,4,119,9,9,0,Eliminacion Doble Ko,False,False
+738,4,119,9,9,0,Eliminacion Doble Ko,False,False
+739,4,117,3,9,0,Eliminacion Doble Ko,False,False
+740,4,117,3,9,0,Eliminacion Doble Ko,False,False
+741,4,112,3,9,0,Eliminacion Directa,False,False
+742,4,112,3,9,0,Eliminacion Directa,False,True
+743,4,112,3,9,0,Eliminacion Directa,False,True
+744,4,110,9,9,0,Eliminacion Doble Ko,False,False
+745,4,110,9,9,0,Eliminacion Doble Ko,False,True
+746,4,110,9,9,0,Eliminacion Doble Ko,False,False
+747,4,110,3,9,0,Eliminacion Doble Ko,False,True
+748,4,110,3,9,0,Eliminacion Doble Ko,False,True
+749,4,110,3,9,0,Eliminacion Doble Ko,False,True
+750,4,110,3,9,0,Eliminacion Doble Ko,False,True
+751,4,107,9,9,0,Eliminacion Doble Ko,False,False
+752,4,107,9,9,0,Eliminacion Doble Ko,False,False
+753,4,107,9,9,0,Eliminacion Doble Ko,False,True
+754,4,107,9,9,0,Eliminacion Doble Ko,False,True
+755,4,107,3,9,0,Eliminacion Doble Ko,False,False
+756,4,107,3,9,0,Eliminacion Doble Ko,False,True
+757,4,107,3,9,0,Eliminacion Doble Ko,False,False
+758,4,107,3,9,0,Eliminacion Doble Ko,False,True
+759,4,104,3,9,0,Eliminacion Directa,False,False
+760,4,104,3,9,0,Eliminacion Directa,False,False
+761,4,104,3,9,0,Eliminacion Directa,False,True
+762,4,104,3,9,0,Eliminacion Directa,False,True
+763,4,101,3,9,0,Eliminacion Doble Ko,False,False
+764,4,101,3,9,0,Eliminacion Doble Ko,False,False
+765,4,101,3,9,0,Eliminacion Doble Ko,False,True
+766,4,101,3,9,0,Eliminacion Doble Ko,False,True
+767,4,101,3,9,0,Eliminacion Doble Ko,False,True
+768,4,89,3,9,0,Eliminacion Directa,False,False
+769,4,79,3,9,0,Eliminacion Directa,False,True
+770,4,79,3,9,0,Eliminacion Directa,False,True
+771,4,79,3,9,0,Eliminacion Directa,False,True
+772,4,79,3,9,0,Eliminacion Directa,False,True
+773,4,9,3,9,0,Eliminacion Directa,False,False
+774,4,9,3,9,0,Eliminacion Directa,False,True
+775,4,9,3,9,0,Eliminacion Directa,False,True
+776,4,2,9,9,0,Eliminacion Doble Ko,False,False
+777,4,2,9,9,0,Eliminacion Doble Ko,False,True
+778,4,2,9,9,0,Eliminacion Doble Ko,False,False
+1,614,135,12,2,4,Eliminacion Doble Ko,False,False
+2,614,135,12,2,4,Eliminacion Doble Ko,False,False
+3,614,135,1,2,4,Eliminacion Directa,False,False
+4,614,135,1,2,4,Eliminacion Directa,False,True
+5,614,134,12,2,4,Eliminacion Doble Ko,False,True
+6,614,134,12,2,4,Eliminacion Doble Ko,False,True
+7,614,134,12,2,4,Eliminacion Doble Ko,False,True
+8,614,134,12,2,4,Eliminacion Doble Ko,False,True
+9,614,134,12,2,4,Eliminacion Doble Ko,False,False
+10,614,134,12,2,4,Eliminacion Doble Ko,False,True
+11,614,134,12,2,4,Eliminacion Doble Ko,False,True
+12,614,134,1,2,4,Eliminacion Directa,False,False
+13,614,134,1,2,4,Eliminacion Directa,False,True
+14,614,134,1,2,4,Eliminacion Directa,False,True
+15,614,134,1,2,4,Eliminacion Directa,False,True
+16,614,134,1,2,4,Eliminacion Directa,False,True
+17,614,133,12,2,4,Eliminacion Doble Ko,False,False
+18,614,133,12,2,4,Eliminacion Doble Ko,False,True
+19,614,133,12,2,4,Eliminacion Doble Ko,False,True
+20,614,133,12,2,4,Eliminacion Doble Ko,False,False
+21,614,133,12,2,4,Eliminacion Doble Ko,False,True
+22,614,133,25,2,4,Eliminacion Doble Ko,False,True
+23,614,133,25,2,4,Eliminacion Doble Ko,False,True
+24,614,133,25,2,4,Eliminacion Doble Ko,False,False
+25,614,133,25,2,4,Eliminacion Doble Ko,False,True
+26,614,133,25,2,4,Eliminacion Doble Ko,False,True
+27,614,133,25,2,4,Eliminacion Doble Ko,False,True
+28,614,133,25,2,4,Eliminacion Doble Ko,False,True
+29,614,133,1,2,4,Eliminacion Directa,False,False
+30,614,133,1,2,4,Eliminacion Directa,False,True
+31,614,133,1,2,4,Eliminacion Directa,False,True
+32,614,133,1,2,4,Eliminacion Directa,False,True
+33,614,133,1,2,4,Eliminacion Directa,False,True
+34,614,130,12,2,4,Eliminacion Doble Ko,False,False
+35,614,130,12,2,4,Eliminacion Doble Ko,False,True
+36,614,130,12,2,4,Eliminacion Doble Ko,False,False
+37,614,130,12,2,4,Eliminacion Doble Ko,False,True
+38,614,130,1,2,4,Eliminacion Doble Ko,False,False
+39,614,130,1,2,4,Eliminacion Doble Ko,False,True
+40,614,130,1,2,4,Eliminacion Doble Ko,False,False
+41,614,130,1,2,4,Eliminacion Doble Ko,False,True
+42,614,129,12,2,4,Eliminacion Doble Ko,False,False
+43,614,129,12,2,4,Eliminacion Doble Ko,False,False
+44,614,129,12,2,4,Eliminacion Doble Ko,False,True
+45,614,129,12,2,4,Eliminacion Doble Ko,False,True
+46,614,129,1,2,4,Eliminacion Doble Ko,False,False
+47,614,129,1,2,4,Eliminacion Doble Ko,False,True
+48,614,129,1,2,4,Eliminacion Doble Ko,False,False
+49,614,129,1,2,4,Eliminacion Doble Ko,False,True
+50,614,128,12,2,4,Eliminacion Doble Ko,False,False
+51,614,128,12,2,4,Eliminacion Doble Ko,False,True
+52,614,128,12,2,4,Eliminacion Doble Ko,False,False
+53,614,128,12,2,4,Eliminacion Doble Ko,False,True
+54,614,128,1,2,4,Eliminacion Directa,False,False
+55,614,128,1,2,4,Eliminacion Directa,False,True
+56,614,126,12,2,4,Eliminacion Doble Ko,False,False
+57,614,126,12,2,4,Eliminacion Doble Ko,False,True
+58,614,126,12,2,4,Eliminacion Doble Ko,False,False
+59,614,126,12,2,4,Eliminacion Doble Ko,False,True
+60,614,126,1,2,4,Eliminacion Doble Ko,False,False
+61,614,126,1,2,4,Eliminacion Doble Ko,False,False
+62,614,126,1,2,4,Eliminacion Doble Ko,False,True
+63,614,125,12,2,4,Eliminacion Doble Ko,False,False
+64,614,125,12,2,4,Eliminacion Doble Ko,False,False
+65,614,125,12,2,4,Eliminacion Doble Ko,False,True
+66,614,125,12,2,4,Eliminacion Doble Ko,False,True
+67,614,125,1,2,4,Eliminacion Directa,False,False
+68,614,125,1,2,4,Eliminacion Directa,False,True
+69,614,125,1,2,4,Eliminacion Directa,False,True
+70,614,125,1,2,0,Liguilla,True,False
+71,614,125,1,2,0,Liguilla,True,True
+72,614,125,1,2,0,Liguilla,True,True
+73,614,125,1,2,0,Liguilla,True,True
+74,614,125,1,2,0,Liguilla,True,True
+75,614,124,12,2,3,Eliminacion Doble Ko,False,False
+76,614,124,12,2,3,Eliminacion Doble Ko,False,True
+77,614,124,12,2,3,Eliminacion Doble Ko,False,True
+78,614,124,12,2,3,Eliminacion Doble Ko,False,False
+79,614,124,12,2,3,Eliminacion Doble Ko,False,True
+80,614,124,12,2,3,Eliminacion Doble Ko,False,True
+81,614,124,25,2,3,Eliminacion Doble Ko,False,False
+82,614,124,25,2,3,Eliminacion Doble Ko,False,True
+83,614,124,25,2,3,Eliminacion Doble Ko,False,True
+84,614,124,25,2,3,Eliminacion Doble Ko,False,True
+85,614,124,25,2,3,Eliminacion Doble Ko,False,True
+86,614,124,25,2,3,Eliminacion Doble Ko,False,False
+87,614,124,25,2,3,Eliminacion Doble Ko,False,True
+88,614,124,25,2,3,Eliminacion Doble Ko,False,True
+89,614,124,1,2,3,Eliminacion Directa,False,False
+90,614,124,1,2,3,Eliminacion Directa,False,True
+91,614,123,12,2,3,Eliminacion Doble Ko,False,False
+92,614,123,12,2,3,Eliminacion Doble Ko,False,True
+93,614,123,12,2,3,Eliminacion Doble Ko,False,False
+94,614,123,12,2,3,Eliminacion Doble Ko,False,True
+95,614,123,1,2,3,Eliminacion Doble Ko,False,False
+96,614,123,1,2,3,Eliminacion Doble Ko,False,False
+97,614,123,1,2,3,Eliminacion Doble Ko,False,True
+98,614,123,1,2,3,Eliminacion Doble Ko,False,True
+99,614,123,1,2,3,Eliminacion Doble Ko,False,True
+100,614,121,12,2,3,Eliminacion Doble Ko,False,False
+101,614,121,12,2,3,Eliminacion Doble Ko,False,True
+102,614,121,12,2,3,Eliminacion Doble Ko,False,False
+103,614,121,1,2,3,Eliminacion Doble Ko,False,False
+104,614,121,1,2,3,Eliminacion Doble Ko,False,False
+105,614,121,1,2,3,Eliminacion Doble Ko,False,True
+106,614,121,1,2,3,Eliminacion Doble Ko,False,True
+107,614,121,1,2,3,Eliminacion Doble Ko,False,True
+108,614,120,12,2,3,Eliminacion Doble Ko,False,True
+109,614,120,12,2,3,Eliminacion Doble Ko,False,True
+110,614,120,12,2,3,Eliminacion Doble Ko,False,True
+111,614,120,12,2,3,Eliminacion Doble Ko,False,True
+112,614,120,1,2,3,Eliminacion Doble Ko,False,True
+113,614,120,1,2,3,Eliminacion Doble Ko,False,True
+114,614,120,1,2,3,Eliminacion Doble Ko,False,True
+115,614,120,1,2,3,Eliminacion Doble Ko,False,True
+116,614,120,1,2,3,Eliminacion Doble Ko,False,True
+117,614,119,12,2,3,Eliminacion Doble Ko,False,False
+118,614,119,12,2,3,Eliminacion Doble Ko,False,True
+119,614,119,12,2,3,Eliminacion Doble Ko,False,True
+120,614,119,12,2,3,Eliminacion Doble Ko,False,True
+121,614,119,12,2,3,Eliminacion Doble Ko,False,False
+122,614,119,1,2,3,Eliminacion Doble Ko,False,False
+123,614,119,1,2,3,Eliminacion Doble Ko,False,True
+124,614,119,1,2,3,Eliminacion Doble Ko,False,False
+125,614,119,1,2,3,Eliminacion Doble Ko,False,True
+126,614,119,1,2,3,Eliminacion Doble Ko,False,True
+127,614,119,1,2,3,Eliminacion Doble Ko,False,True
+128,614,118,2,2,3,Eliminacion Doble Ko,False,False
+129,614,118,2,2,3,Eliminacion Doble Ko,False,True
+130,614,118,2,2,3,Eliminacion Doble Ko,False,True
+131,614,118,2,2,3,Eliminacion Doble Ko,False,True
+132,614,118,2,2,3,Eliminacion Doble Ko,False,True
+133,614,118,2,2,3,Eliminacion Doble Ko,False,True
+134,614,118,25,2,3,Eliminacion Doble Ko,False,False
+135,614,118,25,2,3,Eliminacion Doble Ko,False,False
+136,614,118,25,2,3,Eliminacion Doble Ko,False,True
+137,614,118,25,2,3,Eliminacion Doble Ko,False,True
+138,614,117,2,2,3,Eliminacion Doble Ko,False,False
+139,614,117,2,2,3,Eliminacion Doble Ko,False,True
+140,614,117,2,2,3,Eliminacion Doble Ko,False,False
+141,614,117,2,2,3,Eliminacion Doble Ko,False,True
+142,614,117,2,2,3,Eliminacion Doble Ko,False,True
+143,614,117,2,2,3,Eliminacion Doble Ko,False,True
+144,614,117,1,2,3,Eliminacion Doble Ko,False,False
+145,614,117,1,2,3,Eliminacion Doble Ko,False,True
+146,614,117,1,2,3,Eliminacion Doble Ko,False,True
+147,614,117,1,2,3,Eliminacion Doble Ko,False,False
+148,614,117,1,2,3,Eliminacion Doble Ko,False,True
+149,614,117,1,2,3,Eliminacion Doble Ko,False,True
+150,614,117,1,2,3,Eliminacion Doble Ko,False,True
+151,614,116,2,2,3,Eliminacion Doble Ko,False,True
+152,614,116,2,2,3,Eliminacion Doble Ko,False,True
+153,614,116,2,2,3,Eliminacion Doble Ko,False,True
+154,614,116,2,2,3,Eliminacion Doble Ko,False,True
+155,614,116,2,2,3,Eliminacion Doble Ko,False,True
+156,614,116,2,2,3,Eliminacion Doble Ko,False,True
+157,614,116,1,2,3,Eliminacion Doble Ko,False,False
+158,614,116,1,2,3,Eliminacion Doble Ko,False,False
+159,614,116,1,2,3,Eliminacion Doble Ko,False,True
+160,614,116,1,2,3,Eliminacion Doble Ko,False,True
+161,614,116,1,2,3,Eliminacion Doble Ko,False,True
+162,614,115,2,2,3,Eliminacion Doble Ko,False,True
+163,614,115,2,2,3,Eliminacion Doble Ko,False,True
+164,614,115,2,2,3,Eliminacion Doble Ko,False,False
+165,614,115,2,2,3,Eliminacion Doble Ko,False,True
+166,614,115,2,2,3,Eliminacion Doble Ko,False,True
+167,614,115,2,2,3,Eliminacion Doble Ko,False,True
+168,614,115,2,2,3,Eliminacion Doble Ko,False,True
+169,614,115,25,2,3,Eliminacion Doble Ko,False,False
+170,614,115,25,2,3,Eliminacion Doble Ko,False,True
+171,614,115,25,2,3,Eliminacion Doble Ko,False,True
+172,614,115,25,2,3,Eliminacion Doble Ko,False,True
+173,614,115,25,2,3,Eliminacion Doble Ko,False,True
+174,614,115,25,2,3,Eliminacion Doble Ko,False,False
+175,614,115,25,2,3,Eliminacion Doble Ko,False,True
+176,614,114,21,2,3,Eliminacion Directa,False,
+177,614,112,2,2,3,Eliminacion Doble Ko,False,False
+178,614,112,2,2,3,Eliminacion Doble Ko,False,False
+179,614,112,2,2,3,Eliminacion Doble Ko,False,True
+180,614,112,2,2,3,Eliminacion Doble Ko,False,True
+181,614,112,25,2,3,Eliminacion Doble Ko,False,False
+182,614,112,25,2,3,Eliminacion Doble Ko,False,True
+183,614,112,25,2,3,Eliminacion Doble Ko,False,True
+184,614,112,25,2,3,Eliminacion Doble Ko,False,True
+185,614,112,25,2,3,Eliminacion Doble Ko,False,False
+186,614,112,1,2,3,Eliminacion Doble Ko,False,False
+187,614,112,1,2,3,Eliminacion Doble Ko,False,False
+188,614,110,10,2,1,Eliminacion Doble Ko,False,True
+189,614,110,10,2,1,Eliminacion Doble Ko,False,True
+190,614,110,10,2,1,Eliminacion Doble Ko,False,True
+191,614,110,10,2,1,Eliminacion Doble Ko,False,True
+192,614,110,10,2,1,Eliminacion Doble Ko,False,True
+193,614,110,2,2,1,Eliminacion Doble Ko,False,False
+194,614,110,2,2,1,Eliminacion Doble Ko,False,False
+195,614,110,2,2,1,Eliminacion Doble Ko,False,True
+196,614,110,2,2,1,Eliminacion Doble Ko,False,True
+197,614,110,25,2,1,Eliminacion Doble Ko,False,False
+198,614,110,25,2,1,Eliminacion Doble Ko,False,True
+199,614,110,25,2,1,Eliminacion Doble Ko,False,True
+200,614,110,25,2,1,Eliminacion Doble Ko,False,True
+201,614,110,25,2,1,Eliminacion Doble Ko,False,False
+202,614,104,1,2,1,Eliminacion Doble Ko,False,False
+203,614,104,1,2,1,Eliminacion Doble Ko,False,False
+204,614,104,1,2,1,Eliminacion Doble Ko,False,True
+205,614,104,1,2,1,Eliminacion Doble Ko,False,True
+206,614,104,1,2,0,Liguilla,True,True
+207,614,104,1,2,0,Liguilla,True,True
+208,614,104,1,2,0,Liguilla,True,True
+209,614,104,1,2,0,Liguilla,True,False
+210,614,104,1,2,0,Liguilla,True,False
+211,614,104,1,2,0,Liguilla,True,False
+212,614,104,1,2,0,Liguilla,True,True
+213,614,104,1,2,0,Liguilla,True,True
+214,614,135,13,1,5,Eliminacion Directa,False,False
+215,614,135,13,1,5,Eliminacion Directa,False,True
+216,614,134,13,1,5,Eliminacion Directa,False,False
+217,614,134,13,1,5,Eliminacion Directa,False,True
+218,614,133,24,1,5,Eliminacion Directa,False,False
+219,614,133,24,1,5,Eliminacion Directa,False,True
+220,614,133,24,1,5,Eliminacion Directa,False,True
+221,614,133,13,1,5,Eliminacion Directa,False,False
+222,614,133,13,1,5,Eliminacion Directa,False,True
+223,614,133,13,1,5,Eliminacion Directa,False,True
+224,614,130,13,1,5,Eliminacion Directa,False,False
+225,614,130,13,1,5,Eliminacion Directa,False,True
+226,614,130,13,1,5,Eliminacion Directa,False,True
+227,614,130,13,1,5,Eliminacion Directa,False,True
+228,614,128,13,1,5,Eliminacion Directa,False,False
+229,614,128,13,1,5,Eliminacion Directa,False,True
+230,614,128,13,1,5,Eliminacion Directa,False,True
+231,614,128,13,1,5,Eliminacion Directa,False,True
+232,614,128,13,1,5,Eliminacion Directa,False,True
+233,614,128,13,1,5,Eliminacion Directa,False,True
+234,614,128,13,1,0,Liguilla,True,True
+235,614,128,13,1,0,Liguilla,True,True
+236,614,128,13,1,0,Liguilla,True,True
+237,614,128,13,1,0,Liguilla,True,True
+238,614,128,13,1,0,Liguilla,True,True
+239,614,126,13,1,5,Eliminacion Doble Ko,False,False
+240,614,126,13,1,5,Eliminacion Doble Ko,False,False
+241,614,126,13,1,5,Eliminacion Doble Ko,False,True
+242,614,125,13,1,5,Eliminacion Directa,False,False
+243,614,125,13,1,5,Eliminacion Directa,False,True
+244,614,125,13,1,0,Liguilla,True,True
+245,614,125,13,1,0,Liguilla,True,False
+246,614,125,13,1,0,Liguilla,True,True
+247,614,125,13,1,0,Liguilla,True,False
+248,614,124,24,1,3,Eliminacion Doble Ko,False,False
+249,614,124,24,1,3,Eliminacion Doble Ko,False,True
+250,614,124,24,1,3,Eliminacion Doble Ko,False,True
+251,614,124,24,1,3,Eliminacion Doble Ko,False,False
+252,614,124,24,1,3,Eliminacion Doble Ko,False,True
+253,614,124,24,1,3,Eliminacion Doble Ko,False,True
+254,614,124,24,1,3,Eliminacion Doble Ko,False,True
+255,614,124,13,1,3,Eliminacion Directa,False,False
+256,614,123,13,1,3,Eliminacion Directa,False,False
+257,614,123,13,1,3,Eliminacion Directa,False,True
+258,614,123,13,1,3,Eliminacion Directa,False,True
+259,614,123,13,1,3,Eliminacion Directa,False,True
+260,614,121,13,1,3,Eliminacion Doble Ko,False,False
+261,614,121,13,1,3,Eliminacion Doble Ko,False,True
+262,614,121,13,1,3,Eliminacion Doble Ko,False,False
+263,614,121,13,1,3,Eliminacion Doble Ko,False,True
+264,614,121,13,1,3,Eliminacion Doble Ko,False,True
+265,614,120,13,1,3,Eliminacion Doble Ko,False,True
+266,614,120,13,1,3,Eliminacion Doble Ko,False,True
+267,614,120,13,1,3,Eliminacion Doble Ko,False,True
+268,614,120,13,1,3,Eliminacion Doble Ko,False,True
+269,614,120,13,1,3,Eliminacion Doble Ko,False,True
+270,614,120,13,1,3,Eliminacion Doble Ko,False,True
+271,614,120,13,1,3,Eliminacion Doble Ko,False,True
+272,614,120,13,1,3,Eliminacion Doble Ko,False,False
+273,614,119,13,1,3,Eliminacion Doble Ko,False,False
+274,614,119,13,1,3,Eliminacion Doble Ko,False,False
+275,614,118,14,1,3,Eliminacion Doble Ko,False,True
+276,614,118,14,1,3,Eliminacion Doble Ko,False,True
+277,614,118,14,1,3,Eliminacion Doble Ko,False,True
+278,614,118,14,1,3,Eliminacion Doble Ko,False,True
+279,614,118,14,1,3,Eliminacion Doble Ko,False,True
+280,614,118,24,1,3,Eliminacion Doble Ko,False,False
+281,614,118,24,1,3,Eliminacion Doble Ko,False,True
+282,614,118,24,1,3,Eliminacion Doble Ko,False,True
+283,614,118,24,1,3,Eliminacion Doble Ko,False,True
+284,614,118,24,1,3,Eliminacion Doble Ko,False,True
+285,614,118,24,1,3,Eliminacion Doble Ko,False,True
+286,614,118,24,1,3,Eliminacion Doble Ko,False,True
+287,614,118,24,1,3,Eliminacion Doble Ko,False,False
+288,614,118,24,1,3,Eliminacion Doble Ko,False,True
+289,614,117,14,1,3,Eliminacion Doble Ko,False,False
+290,614,117,14,1,3,Eliminacion Doble Ko,False,True
+291,614,117,14,1,3,Eliminacion Doble Ko,False,True
+292,614,117,14,1,3,Eliminacion Doble Ko,False,False
+293,614,117,14,1,3,Eliminacion Doble Ko,False,True
+294,614,117,13,1,3,Eliminacion Doble Ko,False,False
+295,614,117,13,1,3,Eliminacion Doble Ko,False,True
+296,614,117,13,1,3,Eliminacion Doble Ko,False,False
+297,614,117,13,1,3,Eliminacion Doble Ko,False,True
+298,614,117,13,1,3,Eliminacion Doble Ko,False,True
+299,614,116,14,1,3,Eliminacion Doble Ko,False,False
+300,614,116,14,1,3,Eliminacion Doble Ko,False,True
+301,614,116,14,1,3,Eliminacion Doble Ko,False,False
+302,614,116,14,1,3,Eliminacion Doble Ko,False,True
+303,614,116,14,1,3,Eliminacion Doble Ko,False,True
+304,614,116,14,1,3,Eliminacion Doble Ko,False,True
+305,614,116,14,1,3,Eliminacion Doble Ko,False,True
+306,614,116,14,1,3,Eliminacion Doble Ko,False,True
+307,614,116,13,1,3,Eliminacion Doble Ko,False,False
+308,614,116,13,1,3,Eliminacion Doble Ko,False,True
+309,614,116,13,1,3,Eliminacion Doble Ko,False,False
+310,614,116,13,1,3,Eliminacion Doble Ko,False,True
+311,614,115,24,1,3,Eliminacion Doble Ko,False,False
+312,614,115,24,1,3,Eliminacion Doble Ko,False,True
+313,614,115,24,1,3,Eliminacion Doble Ko,False,True
+314,614,115,24,1,3,Eliminacion Doble Ko,False,True
+315,614,115,24,1,3,Eliminacion Doble Ko,False,True
+316,614,115,24,1,3,Eliminacion Doble Ko,False,True
+317,614,115,24,1,3,Eliminacion Doble Ko,False,True
+318,614,115,24,1,3,Eliminacion Doble Ko,False,True
+319,614,115,24,1,3,Eliminacion Doble Ko,False,True
+320,614,115,24,1,3,Eliminacion Doble Ko,False,False
+321,614,114,20,1,3,Eliminacion Directa,False,
+322,614,112,14,1,2,Eliminacion Doble Ko,False,False
+323,614,112,14,1,2,Eliminacion Doble Ko,False,True
+324,614,112,14,1,2,Eliminacion Doble Ko,False,False
+325,614,112,14,1,2,Eliminacion Doble Ko,False,True
+326,614,112,24,1,2,Eliminacion Doble Ko,False,False
+327,614,112,24,1,2,Eliminacion Doble Ko,False,True
+328,614,112,24,1,2,Eliminacion Doble Ko,False,False
+329,614,112,13,1,2,Eliminacion Doble Ko,False,False
+330,614,112,13,1,2,Eliminacion Doble Ko,False,False
+331,614,112,13,1,2,Eliminacion Doble Ko,False,True
+332,614,112,13,1,2,Eliminacion Doble Ko,False,True
+333,614,112,13,1,2,Eliminacion Doble Ko,False,True
+334,614,112,13,1,2,Eliminacion Doble Ko,False,True
+335,614,110,14,1,1,Eliminacion Doble Ko,False,False
+336,614,110,14,1,1,Eliminacion Doble Ko,False,False
+337,614,110,14,1,1,Eliminacion Doble Ko,False,True
+338,614,110,14,1,1,Eliminacion Doble Ko,False,True
+339,614,110,14,1,1,Eliminacion Doble Ko,False,True
+340,614,110,24,1,1,Eliminacion Doble Ko,False,False
+341,614,110,24,1,1,Eliminacion Doble Ko,False,False
+342,614,110,24,1,1,Eliminacion Doble Ko,False,True
+343,614,104,13,1,1,Eliminacion Directa,False,False
+344,614,104,13,1,0,Liguilla,True,False
+345,614,104,13,1,0,Liguilla,True,True
+346,614,104,13,1,0,Liguilla,True,False
+347,614,104,13,1,0,Liguilla,True,False
+348,614,104,13,1,0,Liguilla,True,True
+349,614,104,13,1,0,Liguilla,True,True
+350,614,135,11,10,1,Eliminacion Doble Ko,False,False
+351,614,135,11,10,1,Eliminacion Doble Ko,False,True
+352,614,135,11,10,1,Eliminacion Doble Ko,False,False
+353,614,135,11,10,1,Eliminacion Doble Ko,False,True
+354,614,123,3,9,0,Eliminacion Doble Ko,False,True
+355,614,123,3,9,0,Eliminacion Doble Ko,False,True
+356,614,123,3,9,0,Eliminacion Doble Ko,False,True
+357,614,120,9,9,0,Eliminacion Doble Ko,False,True
+358,614,120,9,9,0,Eliminacion Doble Ko,False,True
+359,614,120,9,9,0,Eliminacion Doble Ko,False,True
+360,614,120,9,9,0,Eliminacion Doble Ko,False,True
+361,614,119,9,9,0,Eliminacion Doble Ko,False,False
+362,614,119,9,9,0,Eliminacion Doble Ko,False,False
+363,614,118,9,9,0,Eliminacion Doble Ko,False,False
+364,614,118,9,9,0,Eliminacion Doble Ko,False,False
+365,614,118,9,9,0,Eliminacion Doble Ko,False,True
+366,614,118,9,9,0,Eliminacion Doble Ko,False,True
+367,614,117,3,9,0,Eliminacion Doble Ko,False,False
+368,614,117,3,9,0,Eliminacion Doble Ko,False,True
+369,614,117,3,9,0,Eliminacion Doble Ko,False,True
+370,614,117,3,9,0,Eliminacion Doble Ko,False,False
+371,614,112,3,9,0,Eliminacion Directa,False,False
+372,614,112,3,9,0,Eliminacion Directa,False,True
+373,614,112,3,9,0,Eliminacion Directa,False,True
+374,614,110,9,9,0,Eliminacion Doble Ko,False,False
+375,614,110,9,9,0,Eliminacion Doble Ko,False,False
+376,614,104,3,9,0,Eliminacion Directa,False,False

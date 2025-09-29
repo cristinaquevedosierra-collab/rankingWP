@@ -1,0 +1,323 @@
+/* 90-compat-override.css
+   Propósito: blindar el layout del plugin frente a estilos de temas/builder (Astra, Elementor, etc.)
+   Nota: Solo se usan !important en propiedades estructurales.
+*/
+
+/* 1) Asegurar que el wrapper sale del contenedor del tema y ocupa todo el ancho */
+
+/* 2) Neutralizar paddings/márgenes heredados por el tema */
+.futbolin-full-bleed-wrapper,
+.futbolin-full-bleed-wrapper .futbolin-content-container {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* 3) Forzar el grid del layout (con y sin sidebar) */
+.futbolin-layout-container {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 24px !important;
+}
+.futbolin-layout-container.with-sidebar {
+  grid-template-columns: 320px 1fr !important;
+}
+@media (max-width: 1024px) {
+  .futbolin-layout-container.with-sidebar {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 4) Neutralizar floats/anchos del tema en columnas internas */
+
+.futbolin-layout-container .futbolin-sidebar {
+  float: none !important;
+  width: auto !important;
+}
+
+/* 5) Box-sizing consistente dentro del plugin */
+.futbolin-full-bleed-wrapper, 
+.futbolin-full-bleed-wrapper * {
+  box-sizing: border-box !important;
+}
+
+/* 6) Aislar tipografías del tema (solo contenedores plugin) */
+.futbolin-full-bleed-wrapper,
+.futbolin-full-bleed-wrapper * {
+  font-family: var(--futbolin-font-family-base, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif) !important;
+  line-height: 1.35 !important;
+}
+
+/* 7) Sanitizar títulos/espacios que Astra suele alterar */
+
+/* 8) Botón "subir arriba" pegado al contenedor del plugin */
+.futbolin-layout-container.with-sidebar .rf-back-to-top {
+  position: sticky !important;
+  bottom: 24px !important;
+  align-self: end !important;
+  margin-left: auto !important;
+  z-index: 3 !important;
+}
+
+/* 9) Corrección de contenedores del tema que imponen overflow/ocultan el full-bleed */
+
+/* 10) No interferir fuera del plugin */
+
+/* RF: Historial — forzar etiqueta fija sobre el cuadro de datos y apilado vertical seguro */
+.futbolin-card .history-summary-search {
+  display: block !important;           /* Evitar que el tema imponga flex/gird que lo rompa */
+}
+.futbolin-card .history-summary-search #history-global-label {
+  display: block !important;           /* Línea completa */
+  width: 100% !important;
+  flex-basis: 100% !important;
+  margin: 4px 0 6px 0 !important;
+  font-weight: 700 !important;
+  color: var(--futbolin-text-headings, #111827) !important;
+}
+.futbolin-card .history-summary-search .history-summary-cards,
+.futbolin-card .history-summary-search .history-search-box,
+.futbolin-card .history-summary-search .history-split-counters {
+  display: block !important;           /* Cada bloque en su propia línea */
+  width: 100% !important;
+}
+
+/* Mini-fix: remove outer line around pagination wrapper */
+.futbolin-paginacion{
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+
+/* Mini-fix: ensure "volver arriba" arrow is visible and clickable */
+
+
+
+
+/* Ensure the specific back-to-top button is visible and above overlays */
+
+
+
+/* Auto-hide back-to-top at page top */
+
+
+
+
+/* =========================================================
+   TOP-3 HIGHLIGHT & MEDAL ICONS (safe, theme-proof)
+   - Fills the FULL row background for 1º/2º/3º
+   - Replaces the numeric badge with medal emoji
+   - Works across all known markup variants
+   - Uses :has() when available + .top-[1..3] fallback via JS
+   ========================================================= */
+:root {
+  --rf-gold-1: #fff6cc;
+  --rf-gold-2: #f4d35e;
+  --rf-gold-border: #e1b700;
+  --rf-silver-1: #f4f6f8;
+  --rf-silver-2: #cfd8dc;
+  --rf-silver-border: #9ea7ad;
+  --rf-bronze-1: #ffe6cc;
+  --rf-bronze-2: #d19a66;
+  --rf-bronze-border: #ad6a2b;
+}
+
+/* Helper: treat any "row" generically */
+.ranking-row, .champion-row, li.ranking-row {
+  position: relative;
+  z-index: 0;
+}
+
+/* --- GOLD (1º) --- */
+
+
+.ranking-row:has(.ranking-position.pos-1),
+.ranking-row:has(.badge.pos-1),
+.champion-row:has(.pos-1),
+li.ranking-row:has(.pos-1) {
+  background: linear-gradient(180deg, var(--rf-gold-1), var(--rf-gold-2));
+  border-color: var(--rf-gold-border) !important;
+  box-shadow: inset 0 0 0 1px rgba(225,183,0,.35);
+}
+
+/* --- SILVER (2º) --- */
+
+.ranking-row:has(.ranking-position.pos-2),
+.ranking-row:has(.badge.pos-2),
+.champion-row:has(.pos-2),
+li.ranking-row:has(.pos-2) {
+  background: linear-gradient(180deg, var(--rf-silver-1), var(--rf-silver-2));
+  border-color: var(--rf-silver-border) !important;
+  box-shadow: inset 0 0 0 1px rgba(158,167,173,.35);
+}
+
+/* --- BRONZE (3º) --- */
+.ranking-row.top-3,
+.champion-row.top-3,
+li.ranking-row.top-3,
+.ranking-row:has(.ranking-position.pos-3),
+.ranking-row:has(.badge.pos-3),
+.champion-row:has(.pos-3),
+li.ranking-row:has(.pos-3) {
+  background: linear-gradient(180deg, var(--rf-bronze-1), var(--rf-bronze-2));
+  border-color: var(--rf-bronze-border) !important;
+  box-shadow: inset 0 0 0 1px rgba(173,106,43,.35);
+}
+
+/* Ensure readable text on gradients */
+
+.ranking-row.top-3 .ranking-player-details a,
+.ranking-row:has(.pos-1) .ranking-player-details a,
+.ranking-row:has(.pos-2) .ranking-player-details a,
+.ranking-row:has(.pos-3) .ranking-player-details a {
+  color: var(--futbolin-text-headings) !important;
+}
+
+/* Replace numeric badge with medal icon */
+.ranking-position.pos-1,
+.ranking-position.pos-2,
+.ranking-position.pos-3,
+.badge.pos-1,
+.badge.pos-2,
+.badge.pos-3 {
+  position: relative;
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* Medal size/placement */
+.ranking-position.pos-1::before,
+.ranking-position.pos-2::before,
+.ranking-position.pos-3::before,
+.badge.pos-1::before,
+.badge.pos-2::before,
+.badge.pos-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+/* Specific medals */
+.ranking-position.pos-1::before, .badge.pos-1::before { content: "🥇"; }
+.ranking-position.pos-2::before, .badge.pos-2::before { content: "🥈"; }
+.ranking-position.pos-3::before, .badge.pos-3::before { content: "🥉"; }
+
+
+/* RF: Medalla visible y grande encima del número */
+.ranking-position.pos-1::before,
+.ranking-position.pos-2::before,
+.ranking-position.pos-3::before,
+.badge.pos-1::before,
+.badge.pos-2::before,
+.badge.pos-3::before {
+  color: #111827 !important;       /* color explícito: NO heredar "transparent" */
+  font-size: 1.35em !important;    /* medalla más grande */
+  z-index: 3 !important;           /* por encima de cualquier fondo/contenido */
+  pointer-events: none !important;
+}
+
+
+/* == RF: Relleno completo también cuando hay .ranking-cell dentro =================== */
+/* Oro */
+/* Plata */
+/* Bronce */
+.futbolin-ranking .ranking-row.top-3,
+.futbolin-card .ranking-row.top-3,
+li.ranking-row.top-3,
+.ranking-row.top-3 {
+  background: linear-gradient(180deg, #f8cf8e 0%, #cd7f32 100%) !important;
+  border-color: #b87333 !important;
+}
+
+/* Transparentar celdas internas si tienen fondo propio (tapan el amarillo/plata/bronce) */
+
+.ranking-row.top-3 .ranking-cell,
+li.ranking-row.top-3 .ranking-cell {
+  background: transparent !important;
+}
+
+/* Evitar que :hover cambie el fondo */
+
+.ranking-row.top-3:hover,
+li.ranking-row.top-3:hover {
+  background: inherit !important;
+}
+/* ============================================================================= */
+
+
+/* == RF: Anclas en filas del ranking: color del plugin y SIN subrayado ================= */
+/* Cobertura amplia: ranking en cards, wrapper principal, y <li class="ranking-row"> */
+.futbolin-card .ranking-row a[href],
+.futbolin-ranking .ranking-row a[href],
+.futbolin-layout-container .ranking-row a[href],
+li.ranking-row a[href],
+/* Targets específicos para nombres */
+.ranking-row .ranking-player-details a[href],
+.ranking-row .ranking-player-name-cell a[href],
+.ranking-row .jug a[href],
+.ranking-row h4 a[href] {
+  color: var(--futbolin-text-headings, #111827) !important;
+  text-decoration: none !important;
+  -webkit-text-decoration: none !important;
+}
+
+/* Estados */
+.futbolin-card .ranking-row a[href]:visited,
+.futbolin-ranking .ranking-row a[href]:visited,
+.futbolin-layout-container .ranking-row a[href]:visited,
+li.ranking-row a[href]:visited,
+.ranking-row .ranking-player-details a[href]:visited,
+.ranking-row .ranking-player-name-cell a[href]:visited,
+.ranking-row .jug a[href]:visited,
+.ranking-row h4 a[href]:visited {
+  color: var(--futbolin-text-headings, #111827) !important;
+  text-decoration: none !important;
+}
+
+.futbolin-card .ranking-row a[href]:hover,
+.futbolin-ranking .ranking-row a[href]:hover,
+.futbolin-layout-container .ranking-row a[href]:hover,
+li.ranking-row a[href]:hover,
+.ranking-row .ranking-player-details a[href]:hover,
+.ranking-row .ranking-player-name-cell a[href]:hover,
+.ranking-row .jug a[href]:hover,
+.ranking-row h4 a[href]:hover {
+  color: var(--futbolin-text-headings, #111827) !important;
+  text-decoration: none !important;
+  opacity: .95;
+}
+
+.futbolin-card .ranking-row a[href]:focus,
+.futbolin-ranking .ranking-row a[href]:focus,
+.futbolin-layout-container .ranking-row a[href]:focus,
+li.ranking-row a[href]:focus,
+.ranking-row .ranking-player-details a[href]:focus,
+.ranking-row .ranking-player-name-cell a[href]:focus,
+.ranking-row .jug a[href]:focus,
+.ranking-row h4 a[href]:focus {
+  outline: auto;
+  text-decoration: none !important;
+}
+/* ======================================================================= */
+
+/* RF: Asegurar tamaño de la bandera (aunque no cargue 04-header.css o CSS purged)
+   - Se usa !important para ganar a cualquier estilo del tema o bundles purgados
+   - También se fuerza el layout de la columna derecha del header para apilar bandera y categoría */
+.header-flag {
+  height: 48px !important;
+  width: auto !important;
+  max-height: none !important;
+  display: block !important;
+}
+.futbolin-main-header .header-side.right {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
